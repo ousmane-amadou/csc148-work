@@ -224,6 +224,7 @@ class UnreliableMagicCarpet(Vehicle):
 # Task 2: Introduction to Stacks
 ##############################################################################
 
+
 def reverse_top_two(stack: 'Stack') -> None:
     """Reverse the top two elements on <stack>.
 
@@ -243,3 +244,18 @@ def reverse_top_two(stack: 'Stack') -> None:
     top_2 = stack.pop()
     stack.push(top)
     stack.push(top_2)
+
+
+if __name__ == '__main__':
+    import doctest
+    doctest.testmod()
+
+    # Uncomment and run before final submission. This checks for style errors
+    # in addition to code inconsistencies and forbidden Python features.
+    import python_ta
+    python_ta.check_all(config={
+         'allowed-import-modules': [
+             'doctest', 'python_ta', 'typing',
+             'math', 'random', 'obfuscated_stack'
+         ]
+     })

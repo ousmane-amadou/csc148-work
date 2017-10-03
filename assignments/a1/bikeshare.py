@@ -39,7 +39,7 @@ class Drawable:
         self.sprite = sprite_file
 
     def get_position(self, time: datetime) -> Tuple[float, float]:
-        """Return the (lat, long) position of this object at the given time.
+        """Return the (long, lat) position of this object at the given time.
         """
         raise NotImplementedError
 
@@ -51,7 +51,9 @@ class Station(Drawable):
     capacity:
         the total number of bikes the station can store
     location:
-        the location of the station in lat/long coordinates
+        the location of the station in long/lat coordinates
+        **UPDATED**: make sure the first coordinate is the longitude,
+        and the second coordinate is the latitude.
     name: str
         name of the station
     num_bikes: int
@@ -77,7 +79,7 @@ class Station(Drawable):
         self.name = name
 
     def get_position(self, time: datetime) -> Tuple[float, float]:
-        """Return the (lat, long) position of this station for the given time.
+        """Return the (long, lat) position of this station for the given time.
 
         Note that the station's location does *not* change over time.
         The <time> parameter is included only because we should not change
@@ -115,7 +117,7 @@ class Ride(Drawable):
         self.start_time, self.end_time = times[0], times[1]
 
     def get_position(self, time: datetime) -> Tuple[float, float]:
-        """Return the position of this ride for the given time.
+        """Return the (long, lat) position of this ride for the given time.
 
         A ride travels in a straight line between its start and end stations
         at a constant speed.

@@ -140,8 +140,13 @@ def create_stations(stations_file: str) -> Dict[str, 'Station']:
         # as described in the assignment handout.
         # NOTE: all of the corresponding values are strings, and so you need
         # to convert some of them to numbers explicitly using int() or float().
-        pass
+        id = int(s['n'])
+        name = s['s']
+        location = (s['lo'], s['la'])
+        bike_count = int(s['da'])
+        capcity = int(s['do']) + bike_count
 
+        stations[id] = Station(location, capcity, bike_count, name)
     return stations
 
 
@@ -168,7 +173,7 @@ def create_rides(rides_file: str,
             # constant we defined above. Example:
             # >>> datetime.strptime('2017-06-01 8:00', DATETIME_FORMAT)
             # datetime.datetime(2017, 6, 1, 8, 0)
-            pass
+
 
     return rides
 

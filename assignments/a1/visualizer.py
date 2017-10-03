@@ -28,7 +28,7 @@ from bikeshare import Drawable
 
 WHITE = (255, 255, 255)
 MAP_FILE = 'montreal.png'
-# Map upper-left and bottom-right coordinates (lat, long).
+# Map upper-left and bottom-right coordinates (long, lat).
 MAP_MIN = (-73.840119, 45.638191)
 MAP_MAX = (-73.471199, 45.425780)
 
@@ -43,7 +43,7 @@ class Visualizer:
     # _screen: the pygame window that is shown to the user.
     # _mouse_down: whether the user is holding down a mouse button
     #   on the pygame window.
-    # _map: the Map object responsible for converting between lat/long
+    # _map: the Map object responsible for converting between long/lat
     #   coordinates and the pixels of the visualization window.
     _screen: pygame.Surface
     _mouse_down: bool
@@ -108,9 +108,9 @@ class Map:
     image:
         the full image for the area to cover with the map
     min_coords:
-        the minimum lat/long coordinates
+        the minimum long/lat coordinates
     max_coords:
-        the maximum lat/long coordinates
+        the maximum long/lat coordinates
     """
     image: pygame.image
     min_coords: Tuple[float, float]
@@ -145,7 +145,7 @@ class Map:
 
     def _latlong_to_screen(self,
                            location: Tuple[float, float]) -> Tuple[int, int]:
-        """Convert the given lat/long coordinates into pixel coordinates.
+        """Convert the given (long, lat) coordinates into pixel coordinates.
 
         You can safely ignore the calculations done in this method!
         """
