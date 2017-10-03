@@ -48,17 +48,21 @@ class Simulation:
         """Initialize this simulation with the given configuration settings.
         """
         self.visualizer = Visualizer()
+        self.all_stations = create_stations(station_file)
+        self.all_rides = create_rides(ride_file, self.all_stations)
 
     def run(self, start: datetime, end: datetime) -> None:
         """Run the simulation from <start> to <end>.
         """
         step = timedelta(minutes=1)  # Each iteration spans one minute of time
 
+        to_draw = list(self.all_stations.values()) + self.all_rides
         # Leave this code at the very bottom of this method.
         # It will keep the visualization window open until you close
         # it by pressing the 'X'.
         while True:
             if self.visualizer.handle_window_events():
+                self.visualizer.render_drawables(to_draw, start+step)
                 return  # Stop the simulation
 
     def _update_active_rides(self, time: datetime) -> None:
@@ -174,6 +178,12 @@ def create_rides(rides_file: str,
             # >>> datetime.strptime('2017-06-01 8:00', DATETIME_FORMAT)
             # datetime.datetime(2017, 6, 1, 8, 0)
 
+            start_time = datetime.strptime(line[0], DATETIME_FORMAT)
+            start_station = stations[int(line[1])]
+
+            end_time = datetime.strptime(line[2], DATETIME_FORMAT)
+            end_station = stations[int(line[3])]
+            rides.append(Ride(start_station, end_station, (start_time, end_time)))
 
     return rides
 

@@ -73,6 +73,7 @@ class Station(Drawable):
 
         Precondition: 0 <= num_bikes <= cap
         """
+        Drawable.__init__(self, STATION_SPRITE)
         self.location = pos
         self.capacity = cap
         self.num_bikes = num_bikes
@@ -85,7 +86,7 @@ class Station(Drawable):
         The <time> parameter is included only because we should not change
         the header of an overridden method.
         """
-        pass
+        return self.location
 
 
 class Ride(Drawable):
@@ -113,6 +114,7 @@ class Ride(Drawable):
                  times: Tuple[datetime, datetime]) -> None:
         """Initialize a ride object with the given start and end information.
         """
+        Drawable.__init__(self, RIDE_SPRITE)
         self.start, self.end = start, end
         self.start_time, self.end_time = times[0], times[1]
 
@@ -122,7 +124,21 @@ class Ride(Drawable):
         A ride travels in a straight line between its start and end stations
         at a constant speed.
         """
-        pass
+        # Calculate the total time of ride from start station to end station
+        ride_time = (self.end_time - self.start_time).total_seconds()
+
+        # Calculuate the speed ride goes in the logitudinal direction
+        dx = self.start.get_position(time)[0] - self.end.get_position(time)[0]
+        sp_x = dx / ride_time.total_seconds()
+
+        # Calculuate the speed ride goes in the latitudinal direction
+        dy = self.start.get_position(time)[1] - self.end.get_position(time)[1]
+        sp_y = dy / ride_time.total_seconds()
+
+        return (self.start.get_position(time)[0] + sp_x*ride_time,
+                       self.start.get_position(time)[1] + sp_y*ride_time)
+
+
 
 
 if __name__ == '__main__':
