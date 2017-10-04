@@ -35,6 +35,8 @@ class Simulation:
         A list of all the rides in this simulation.
         Note that not all rides might be used, depending on the timeframe
         when the simulation is run.
+    active_rides:
+        TODO
     all_stations:
         A dictionary containing all the stations in this simulation.
     visualizer:
@@ -42,6 +44,7 @@ class Simulation:
     """
     all_stations: Dict[str, Station]
     all_rides: List[Ride]
+    active_rides: List[Ride]
     visualizer: Visualizer
 
     def __init__(self, station_file: str, ride_file: str) -> None:
@@ -50,19 +53,30 @@ class Simulation:
         self.visualizer = Visualizer()
         self.all_stations = create_stations(station_file)
         self.all_rides = create_rides(ride_file, self.all_stations)
+        self.active_rides = []
 
     def run(self, start: datetime, end: datetime) -> None:
         """Run the simulation from <start> to <end>.
         """
         step = timedelta(minutes=1)  # Each iteration spans one minute of time
 
-        to_draw = list(self.all_stations.values()) + self.all_rides
+        st_to_draw = list(self.all_stations.values()) # Stations that need to be rendered
+        rd_to_draw = self.active_rides                # Initially set to empty
+        current = start
+
+        # Simulation Loop (halt when current time exceeds end time)
+        while current < end:
+            self._update_active_rides(current)        # Changes rd_to_draw by side effect
+            self.visualizer.render_drawables(st_to_draw+rd_to_draw, current)
+
+            current += step
+            print(current)
+
         # Leave this code at the very bottom of this method.
         # It will keep the visualization window open until you close
         # it by pressing the 'X'.
         while True:
             if self.visualizer.handle_window_events():
-                self.visualizer.render_drawables(to_draw, start+step)
                 return  # Stop the simulation
 
     def _update_active_rides(self, time: datetime) -> None:
@@ -83,7 +97,15 @@ class Simulation:
             period but ends during or after the simulation's time period,
             it should still be added to self.active_rides.
         """
-        pass
+        for ride in self.all_rides:
+            prev_active = ride in self.active_rides
+            curr_active = (time <= ride.start_time) and (time >= ride.end_time)
+
+            if prev_active and not curr_active:
+                self.active_rides.remove(ride)
+            elif not prev_active and curr_active:
+                self.active_rides.append(ride)
+
 
     def calculate_statistics(self) -> Dict[str, Tuple[str, float]]:
         """Return a dictionary containing statistics for this simulation.
@@ -148,7 +170,7 @@ def create_stations(stations_file: str) -> Dict[str, 'Station']:
         name = s['s']
         location = (s['lo'], s['la'])
         bike_count = int(s['da'])
-        capcity = int(s['do']) + bike_count
+        capcity = int(s['ba']) + bike_count
 
         stations[id] = Station(location, capcity, bike_count, name)
     return stations
@@ -167,6 +189,7 @@ def create_rides(rides_file: str,
                   assignment handout.
     """
     rides = []
+
     with open(rides_file) as file:
         for line in csv.reader(file):
             # line is a list of strings, following the format described
@@ -178,12 +201,15 @@ def create_rides(rides_file: str,
             # >>> datetime.strptime('2017-06-01 8:00', DATETIME_FORMAT)
             # datetime.datetime(2017, 6, 1, 8, 0)
 
-            start_time = datetime.strptime(line[0], DATETIME_FORMAT)
-            start_station = stations[int(line[1])]
+            try:
+                start_time = datetime.strptime(line[0], DATETIME_FORMAT)
+                start_station = stations[line[1]]
 
-            end_time = datetime.strptime(line[2], DATETIME_FORMAT)
-            end_station = stations[int(line[3])]
-            rides.append(Ride(start_station, end_station, (start_time, end_time)))
+                end_time = datetime.strptime(line[2], DATETIME_FORMAT)
+                end_station = stations[line[3]]
+                rides.append(Ride(start_station, end_station, (start_time, end_time)))
+            except KeyError:
+                pass
 
     return rides
 
