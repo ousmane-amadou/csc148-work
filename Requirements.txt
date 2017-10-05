@@ -2,3 +2,4 @@ hypothesis
 pytest
 Pygame
 python-ta==1.2.0
+matplotlib

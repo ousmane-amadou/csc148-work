@@ -5,6 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/exercises/ex2" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/assignments/a1" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/labs/lab4" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
