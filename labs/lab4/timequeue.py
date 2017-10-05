@@ -20,7 +20,7 @@ from timer import Timer
 import matplotlib.pyplot as plt
 
 
-def _profile_enqueue(queue_size: int, n: int) -> None:
+def _profile_enqueue(queue_size: int, n: int) -> float:
     """Report the time taken to perform enqueue operations.
 
     Specifically, report the time taken to perform a single Queue.enqueue
@@ -37,6 +37,7 @@ def _profile_enqueue(queue_size: int, n: int) -> None:
         for new_queue in queue_list:
             new_queue.enqueue(10)
 
+    return my_timer.interval
     # TODO: implement this function by following the steps in the comments.
     # Experiment preparation: make a list containing <n> queues,
     # each of size <queue_size>. The elements you enqueue don't matter.
@@ -90,11 +91,16 @@ def time_queue() -> None:
     sizes = [10000, 20000, 40000, 80000, 160000]
     trials = 300
 
-    y = []
+    y1 = []
+    y2 = []
     for size in sizes:
-        _profile_enqueue(size, trials)
-        _profile_dequeue(size, trials)
+        a = _profile_enqueue(size, trials)
+        y1.append(a)
+        b = _profile_dequeue(size, trials)
+        y2.append(b)
 
+    plt.plot(sizes, y1, sizes, y2)
+    plt.show()
     # TODO: Run _profile_enqueue and _profile_enqueue with the different
     # experiment parameters (sizes and trials).
 
