@@ -23,6 +23,7 @@ from bikeshare import Ride, Station
 from container import PriorityQueue
 from visualizer import Visualizer
 
+import pygame
 # Datetime format to parse the ride data
 DATETIME_FORMAT = '%Y-%m-%d %H:%M'
 
@@ -76,8 +77,9 @@ class Simulation:
         # It will keep the visualization window open until you close
         # it by pressing the 'X'.
         while True:
-            if self.visualizer.handle_window_events():
-                return  # Stop the simulation
+            pygame.event.peek()
+            # if self.visualizer.handle_window_events():
+            #    return  # Stop the simulation
 
     def _update_active_rides(self, time: datetime) -> None:
         """Update this simulation's list of active rides for the given time.
@@ -106,15 +108,13 @@ class Simulation:
             curr_active = (time <= ride.start_time) and (time >= ride.end_time)
 
             if prev_active and not curr_active:  # Indicates a ride that has just ended
-                ride.update_state('ended')        # Should remove bike from station, and update stats
+                ride.update_state('end')         # Should remove bike from station, and update stats
                 self.active_rides.remove(ride)
             elif not prev_active and curr_active:  # Indicates a ride that has just been started
-                ride.update_state('started')        # Should add bike to station, and update stats
+                ride.update_state('start')         # Should add bike to station, and update stats
                 self.active_rides.append(ride)
             else:
                 ride.update_state('unchanged')  # Just update statistics
-
-
 
 
     def calculate_statistics(self) -> Dict[str, Tuple[str, float]]:
@@ -137,15 +137,27 @@ class Simulation:
         station, and the number of rides that started at that station.
 
         NOTES:
+            What about cases where two stations tie?
         """
-
-        return {
+        stats = {
             'max_start': ('', -1),
             'max_end': ('', -1),
             'max_time_low_availability': ('', -1),
             'max_time_low_unoccupied': ('', -1)
         }
 
+        for st_id in self.all_stations:
+            st_stats = self.all_stations[st_id].stats
+            if stats['max_start'][1] > st_stats['start']:
+                stats['max_start'] = (st_id, st_stats['start'])
+            if stats['max_end'][1] > st_stats['end']:
+                stats['max_end'] = (st_id, st_stats['end'])
+            if stats['max_time_low_availability'][1] > st_stats['time_low_availability']:
+                stats['max_time_low_availability'] = (st_id, st_stats['time_low_availability'])
+            if stats['max_time_low_occupancy'][1] > st_stats['time_low_occupancy']:
+                stats['max_time_low_occupancy'] = (st_id, st_stats['time_low_occupancy'])
+
+        return stats
     def _update_active_rides_fast(self, time: datetime) -> None:
         """Update this simulation's list of active rides for the given time.
 

@@ -68,7 +68,7 @@ class Station(Drawable):
     location: Tuple[float, float]
     capacity: int
     num_bikes: int
-    statistcs: Dict['str', int]
+    stats: Dict['str', int]
 
 
     def __init__(self, pos: Tuple[float, float], cap: int,
@@ -83,27 +83,29 @@ class Station(Drawable):
         self.num_bikes = num_bikes
         self.name = name
 
-        self.statistcs['started'] = 0
-        self.statistcs['ended'] = 0
-        self.statistcs['t_low_av'] = 0
-        self.statistcs['t_low_oc'] = 0
+        self.stats = {
+            'start': 0,
+            'end': 0,
+            'time_low_availability': 0,
+            'time_low_unoccupied': 0
+        }
 
     def update_state(self, event: str) -> None:
         """ Update the current state of station.
         Also updates certain stastistics.
         """
-        if event == 'started':
-            self.statistcs['started'] +=1
+        if event == 'start':
+            self.stats['start'] +=1
             self.num_bikes -= 1     # Make sure num_bikes > 0
-        elif event == 'ended':
-            self.statistcs['ended'] +=1
+        elif event == 'end':
+            self.stats['end'] +=1
             self.num_bikes += 1    # Make sure num_bikes <= capacity
 
         if self.num_bikes <= 5:
-            self.statistcs['t_low_av'] += 1
+            self.stats['time_low_availability'] += 1
 
         if (self.capacity - self.num_bikes) >= 5:
-            self.statistcs['t_low_oc'] += 1
+            self.stats['time_low_occupancy'] += 1
 
     def get_position(self, time: datetime) -> Tuple[float, float]:
         """Return the (long, lat) position of this station for the given time.
