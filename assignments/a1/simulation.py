@@ -60,17 +60,17 @@ class Simulation:
         """
         step = timedelta(minutes=1)  # Each iteration spans one minute of time
 
-        st_to_draw = list(self.all_stations.values()) # Stations that need to be rendered
-        rd_to_draw = self.active_rides                # Initially set to empty
-        current = start
+        st_to_draw = list(self.all_stations.values())    # Stations that need to be rendered
+        rides_to_draw = self.active_rides                # Initially set to empty
+        current = start                                  # Sets current time to simulation start time
+
 
         # Simulation Loop (halt when current time exceeds end time)
         while current < end:
             self._update_active_rides(current)        # Changes rd_to_draw by side effect
-            self.visualizer.render_drawables(st_to_draw+rd_to_draw, current)
+            self.visualizer.render_drawables(st_to_draw+rides_to_draw, current)
 
             current += step
-            print(current)
 
         # Leave this code at the very bottom of this method.
         # It will keep the visualization window open until you close
@@ -96,15 +96,25 @@ class Simulation:
         -   This means that if a ride started before the simulation's time
             period but ends during or after the simulation's time period,
             it should still be added to self.active_rides.
+
+            NOTES:
+                * Need to find a way to find number of bikes currently at station
+                * Need to find a way to limit number of bikes getting into station
         """
         for ride in self.all_rides:
             prev_active = ride in self.active_rides
             curr_active = (time <= ride.start_time) and (time >= ride.end_time)
 
-            if prev_active and not curr_active:
+            if prev_active and not curr_active:  # Indicates a ride that has just ended
+                ride.update_state('ended')        # Should remove bike from station, and update stats
                 self.active_rides.remove(ride)
-            elif not prev_active and curr_active:
+            elif not prev_active and curr_active:  # Indicates a ride that has just been started
+                ride.update_state('started')        # Should add bike to station, and update stats
                 self.active_rides.append(ride)
+            else:
+                ride.update_state('unchanged')  # Just update statistics
+
+
 
 
     def calculate_statistics(self) -> Dict[str, Tuple[str, float]]:
@@ -125,7 +135,10 @@ class Simulation:
         For example, the value corresponding to key 'max_start' should be the
         name of the station with the most number of rides started at that
         station, and the number of rides that started at that station.
+
+        NOTES:
         """
+
         return {
             'max_start': ('', -1),
             'max_end': ('', -1),

@@ -16,7 +16,7 @@ Station and Ride. It enables the simulation to visualize these objects in
 a graphical window.
 """
 from datetime import datetime
-from typing import Tuple
+from typing import Dict, Tuple
 
 
 # Sprite files
@@ -62,10 +62,14 @@ class Station(Drawable):
     === Representation Invariants ===
     - 0 <= num_bikes <= capacity
     """
+    # Private Attributes
+
     name: str
     location: Tuple[float, float]
     capacity: int
     num_bikes: int
+    statistcs: Dict['str', int]
+
 
     def __init__(self, pos: Tuple[float, float], cap: int,
                  num_bikes: int, name: str) -> None:
@@ -78,6 +82,28 @@ class Station(Drawable):
         self.capacity = cap
         self.num_bikes = num_bikes
         self.name = name
+
+        self.statistcs['started'] = 0
+        self.statistcs['ended'] = 0
+        self.statistcs['t_low_av'] = 0
+        self.statistcs['t_low_oc'] = 0
+
+    def update_state(self, event: str) -> None:
+        """ Update the current state of station.
+        Also updates certain stastistics.
+        """
+        if event == 'started':
+            self.statistcs['started'] +=1
+            self.num_bikes -= 1     # Make sure num_bikes > 0
+        elif event == 'ended':
+            self.statistcs['ended'] +=1
+            self.num_bikes += 1    # Make sure num_bikes <= capacity
+
+        if self.num_bikes <= 5:
+            self.statistcs['t_low_av'] += 1
+
+        if (self.capacity - self.num_bikes) >= 5:
+            self.statistcs['t_low_oc'] += 1
 
     def get_position(self, time: datetime) -> Tuple[float, float]:
         """Return the (long, lat) position of this station for the given time.
