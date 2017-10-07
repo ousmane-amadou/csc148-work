@@ -47,6 +47,7 @@ class Simulation:
     all_rides: List[Ride]
     active_rides: List[Ride]
     visualizer: Visualizer
+    ride_handler: PriorityQueue
 
     def __init__(self, station_file: str, ride_file: str) -> None:
         """Initialize this simulation with the given configuration settings.
@@ -55,6 +56,7 @@ class Simulation:
         self.all_stations = create_stations(station_file)
         self.all_rides = create_rides(ride_file, self.all_stations)
         self.active_rides = []
+        self.ride_handler = PriorityQueue()
 
     def run(self, start: datetime, end: datetime) -> None:
         """Run the simulation from <start> to <end>.
@@ -65,10 +67,11 @@ class Simulation:
         rides_to_draw = self.active_rides                # Initially set to empty
         current = start                                  # Sets current time to simulation start time
 
-
+        for ride in self.all_rides:                      # Adds all rides to PriorityQueue
+            self.ride_handler.add(RideStartEvent(self, ride))
         # Simulation Loop (halt when current time exceeds end time)
         while current < end:
-            self._update_active_rides(current)        # Changes rd_to_draw by side effect
+            self._update_active_rides(current)        # Changes rides_to_draw by side effect
             self.visualizer.render_drawables(st_to_draw+rides_to_draw, current)
 
             current += step
@@ -158,13 +161,22 @@ class Simulation:
                 stats['max_time_low_occupancy'] = (st_id, st_stats['time_low_occupancy'])
 
         return stats
+
     def _update_active_rides_fast(self, time: datetime) -> None:
         """Update this simulation's list of active rides for the given time.
 
         REQUIRED IMPLEMENTATION NOTES:
         -   see Task 5 of the assignment handout
         """
-        pass
+
+        while not self.ride_handler.is_empty():
+            rideEvent = self.ride_handler.remove()
+
+            if Event(self, time) < rideEvent:     # if top priority event comes after current time
+                self.ride_handler.add(rideEvent)
+                return
+            else:                                 # if top priority event comes before or during curr time
+                rideEvent.process()
 
 
 def create_stations(stations_file: str) -> Dict[str, 'Station']:
@@ -269,13 +281,36 @@ class Event:
 
 class RideStartEvent(Event):
     """An event corresponding to the start of a ride."""
-    pass
+    ride: Ride
+
+    def __init__(self, simulation: 'Simulation', ride: Ride) -> None:
+        """Initialize a new event."""
+        Event.__init__(self, simulation, ride.start)
+
+    def process(self) -> List['Event']:
+        """Process this event by updating the state of the simulation.
+
+        Return a list of new events spawned by this event.
+        """
+        self.ride.update_state('start')
+        return [RideEndEvent(self.simulation, self.ride)]
 
 
 class RideEndEvent(Event):
     """An event corresponding to the start of a ride."""
-    pass
+    ride: Ride
 
+    def __init__(self, simulation: 'Simulation', ride: Ride) -> None:
+        """Initialize a new event."""
+        Event.__init__(self, simulation, ride.end_time)
+
+    def process(self) -> List['Event']:
+        """Process this event by updating the state of the simulation.
+
+        Return a list of new events spawned by this event.
+        """
+        self.ride.update_state('end')
+        return []
 
 def sample_simulation() -> Dict[str, Tuple[str, float]]:
     """Run a sample simulation. For testing purposes only."""

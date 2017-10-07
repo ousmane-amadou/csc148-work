@@ -72,9 +72,22 @@ class PriorityQueue(Container[T]):
         """Add <item> to this PriorityQueue.
 
         NOTE: See the docstring for the 'remove' method for a sample doctest.
+
+        MORE NOTES:
+            This is an O(n) algorithm...
+        QUESTION(S):
+            Are we allowed to add private variables to this class
+            Can we play with the impementation for efficiency (i.e binary tree)
+            What are you looking for in terms of eficiency?
+            For speed up, could we try keeping track of certain things?
         """
-        # TODO: Implement this method!
-        pass
+        pcf = False         # Priority Class Flag, is true when loop comes across items of same priority
+        for i in range(len(self._queue) - 1, 0) :
+            if self._queue[i] == item:
+                pcf = False
+            elif (self._queue[i] < item) and pcf:
+                self._queue.insert(i, item)
+
 
     def remove(self) -> T:
         """Remove and return the next item from this PriorityQueue.

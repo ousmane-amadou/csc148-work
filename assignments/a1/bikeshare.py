@@ -157,11 +157,11 @@ class Ride(Drawable):
 
         # Calculuate the speed ride goes in the logitudinal direction
         dx = self.start.get_position(time)[0] - self.end.get_position(time)[0]
-        sp_x = dx / ride_time.total_seconds()
+        sp_x = dx // ride_time.total_seconds()
 
         # Calculuate the speed ride goes in the latitudinal direction
         dy = self.start.get_position(time)[1] - self.end.get_position(time)[1]
-        sp_y = dy / ride_time.total_seconds()
+        sp_y = dy // ride_time.total_seconds()
 
         return (self.start.get_position(time)[0] + sp_x*ride_time,
                        self.start.get_position(time)[1] + sp_y*ride_time)
