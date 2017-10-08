@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1eec9c6e-4093-4dfc-a5b9-605adbf12f3c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exercises/ex3/.hypothesis/unicodedata/9.0.0/charmap.pickle.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exercises/ex3/ex3.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exercises/ex3/ex3_test.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exercises/ex3/output.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exercises/ex3/stack.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/csc148-work.iml" afterPath="$PROJECT_DIR$/.idea/csc148-work.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/exercises/ex3/ex3.py" afterPath="$PROJECT_DIR$/exercises/ex3/ex3.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/exercises/ex3/ex3_test.py" afterPath="$PROJECT_DIR$/exercises/ex3/ex3_test.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,8 +18,28 @@
       <file leaf-file-name="ex3.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/exercises/ex3/ex3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
-              <caret line="135" column="66" lean-forward="false" selection-start-line="135" selection-start-column="66" selection-end-line="135" selection-end-column="66" />
+            <state relative-caret-position="150">
+              <caret line="214" column="26" lean-forward="true" selection-start-line="214" selection-start-column="26" selection-end-line="214" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ex3_test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/exercises/ex3/ex3_test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="99" column="0" lean-forward="true" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ex2_test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/exercises/ex2/ex2_test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="329">
+              <caret line="24" column="10" lean-forward="false" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -47,6 +63,7 @@
         <option value="$PROJECT_DIR$/assignments/a1/container.py" />
         <option value="$PROJECT_DIR$/assignments/a1/simulation.py" />
         <option value="$PROJECT_DIR$/exercises/ex3/ex3.py" />
+        <option value="$PROJECT_DIR$/exercises/ex3/ex3_test.py" />
       </list>
     </option>
   </component>
@@ -71,6 +88,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -82,12 +101,6 @@
               <item name="csc148-work" type="b2602c69:ProjectViewProjectNode" />
               <item name="csc148-work" type="462c0819:PsiDirectoryNode" />
               <item name="assignments" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="csc148-work" type="b2602c69:ProjectViewProjectNode" />
-              <item name="csc148-work" type="462c0819:PsiDirectoryNode" />
-              <item name="assignments" type="462c0819:PsiDirectoryNode" />
-              <item name="a1" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="csc148-work" type="b2602c69:ProjectViewProjectNode" />
@@ -110,8 +123,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -142,7 +153,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.ex3">
+  <component name="RunManager" selected="Python tests.Nosetests in ex3_test.py">
     <configuration name="Doctests in ex3" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -236,9 +247,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.ex3" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Doctests in ex3" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Nosetests in ex3_test.py" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Nosetests in ex3_test.py" />
+        <item index="1" class="java.lang.String" itemvalue="Python.ex3" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Doctests in ex3" />
         <item index="3" class="java.lang.String" itemvalue="Python.simulation" />
         <item index="4" class="java.lang.String" itemvalue="Python.timequeue" />
       </list>
@@ -261,52 +272,52 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Doctests_in_ex3 - 2017.10.08 at 12h 11m 28s.xml">
-      <configuration name="Doctests in ex3" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Doctests_in_ex3 - 2017.10.08 at 12h 16m 24s.xml">
-      <configuration name="Doctests in ex3" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Doctests_in_ex3 - 2017.10.08 at 12h 16m 41s.xml">
-      <configuration name="Doctests in ex3" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Nosetests_in_ex3_test_py - 2017.10.08 at 12h 02m 01s.xml">
+    <history-entry file="Nosetests_in_ex3_test_py - 2017.10.08 at 19h 12m 48s.xml">
       <configuration name="Nosetests in ex3_test.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_in_ex3_test_py - 2017.10.08 at 12h 02m 17s.xml">
+    <history-entry file="Nosetests_in_ex3_test_py - 2017.10.08 at 19h 14m 24s.xml">
       <configuration name="Nosetests in ex3_test.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_in_ex3_test_py - 2017.10.08 at 12h 04m 53s.xml">
+    <history-entry file="Nosetests_in_ex3_test_py - 2017.10.08 at 19h 15m 37s.xml">
       <configuration name="Nosetests in ex3_test.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_in_ex3_test_py - 2017.10.08 at 12h 06m 02s.xml">
+    <history-entry file="Nosetests_in_ex3_test_py - 2017.10.08 at 19h 16m 15s.xml">
       <configuration name="Nosetests in ex3_test.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_in_ex3_test_py - 2017.10.08 at 12h 11m 32s.xml">
+    <history-entry file="Nosetests_in_ex3_test_py - 2017.10.08 at 19h 20m 41s.xml">
       <configuration name="Nosetests in ex3_test.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_in_ex3_test_py - 2017.10.08 at 12h 15m 53s.xml">
+    <history-entry file="Nosetests_in_ex3_test_py - 2017.10.08 at 19h 20m 48s.xml">
       <configuration name="Nosetests in ex3_test.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_in_ex3_test_py - 2017.10.08 at 12h 16m 17s.xml">
+    <history-entry file="Nosetests_in_ex3_test_py - 2017.10.08 at 19h 25m 13s.xml">
+      <configuration name="Nosetests in ex3_test.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_ex3_test_py - 2017.10.08 at 19h 25m 45s.xml">
+      <configuration name="Nosetests in ex3_test.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_ex3_test_py - 2017.10.08 at 19h 26m 29s.xml">
+      <configuration name="Nosetests in ex3_test.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_ex3_test_py - 2017.10.08 at 19h 26m 44s.xml">
       <configuration name="Nosetests in ex3_test.py" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="50" y="23" width="1230" height="777" extended-state="6" />
+    <frame x="50" y="23" width="1230" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2946128" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2996633" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15629742" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38239756" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3068182" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39908952" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996634" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -328,11 +339,19 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="1" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/exercises/ex3/ex3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/exercises/ex3/ex3.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1620">
@@ -345,7 +364,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2040">
           <caret line="136" column="0" lean-forward="false" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -361,7 +379,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2040">
           <caret line="136" column="0" lean-forward="true" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -385,7 +402,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1815">
           <caret line="121" column="55" lean-forward="false" selection-start-line="121" selection-start-column="55" selection-end-line="121" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -401,7 +417,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -432,7 +447,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3180">
           <caret line="212" column="0" lean-forward="true" selection-start-line="212" selection-start-column="0" selection-end-line="212" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -568,23 +582,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="106">
           <caret line="136" column="0" lean-forward="false" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/nose/case.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="197" column="0" lean-forward="false" selection-start-line="197" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exercises/ex3/ex3_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="84" column="0" lean-forward="false" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -596,34 +593,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/exercises/ex2/ex2_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1335">
-          <caret line="24" column="10" lean-forward="true" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/exercises/ex2/obfuscated_stack.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/hypothesis/executors.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/hypothesis/core.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="117" column="0" lean-forward="true" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/exercises/ex3/stack.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-182">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="173">
+          <caret line="67" column="23" lean-forward="true" selection-start-line="67" selection-start-column="23" selection-end-line="67" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exercises/ex2/ex2_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="24" column="10" lean-forward="false" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/nose/case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="197" column="0" lean-forward="false" selection-start-line="197" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exercises/ex3/ex3_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="99" column="0" lean-forward="true" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/exercises/ex3/ex3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="135" column="66" lean-forward="false" selection-start-line="135" selection-start-column="66" selection-end-line="135" selection-end-column="66" />
+        <state relative-caret-position="150">
+          <caret line="214" column="26" lean-forward="true" selection-start-line="214" selection-start-column="26" selection-end-line="214" selection-end-column="26" />
           <folding />
         </state>
       </provider>

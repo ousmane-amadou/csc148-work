@@ -112,6 +112,8 @@ def merge_alternating(stack1: Stack, stack2: Stack) -> Stack:
 ##############################################################################
 # Task 2: A Chain of People
 ##############################################################################
+
+
 class Person:
     """A person in a chain of people.
 
@@ -135,6 +137,7 @@ class Person:
 class ShortChainError(Exception):
     """Error raised when invalid access to a PersonChain occurs"""
     pass
+
 
 class PeopleChain:
     """A chain of people.
@@ -187,7 +190,8 @@ class PeopleChain:
         >>> chain.get_second()
         'Janna'
         """
-        return self.leader.next.name
+
+        return self.get_nth(2)
 
     def get_third(self) -> str:
         """Return the name of the third person in the chain.
@@ -198,7 +202,7 @@ class PeopleChain:
         >>> chain.get_third()
         'Kevan'
         """
-        return self.leader.next.next.name
+        return self.get_nth(3)
 
     def get_nth(self, n: int) -> str:
         """Return the name of the n-th person in the chain.
@@ -228,6 +232,7 @@ class PeopleChain:
 
             i += 1
             curr = curr.next
+
 
 if __name__ == '__main__':
     import doctest

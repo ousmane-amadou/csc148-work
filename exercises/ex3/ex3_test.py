@@ -19,11 +19,11 @@ Note: this file is for support purposes only, and is not part of your
 submission.
 """
 from typing import List
-from hypothesis import given
+from hypothesis import given, assume
 from hypothesis.strategies import lists, text, integers
 from pytest import raises
 from stack import Stack
-from ex3 import reverse, PeopleChain, ShortChainError
+from ex3 import reverse, PeopleChain, ShortChainError, merge_alternating
 
 
 ###############################################################################
@@ -51,6 +51,20 @@ def test_reverse_empty():
     reverse(stack)
     assert stack.is_empty()
 
+@given(integers(min_value=0, max_value=100))
+def test_merge_alternating(stack_size: int):
+    stack1 = Stack()
+    stack2 = Stack()
+    i = 0
+    while i < stack_size:
+        stack1.push(i)
+        stack2.push(stack_size+i)
+        i += 1
+
+    stack = merge_alternating(stack1, stack2)
+    while not stack.is_empty():
+        assert stack.pop() == stack1.pop()
+        assert stack.pop() == stack2.pop()
 
 ###############################################################################
 # Task 2: A Chain of People
@@ -83,6 +97,14 @@ def test_get_nth_on_out_of_bounds_index(names: List[str], offset: int):
     # code raises an error.
     with raises(ShortChainError):
         chain.get_nth(len(names) + offset)
+
+@given(lists(text()), integers(min_value=1))
+def test_get_nth(names: List[str], n: int):
+    """Test that get_nth raises a ShortChainError when given a too-large index.
+    """
+    assume(n <= len(names))
+    chain = PeopleChain(names)
+    assert names[n-1] == chain.get_nth(n)
 
 
 if __name__ == '__main__':
