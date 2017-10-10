@@ -132,6 +132,7 @@ class Ride(Drawable):
 
     === Representation Invariants ===
     - start_time < end_time
+    - start_time - datetime > timedelta(minutes = 1) (that is, the minimum total ride time is 1 minute)
     """
     start: Station
     end: Station
@@ -151,20 +152,27 @@ class Ride(Drawable):
 
         A ride travels in a straight line between its start and end stations
         at a constant speed.
+        Precondition: self.start_time <= time < self.end_time
         """
+
+        if time == self.start_time:
+            return (self.start.get_position(time)[0], self.start.get_position(time)[1])
+        elif time == self.end_time:
+            return (self.end.get_position(time)[0], self.end.get_position(time)[1])
+
         # Calculate the total time of ride from start station to end station
         total_ride_time = (self.end_time - self.start_time).total_seconds()
-        ride_time =  (time - self.start_time ).total_seconds()
+        ride_time = (time - self.start_time).total_seconds()
+
 
         # Calculuate the speed ride goes in the logitudinal direction
-        dx = self.start.get_position(time)[0] - self.end.get_position(time)[0]
+        dx = self.end.get_position(time)[0] - self.start.get_position(time)[0]
         sp_x = dx / total_ride_time
 
         # Calculuate the speed ride goes in the latitudinal direction
-        dy = self.start.get_position(time)[1] - self.end.get_position(time)[1]
+        dy =  self.end.get_position(time)[1] - self.start.get_position(time)[1]
         sp_y = dy / total_ride_time
-        print(self.start.get_position(time)[0] + sp_x*ride_time,
-                       self.start.get_position(time)[1] + sp_y*ride_time)
+
         return (self.start.get_position(time)[0] + sp_x*ride_time,
                        self.start.get_position(time)[1] + sp_y*ride_time)
 

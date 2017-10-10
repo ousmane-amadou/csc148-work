@@ -19,11 +19,14 @@ Note: this file is for support purposes only, and is not part of your
 submission.
 """
 from datetime import datetime, timedelta
+from math import isnan
 import os
 import pygame
 import json
 from pytest import approx
 from bikeshare import Ride, Station
+from hypothesis import given, assume
+from hypothesis.strategies import integers, floats, tuples
 from simulation import Simulation, create_stations, create_rides
 
 
@@ -43,7 +46,6 @@ def test_create_stations_simple():
     assert station.location == (-73.54983, 45.51086)  # NOTE: (long, lat) coordinates!
     assert station.num_bikes == 18
     assert station.capacity == 39
-
 
 def test_create_stations():
     """Test reading in a station from provided sample stations.json.
@@ -99,30 +101,31 @@ def test_get_position_station():
     time = datetime(2017, 9, 1, 0, 0, 0)  # Note: the time shouldn't matter.
     assert station.get_position(time) == (-73.54983, 45.51086)
 
-
-def test_get_position_ride():
+@given(integers(min_value=1), tuples(floats(), floats()), tuples(floats(), floats()))
+def test_get_position_ride(ride_time, station_start_location, station_end_location):
     """Test get_position for a simple ride.
     """
-    stations = create_stations('stations.json')
-    rides = create_rides('sample_rides.csv', stations)
+    assume(not isnan(station_start_location[0]))
+    assume(not isnan(station_start_location[1]))
+    assume(not isnan(station_end_location[0]))
+    assume(not isnan(station_end_location[1]))
 
-    ride = rides[0]
+    # 1. Generate random stations
+    station_start = Station(station_start_location, cap=10, num_bikes=10, name="generated")
+    station_end = Station(station_end_location, cap=10, num_bikes=10, name="generated")
+
+    # 2. Generate Random end time from a fixed start time
+    start_time = datetime(2017, 9, 1, 0, 0, 0)
+    end_time = start_time + timedelta(minutes=ride_time)
+
+    ride = Ride(station_start, station_end, (start_time, end_time))
 
     # Check ride endpoints. We use pytest's approx function to
     # avoid floating point issues.
     assert ride.get_position(ride.start_time) == approx(ride.start.location)
     assert ride.get_position(ride.end_time) == approx(ride.end.location)
 
-    # Manually check a time during the ride.
-    # Note that this ride lasts *23 minutes*, and
-    # goes from (-73.562643, 45.537964) to
-    # (-73.54628920555115, 45.57713595014113).
-    # We're checking the position after 10 minutes have passed.
-    assert (
-        ride.get_position(datetime(2017, 6, 1, 7, 41, 0)) ==
-        approx((-73.5555326546, 45.5549952827),
-               abs=1e-5)
-    )
+    # Check ride at specific time
 
 
 ###############################################################################

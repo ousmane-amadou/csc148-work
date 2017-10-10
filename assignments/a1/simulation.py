@@ -37,17 +37,22 @@ class Simulation:
         Note that not all rides might be used, depending on the timeframe
         when the simulation is run.
     active_rides:
-        TODO
+        A list of all rides currently active in the simulation
     all_stations:
         A dictionary containing all the stations in this simulation.
+    ride_handler:
+        A priority queue containing all events. ## BE BETTER
     visualizer:
         A helper class for visualizing the simulation.
+
+    === Representation invariants ==
+    active_rides[i].start.time >= current time
     """
     all_stations: Dict[str, 'Station']
     all_rides: List[Ride]
     active_rides: List[Ride]
     visualizer: Visualizer
-    ride_handler: PriorityQueue
+    ride_handler: PriorityQueue['Event']
 
     def __init__(self, station_file: str, ride_file: str) -> None:
         """Initialize this simulation with the given configuration settings.
