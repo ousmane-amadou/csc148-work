@@ -191,6 +191,8 @@ def create_stations(stations_file: str) -> Dict[str, 'Station']:
 
     This function should be called *before* _read_rides because the
     rides CSV file refers to station ids.
+
+    >>> stations = create_stations('stations.json')
     """
     # Read in raw data using the json library.
     with open(stations_file) as file:
