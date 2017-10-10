@@ -76,7 +76,7 @@ class Simulation:
 
 
         # Simulation Loop (halt when current time exceeds end time)
-        while current < end:
+        while current <= end:
             self._update_active_rides(current)        # Changes rides_to_draw by side effect
             self.visualizer.render_drawables(st_to_draw+self.active_rides, current)
 

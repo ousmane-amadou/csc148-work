@@ -54,22 +54,21 @@ class Station(Drawable):
         the location of the station in long/lat coordinates
         **UPDATED**: make sure the first coordinate is the longitude,
         and the second coordinate is the latitude.
-    name: str
+    name:
         name of the station
-    num_bikes: int
+    num_bikes:
         current number of bikes at the station
+    stats:
 
     === Representation Invariants ===
     - 0 <= num_bikes <= capacity
     """
     # Private Attributes
-
     name: str
     location: Tuple[float, float]
     capacity: int
     num_bikes: int
     stats: Dict['str', int]
-
 
     def __init__(self, pos: Tuple[float, float], cap: int,
                  num_bikes: int, name: str) -> None:
@@ -91,15 +90,15 @@ class Station(Drawable):
         }
 
     def update_state(self, event: str) -> None:
-        """ Update the current state of station.
+        """ Update the current state of the station station.
         Also updates certain stastistics.
         """
-        if event == 'start':
-            self.stats['start'] +=1
-            self.num_bikes -= 1     # Make sure num_bikes > 0
-        elif event == 'end':
-            self.stats['end'] +=1
-            self.num_bikes += 1    # Make sure num_bikes <= capacity
+        if event == 'start' and self.num_bikes > 0:
+            self.stats['start'] += 1
+            self.num_bikes -= 1
+        elif event == 'end' and self.num_bikes < self.capacity:
+            self.stats['end'] += 1
+            self.num_bikes += 1
 
         if self.num_bikes <= 5:
             self.stats['time_low_availability'] += 1
@@ -152,7 +151,7 @@ class Ride(Drawable):
 
         A ride travels in a straight line between its start and end stations
         at a constant speed.
-        Precondition: self.start_time <= time < self.end_time
+        Precondition: self.start_time <= time <= self.end_time
         """
 
         if time == self.start_time:
@@ -164,17 +163,17 @@ class Ride(Drawable):
         total_ride_time = (self.end_time - self.start_time).total_seconds()
         ride_time = (time - self.start_time).total_seconds()
 
-
         # Calculuate the speed ride goes in the logitudinal direction
         dx = self.end.get_position(time)[0] - self.start.get_position(time)[0]
         sp_x = dx / total_ride_time
 
         # Calculuate the speed ride goes in the latitudinal direction
-        dy =  self.end.get_position(time)[1] - self.start.get_position(time)[1]
+        dy = self.end.get_position(time)[1] - self.start.get_position(time)[1]
         sp_y = dy / total_ride_time
 
         return (self.start.get_position(time)[0] + sp_x*ride_time,
-                       self.start.get_position(time)[1] + sp_y*ride_time)
+                self.start.get_position(time)[1] + sp_y*ride_time)
+
 
 if __name__ == '__main__':
     import python_ta

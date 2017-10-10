@@ -101,14 +101,22 @@ def test_get_position_station():
     time = datetime(2017, 9, 1, 0, 0, 0)  # Note: the time shouldn't matter.
     assert station.get_position(time) == (-73.54983, 45.51086)
 
-@given(integers(min_value=1), tuples(floats(), floats()), tuples(floats(), floats()))
+@given(integers(min_value=1, max_value=10**4), tuples(floats(max_value=10**4), floats(max_value=10**4)),
+       tuples(floats(max_value=10 ** 4), floats(max_value=10 ** 4)))
 def test_get_position_ride(ride_time, station_start_location, station_end_location):
     """Test get_position for a simple ride.
     """
     assume(not isnan(station_start_location[0]))
+    assume(not abs(station_start_location[0]) == float('Inf'))
+
     assume(not isnan(station_start_location[1]))
+    assume(not abs(station_start_location[1]) == float('Inf'))
+
     assume(not isnan(station_end_location[0]))
+    assume(not abs(station_end_location[0]) == float('Inf'))
+
     assume(not isnan(station_end_location[1]))
+    assume(not abs(station_end_location[1]) == float('Inf'))
 
     # 1. Generate random stations
     station_start = Station(station_start_location, cap=10, num_bikes=10, name="generated")
@@ -126,6 +134,17 @@ def test_get_position_ride(ride_time, station_start_location, station_end_locati
     assert ride.get_position(ride.end_time) == approx(ride.end.location)
 
     # Check ride at specific time
+    current_time = start_time
+    total_displacement = (station_end_location[0] - station_start_location[0],
+                          station_end_location[1] - station_start_location[1])
+    while current_time < end_time:
+        coeff = (current_time-start_time).total_seconds() / (end_time-start_time).total_seconds()
+        current_location = (station_start_location[0] + coeff*total_displacement[0],
+                            station_start_location[1] + coeff*total_displacement[1])
+
+        assert ride.get_position(current_time) == approx(current_location)
+        current_time += timedelta(minutes=1)
+
 
 
 ###############################################################################
