@@ -81,14 +81,14 @@ class PriorityQueue(Container[T]):
             What are you looking for in terms of eficiency?
             For speed up, could we try keeping track of certain things?
         """
-        pcf = False         # Priority Class Flag, is true when loop comes across items of same priority
-        for i in range(len(self._queue) - 1, 0, -1) :
-            if self._queue[i] == item:
-                pcf = True
-            elif (self._queue[i] < item) and pcf:
-                self._queue.insert(i, item)
-                return
 
+        for i in range(0, len(self._queue)):
+            if item < self._queue[len(self._queue)-i-1]:
+                self._queue.insert(len(self._queue)-i, item)
+                return
+            elif item == self._queue[len(self._queue)-i-1]:
+                self._queue.insert(len(self._queue) - i, item)
+                return
         self._queue.insert(0, item)
 
     def remove(self) -> T:

@@ -23,7 +23,6 @@ from bikeshare import Ride, Station
 from container import PriorityQueue
 from visualizer import Visualizer
 
-import pygame
 # Datetime format to parse the ride data
 DATETIME_FORMAT = '%Y-%m-%d %H:%M'
 
@@ -52,7 +51,7 @@ class Simulation:
     all_rides: List[Ride]
     active_rides: List[Ride]
     visualizer: Visualizer
-    ride_handler: PriorityQueue['Event']
+    ride_handler: PriorityQueue
 
     def __init__(self, station_file: str, ride_file: str) -> None:
         """Initialize this simulation with the given configuration settings.
@@ -68,17 +67,17 @@ class Simulation:
         """
         step = timedelta(minutes=1)  # Each iteration spans one minute of time
 
-        st_to_draw = list(self.all_stations.values())    # Stations that need to be rendered
-        current = start                                  # Sets current time to simulation start time
+        st_to_draw = list(self.all_stations.values())
+        current = start  # Sets current time to simulation start time
 
-        for ride in self.all_rides:                      # Adds all rides to PriorityQueue
+        for ride in self.all_rides:  # Adds all rides to PriorityQueue
             self.ride_handler.add(RideStartEvent(self, ride))
-
 
         # Simulation Loop (halt when current time exceeds end time)
         while current <= end:
-            self._update_active_rides(current)        # Changes rides_to_draw by side effect
-            self.visualizer.render_drawables(st_to_draw+self.active_rides, current)
+            self._update_active_rides_fast(current)
+            self.visualizer.render_drawables(st_to_draw+self.active_rides,
+                                             current)
 
             current += step
 
@@ -86,9 +85,8 @@ class Simulation:
         # It will keep the visualization window open until you close
         # it by pressing the 'X'.
         while True:
-            pygame.event.peek()
-            #if self.visualizer.handle_window_events():
-            #    return  # Stop the simulation
+            if self.visualizer.handle_window_events():
+                return  # Stop the simulation
 
     def _update_active_rides(self, time: datetime) -> None:
         """Update this simulation's list of active rides for the given time.
@@ -107,25 +105,20 @@ class Simulation:
         -   This means that if a ride started before the simulation's time
             period but ends during or after the simulation's time period,
             it should still be added to self.active_rides.
-
-            NOTES:
-                * Need to find a way to find number of bikes currently at station
-                * Need to find a way to limit number of bikes getting into station
         """
 
         for ride in self.all_rides:
             prev_active = ride in self.active_rides
             curr_active = (time >= ride.start_time) and (time <= ride.end_time)
 
-            if prev_active and not curr_active:  # Indicates a ride that has just ended
-                ride.end.update_state('end')         # Should remove bike from station, and update stats
+            if prev_active and not curr_active:
+                ride.end.update_state('end')
                 self.active_rides.remove(ride)
-            elif not prev_active and curr_active:  # Indicates a ride that has just been started
-                ride.start.update_state('start')         # Should add bike to station, and update stats
+            elif not prev_active and curr_active:
+                ride.start.update_state('start')
                 self.active_rides.append(ride)
             else:
-                ride.end.update_state('unchanged')  # Just update statistics
-
+                ride.end.update_state('unchanged')
 
     def calculate_statistics(self) -> Dict[str, Tuple[str, float]]:
         """Return a dictionary containing statistics for this simulation.
@@ -162,10 +155,14 @@ class Simulation:
                 stats['max_start'] = (st_id, st_stats['start'])
             if stats['max_end'][1] > st_stats['end']:
                 stats['max_end'] = (st_id, st_stats['end'])
-            if stats['max_time_low_availability'][1] > st_stats['time_low_availability']:
-                stats['max_time_low_availability'] = (st_id, st_stats['time_low_availability'])
-            if stats['max_time_low_occupancy'][1] > st_stats['time_low_occupancy']:
-                stats['max_time_low_occupancy'] = (st_id, st_stats['time_low_occupancy'])
+            if stats['max_time_low_availability'][1] > \
+                    st_stats['time_low_availability']:
+                stats['max_time_low_availability'] = \
+                    (st_id, st_stats['time_low_availability'])
+            if stats['max_time_low_unoccupied'][1] > \
+                    st_stats['time_low_unoccupied']:
+                stats['max_time_low_unoccupied'] = \
+                    (st_id, st_stats['time_low_unoccupied'])
 
         return stats
 
@@ -177,13 +174,17 @@ class Simulation:
         """
 
         while not self.ride_handler.is_empty():
-            rideEvent = self.ride_handler.remove()
+            ride_event = self.ride_handler.remove()
 
-            if Event(self, time) < rideEvent:     # if top priority event comes after current time
-                self.ride_handler.add(rideEvent)
+            # Process event if it occurs before or during current time,
+            # Otherwise add event
+            if Event(self, time) < ride_event:
+                self.ride_handler.add(ride_event)
                 return
-            else:                                 # if top priority event comes before or during curr time
-                rideEvent.process()
+            else:
+                spawned_events = ride_event.process()
+                for event in spawned_events:
+                    self.ride_handler.add(event)
 
 
 def create_stations(stations_file: str) -> Dict[str, 'Station']:
@@ -215,13 +216,13 @@ def create_stations(stations_file: str) -> Dict[str, 'Station']:
         # as described in the assignment handout.
         # NOTE: all of the corresponding values are strings, and so you need
         # to convert some of them to numbers explicitly using int() or float().
-        id = s['n']
+        st_id = s['n']
         name = s['s']
         location = (float(s['lo']), float(s['la']))
         bike_count = int(s['da'])
         capcity = int(s['ba']) + bike_count
 
-        stations[id] = Station(location, capcity, bike_count, name)
+        stations[st_id] = Station(location, capcity, bike_count, name)
     return stations
 
 
@@ -256,7 +257,8 @@ def create_rides(rides_file: str,
 
                 end_time = datetime.strptime(line[2], DATETIME_FORMAT)
                 end_station = stations[line[3]]
-                rides.append(Ride(start_station, end_station, (start_time, end_time)))
+                rides.append(Ride(start_station, end_station,
+                                  (start_time, end_time)))
             except KeyError:
                 pass
 
@@ -298,13 +300,16 @@ class RideStartEvent(Event):
     def __init__(self, simulation: 'Simulation', ride: Ride) -> None:
         """Initialize a new event."""
         Event.__init__(self, simulation, ride.start_time)
+        self.ride = ride
 
     def process(self) -> List['Event']:
         """Process this event by updating the state of the simulation.
 
         Return a list of new events spawned by this event.
         """
-        self.ride.update_state('start')
+        self.ride.start.update_state('start')
+        self.simulation.active_rides.append(self.ride)
+
         return [RideEndEvent(self.simulation, self.ride)]
 
 
@@ -315,14 +320,17 @@ class RideEndEvent(Event):
     def __init__(self, simulation: 'Simulation', ride: Ride) -> None:
         """Initialize a new event."""
         Event.__init__(self, simulation, ride.end_time)
+        self.ride = ride
 
     def process(self) -> List['Event']:
         """Process this event by updating the state of the simulation.
 
         Return a list of new events spawned by this event.
         """
-        self.ride.update_state('end')
+        self.ride.end.update_state('end')
+        self.simulation.active_rides.remove(self.ride)
         return []
+
 
 def sample_simulation() -> Dict[str, Tuple[str, float]]:
     """Run a sample simulation. For testing purposes only."""

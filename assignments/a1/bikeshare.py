@@ -86,7 +86,7 @@ class Station(Drawable):
             'start': 0,
             'end': 0,
             'time_low_availability': 0,
-            'time_low_occupancy': 0
+            'time_low_unoccupied': 0
         }
 
     def update_state(self, event: str) -> None:
@@ -103,8 +103,8 @@ class Station(Drawable):
         if self.num_bikes <= 5:
             self.stats['time_low_availability'] += 1
 
-        if (self.capacity - self.num_bikes) >= 5:
-            self.stats['time_low_occupancy'] += 1
+        if (self.capacity - self.num_bikes) <= 5:
+            self.stats['time_low_unoccupied'] += 1
 
     def get_position(self, time: datetime) -> Tuple[float, float]:
         """Return the (long, lat) position of this station for the given time.
@@ -131,7 +131,7 @@ class Ride(Drawable):
 
     === Representation Invariants ===
     - start_time < end_time
-    - start_time - datetime > timedelta(minutes = 1) (that is, the minimum total ride time is 1 minute)
+    - start_time - datetime >= timedelta(minutes = 1)
     """
     start: Station
     end: Station
@@ -155,9 +155,11 @@ class Ride(Drawable):
         """
 
         if time == self.start_time:
-            return (self.start.get_position(time)[0], self.start.get_position(time)[1])
+            return (self.start.get_position(time)[0],
+                    self.start.get_position(time)[1])
         elif time == self.end_time:
-            return (self.end.get_position(time)[0], self.end.get_position(time)[1])
+            return (self.end.get_position(time)[0],
+                    self.end.get_position(time)[1])
 
         # Calculate the total time of ride from start station to end station
         total_ride_time = (self.end_time - self.start_time).total_seconds()
