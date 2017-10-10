@@ -87,7 +87,7 @@ class Station(Drawable):
             'start': 0,
             'end': 0,
             'time_low_availability': 0,
-            'time_low_unoccupied': 0
+            'time_low_occupancy': 0
         }
 
     def update_state(self, event: str) -> None:
@@ -153,21 +153,20 @@ class Ride(Drawable):
         at a constant speed.
         """
         # Calculate the total time of ride from start station to end station
-        ride_time = (self.end_time - self.start_time).total_seconds()
+        total_ride_time = (self.end_time - self.start_time).total_seconds()
+        ride_time =  (time - self.start_time ).total_seconds()
 
         # Calculuate the speed ride goes in the logitudinal direction
         dx = self.start.get_position(time)[0] - self.end.get_position(time)[0]
-        sp_x = dx // ride_time.total_seconds()
+        sp_x = dx / total_ride_time
 
         # Calculuate the speed ride goes in the latitudinal direction
         dy = self.start.get_position(time)[1] - self.end.get_position(time)[1]
-        sp_y = dy // ride_time.total_seconds()
-
+        sp_y = dy / total_ride_time
+        print(self.start.get_position(time)[0] + sp_x*ride_time,
+                       self.start.get_position(time)[1] + sp_y*ride_time)
         return (self.start.get_position(time)[0] + sp_x*ride_time,
                        self.start.get_position(time)[1] + sp_y*ride_time)
-
-
-
 
 if __name__ == '__main__':
     import python_ta

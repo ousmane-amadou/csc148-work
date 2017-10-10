@@ -43,7 +43,7 @@ class Simulation:
     visualizer:
         A helper class for visualizing the simulation.
     """
-    all_stations: Dict[str, Station]
+    all_stations: Dict[str, 'Station']
     all_rides: List[Ride]
     active_rides: List[Ride]
     visualizer: Visualizer
@@ -64,15 +64,16 @@ class Simulation:
         step = timedelta(minutes=1)  # Each iteration spans one minute of time
 
         st_to_draw = list(self.all_stations.values())    # Stations that need to be rendered
-        rides_to_draw = self.active_rides                # Initially set to empty
         current = start                                  # Sets current time to simulation start time
 
         for ride in self.all_rides:                      # Adds all rides to PriorityQueue
             self.ride_handler.add(RideStartEvent(self, ride))
+
+
         # Simulation Loop (halt when current time exceeds end time)
         while current < end:
             self._update_active_rides(current)        # Changes rides_to_draw by side effect
-            self.visualizer.render_drawables(st_to_draw+rides_to_draw, current)
+            self.visualizer.render_drawables(st_to_draw+self.active_rides, current)
 
             current += step
 
@@ -81,7 +82,7 @@ class Simulation:
         # it by pressing the 'X'.
         while True:
             pygame.event.peek()
-            # if self.visualizer.handle_window_events():
+            #if self.visualizer.handle_window_events():
             #    return  # Stop the simulation
 
     def _update_active_rides(self, time: datetime) -> None:
@@ -106,18 +107,19 @@ class Simulation:
                 * Need to find a way to find number of bikes currently at station
                 * Need to find a way to limit number of bikes getting into station
         """
+
         for ride in self.all_rides:
             prev_active = ride in self.active_rides
-            curr_active = (time <= ride.start_time) and (time >= ride.end_time)
+            curr_active = (time >= ride.start_time) and (time <= ride.end_time)
 
             if prev_active and not curr_active:  # Indicates a ride that has just ended
-                ride.update_state('end')         # Should remove bike from station, and update stats
+                ride.end.update_state('end')         # Should remove bike from station, and update stats
                 self.active_rides.remove(ride)
             elif not prev_active and curr_active:  # Indicates a ride that has just been started
-                ride.update_state('start')         # Should add bike to station, and update stats
+                ride.start.update_state('start')         # Should add bike to station, and update stats
                 self.active_rides.append(ride)
             else:
-                ride.update_state('unchanged')  # Just update statistics
+                ride.end.update_state('unchanged')  # Just update statistics
 
 
     def calculate_statistics(self) -> Dict[str, Tuple[str, float]]:
@@ -193,6 +195,9 @@ def create_stations(stations_file: str) -> Dict[str, 'Station']:
     rides CSV file refers to station ids.
 
     >>> stations = create_stations('stations.json')
+    >>> test_id = '6023'
+    >>> test_id in stations
+    True
     """
     # Read in raw data using the json library.
     with open(stations_file) as file:
@@ -205,9 +210,9 @@ def create_stations(stations_file: str) -> Dict[str, 'Station']:
         # as described in the assignment handout.
         # NOTE: all of the corresponding values are strings, and so you need
         # to convert some of them to numbers explicitly using int() or float().
-        id = int(s['n'])
+        id = s['n']
         name = s['s']
-        location = (s['lo'], s['la'])
+        location = (float(s['lo']), float(s['la']))
         bike_count = int(s['da'])
         capcity = int(s['ba']) + bike_count
 
@@ -287,7 +292,7 @@ class RideStartEvent(Event):
 
     def __init__(self, simulation: 'Simulation', ride: Ride) -> None:
         """Initialize a new event."""
-        Event.__init__(self, simulation, ride.start)
+        Event.__init__(self, simulation, ride.start_time)
 
     def process(self) -> List['Event']:
         """Process this event by updating the state of the simulation.

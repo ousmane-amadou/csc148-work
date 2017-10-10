@@ -21,6 +21,7 @@ submission.
 from datetime import datetime, timedelta
 import os
 import pygame
+import json
 from pytest import approx
 from bikeshare import Ride, Station
 from simulation import Simulation, create_stations, create_rides
@@ -43,6 +44,29 @@ def test_create_stations_simple():
     assert station.num_bikes == 18
     assert station.capacity == 39
 
+
+def test_create_stations():
+    """Test reading in a station from provided sample stations.json.
+    """
+    stations = create_stations('stations.json')
+
+    with open('stations.json') as file:
+        raw_stations = json.load(file)
+
+    for s in raw_stations['stations']:
+        id = s['n']
+        name = s['s']
+        location = (float(s['lo']), float(s['la']))
+        bike_count = int(s['da'])
+        capcity = int(s['ba']) + bike_count
+
+        assert stations[id].name == name
+        assert stations[id].location == location
+        assert stations[id].num_bikes == bike_count
+        assert stations[id].capacity == capcity
+
+        assert isinstance(stations[id], Station)
+    print(len(stations))
 
 def test_create_rides_simple():
     """Test reading in a rides file from provided sample sample_rides.csv.

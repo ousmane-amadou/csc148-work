@@ -82,12 +82,14 @@ class PriorityQueue(Container[T]):
             For speed up, could we try keeping track of certain things?
         """
         pcf = False         # Priority Class Flag, is true when loop comes across items of same priority
-        for i in range(len(self._queue) - 1, 0) :
+        for i in range(len(self._queue) - 1, 0, -1) :
             if self._queue[i] == item:
-                pcf = False
+                pcf = True
             elif (self._queue[i] < item) and pcf:
                 self._queue.insert(i, item)
+                return
 
+        self._queue.insert(0, item)
 
     def remove(self) -> T:
         """Remove and return the next item from this PriorityQueue.
