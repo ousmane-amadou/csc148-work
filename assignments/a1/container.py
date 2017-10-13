@@ -70,25 +70,20 @@ class PriorityQueue(Container[T]):
 
     def add(self, item: T) -> None:
         """Add <item> to this PriorityQueue.
-
-        NOTE: See the docstring for the 'remove' method for a sample doctest.
-
-        MORE NOTES:
-            This is an O(n) algorithm...
-        QUESTION(S):
-            Are we allowed to add private variables to this class
-            Can we play with the impementation for efficiency (i.e binary tree)
-            What are you looking for in terms of eficiency?
-            For speed up, could we try keeping track of certain things?
         """
+        size = len(self._queue)  # current size of priority queue
 
-        for i in range(0, len(self._queue)):
-            if item < self._queue[len(self._queue)-i-1]:
-                self._queue.insert(len(self._queue)-i, item)
+        # Iterate through prority queue backwards
+        for i in range(0, size):
+            if item < self._queue[size-i-1]:
+                # insert item after element with higher priority
+                self._queue.insert(size-i, item)
                 return
-            elif item == self._queue[len(self._queue)-i-1]:
-                self._queue.insert(len(self._queue) - i, item)
+            elif item == self._queue[size-i-1]:
+                # insert item after element with same priority
+                self._queue.insert(size-i, item)
                 return
+        # insert item at back of priority queue
         self._queue.insert(0, item)
 
     def remove(self) -> T:
@@ -97,14 +92,14 @@ class PriorityQueue(Container[T]):
         Precondition: this priority queue is non-empty.
 
         >>> pq = PriorityQueue()
-        >>> pq.add('fred')
+        >>> pq.add('arju')
         >>> pq.add('arju')
         >>> pq.add('monalisa')
         >>> pq.add('hat')
         >>> pq.remove()
         'arju'
         >>> pq.remove()
-        'fred'
+        'arju'
         >>> pq.remove()
         'hat'
         >>> pq.remove()

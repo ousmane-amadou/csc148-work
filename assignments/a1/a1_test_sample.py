@@ -68,7 +68,6 @@ def test_create_stations():
         assert stations[id].capacity == capcity
 
         assert isinstance(stations[id], Station)
-    print(len(stations))
 
 def test_create_rides_simple():
     """Test reading in a rides file from provided sample sample_rides.csv.
@@ -101,8 +100,8 @@ def test_get_position_station():
     time = datetime(2017, 9, 1, 0, 0, 0)  # Note: the time shouldn't matter.
     assert station.get_position(time) == (-73.54983, 45.51086)
 
-@given(integers(min_value=1, max_value=10**4), tuples(floats(max_value=10**4), floats(max_value=10**4)),
-       tuples(floats(max_value=10 ** 4), floats(max_value=10 ** 4)))
+@given(integers(min_value=1, max_value=10**1), tuples(floats(max_value=10**1), floats(max_value=10**1)),
+       tuples(floats(max_value=10 ** 1), floats(max_value=10 ** 1)))
 def test_get_position_ride(ride_time, station_start_location, station_end_location):
     """Test get_position for a simple ride.
     """

@@ -52,18 +52,22 @@ class Station(Drawable):
         the total number of bikes the station can store
     location:
         the location of the station in long/lat coordinates
-        **UPDATED**: make sure the first coordinate is the longitude,
-        and the second coordinate is the latitude.
     name:
         name of the station
     num_bikes:
         current number of bikes at the station
     stats:
+        Has exactly four keys, corresponding
+        to the four statistics tracked for each station:
+          - 'start'
+          - 'end'
+          - 'time_low_availability'
+          - 'time_low_unoccupied'
 
     === Representation Invariants ===
     - 0 <= num_bikes <= capacity
+    - stats[key] >= 0
     """
-    # Private Attributes
     name: str
     location: Tuple[float, float]
     capacity: int
@@ -90,9 +94,13 @@ class Station(Drawable):
         }
 
     def update_state(self, event: str) -> None:
-        """ Update the current state of the station station.
-        Also updates certain stastistics.
+        """ Update the current 'state' of the station after a ride <event> event
+        occurs at this station during the simulation.
+
+        Note: The state of a station includes all values of its attributes
+        excluding name and location, since those values remain constant.
         """
+        # Update attributes in accordance with <event>
         if event == 'start' and self.num_bikes > 0:
             self.stats['start'] += 1
             self.num_bikes -= 1
@@ -100,18 +108,18 @@ class Station(Drawable):
             self.stats['end'] += 1
             self.num_bikes += 1
 
+    def update_statistics(self):
+        # Update statistics as specified in Assignment description
+        # Note: We add 60 seconds, rather than 1 minute
         if self.num_bikes <= 5:
-            self.stats['time_low_availability'] += 1
+            self.stats['time_low_availability'] += 60
 
         if (self.capacity - self.num_bikes) <= 5:
-            self.stats['time_low_unoccupied'] += 1
+            self.stats['time_low_unoccupied'] += 60
 
     def get_position(self, time: datetime) -> Tuple[float, float]:
         """Return the (long, lat) position of this station for the given time.
-
         Note that the station's location does *not* change over time.
-        The <time> parameter is included only because we should not change
-        the header of an overridden method.
         """
         return self.location
 
@@ -131,7 +139,8 @@ class Ride(Drawable):
 
     === Representation Invariants ===
     - start_time < end_time
-    - start_time - datetime >= timedelta(minutes = 1)
+    - start_time - end_time >= timedelta(minutes = 1)
+      (that is the shortest possible time of a ride is 1 minute)
     """
     start: Station
     end: Station
