@@ -23,7 +23,7 @@ from visualizer import Visualizer
 # Datetime format to parse the ride data
 DATETIME_FORMAT = '%Y-%m-%d %H:%M'
 
-# Useful Constants
+# Useful Constants for use in statistics referencing
 S = 'start'
 E = 'end'
 TLA = 'time_low_availability'
@@ -56,7 +56,7 @@ class Simulation:
         A helper class for visualizing the simulation.
 
     === Representation invariants ==
-    active_rides[i].start.time >= current time
+    active_rides[i].start.time >= current_time
     """
     all_stations: Dict[str, 'Station']
     all_rides: List[Ride]
@@ -81,7 +81,7 @@ class Simulation:
 
     def init_ride_queue(self, start: datetime):
         """Initializes the ride_queue with RideStartEvents starting at or
-        after <start> time
+        after <start> time. 
         """
         for ride in self.all_rides:
             if ride.start_time >= start:
@@ -123,10 +123,10 @@ class Simulation:
             curr_active = (time >= ride.start_time) and (time <= ride.end_time)
 
             if prev_active and not curr_active:
-                ride.end.update_state('end')
+                ride.end.update_state(E)
                 self.active_rides.remove(ride)
             elif not prev_active and curr_active:
-                ride.start.update_state('start')
+                ride.start.update_state(S)
                 self.active_rides.append(ride)
 
     def calculate_statistics(self) -> Dict[str, Tuple[str, float]]:
@@ -168,12 +168,14 @@ class Simulation:
 
             if stats[M[TLA]][1] < st_stats[TLA]:
                 stats[M[TLA]] = (st_name, st_stats[TLA])
-            elif (stats[M[TLA]][1] == st_stats[TLA]) and (st_name < stats[M[TLA]][0]):
+            elif (stats[M[TLA]][1] == st_stats[TLA]) \
+                    and (st_name < stats[M[TLA]][0]):
                 stats[M[TLA]] = (st_name, st_stats[TLA])
 
             if stats[M[TLU]][1] < st_stats[TLU]:
                 stats[M[TLU]] = (st_name, st_stats[TLU])
-            elif (stats[M[TLU]][1] == st_stats[TLU]) and (st_name < stats[M[TLU]][0]):
+            elif (stats[M[TLU]][1] == st_stats[TLU]) \
+                    and (st_name < stats[M[TLU]][0]):
                 stats[M[TLU]] = (st_name, st_stats[TLU])
 
         return stats
@@ -320,7 +322,7 @@ class RideStartEvent(Event):
         list containing a single RideEndEvent that corresponds with
         the end time of self.ride.
         """
-        self.ride.start.update_state('start')
+        self.ride.start.update_state(S)
         self.simulation.active_rides.append(self.ride)
 
         return [RideEndEvent(self.simulation, self.ride)]
@@ -350,7 +352,7 @@ class RideEndEvent(Event):
         Note: This should be an empty list, since there is no case in
         which a RideEndEvent should spawn new events.
         """
-        self.ride.end.update_state('end')
+        self.ride.end.update_state(E)
         self.simulation.active_rides.remove(self.ride)
         return []
 
