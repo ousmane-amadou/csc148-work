@@ -49,7 +49,7 @@ class Simulation:
         A list of all rides currently active in the simulation
     all_stations:
         A dictionary containing all the stations in this simulation.
-    ride_queue:
+    ride_event_PQ:
         A priority queue containing all ride events in order of most recently
         occurring ride events, to least recently occurring ride events
     visualizer:
@@ -62,7 +62,7 @@ class Simulation:
     all_rides: List[Ride]
     active_rides: List[Ride]
     visualizer: Visualizer
-    ride_queue: PriorityQueue
+    ride_event_PQ: PriorityQueue
 
     def __init__(self, station_file: str, ride_file: str) -> None:
         """Initialize this simulation with the given configuration settings.
@@ -71,7 +71,7 @@ class Simulation:
         self.all_stations = create_stations(station_file)
         self.all_rides = create_rides(ride_file, self.all_stations)
         self.active_rides = []
-        self.ride_queue = PriorityQueue()
+        self.ride_event_PQ = PriorityQueue()
 
     def update_statistics(self):
         """Updates the statistics of every station. """
@@ -80,12 +80,12 @@ class Simulation:
             station.update_statistics()
 
     def init_ride_queue(self, start: datetime):
-        """Initializes the ride_queue with RideStartEvents starting at or
-        after <start> time. 
+        """Initializes the ride_event_PQ with RideStartEvents starting at or
+        after <start> time.
         """
         for ride in self.all_rides:
             if ride.start_time >= start:
-                self.ride_queue.add(RideStartEvent(self, ride))
+                self.ride_event_PQ.add(RideStartEvent(self, ride))
 
     def run(self, start: datetime, end: datetime) -> None:
         """Run the simulation from <start> to <end>.
@@ -95,15 +95,16 @@ class Simulation:
         st_to_draw = list(self.all_stations.values())
         current = start  # Sets current time to simulation start time
 
-        # Adds all rides that start after start time to ride_queue
+        # Adds all rides that start after or durign start time to ride_event_PQ
         self.init_ride_queue(start)
 
         # Simulation Loop (halt when current time exceeds end time)
-        while current < end:
+        while current <= end:
             self._update_active_rides_fast(current)
-            self.update_statistics()
             self.visualizer.render_drawables(st_to_draw+self.active_rides,
                                              current)
+            if current != end:
+                self.update_statistics()
 
             current += step
 
@@ -184,19 +185,19 @@ class Simulation:
         """Update this simulation's list of active rides for the given time.
         """
 
-        while not self.ride_queue.is_empty():
-            ride_event = self.ride_queue.remove()
+        while not self.ride_event_PQ.is_empty():
+            ride_event = self.ride_event_PQ.remove()
 
             # Process event if it occurs during/before current time,
-            # Otherwise add event back to ride_queue to be processed at
+            # Otherwise add event back to ride_event_PQ to be processed at
             # a future time
             if Event(self, time) < ride_event:
-                self.ride_queue.add(ride_event)
+                self.ride_event_PQ.add(ride_event)
                 return
             else:
                 spawned_events = ride_event.process()
                 for event in spawned_events:
-                    self.ride_queue.add(event)
+                    self.ride_event_PQ.add(event)
 
 
 def create_stations(stations_file: str) -> Dict[str, 'Station']:
@@ -367,13 +368,13 @@ def sample_simulation() -> Dict[str, Tuple[str, float]]:
 
 if __name__ == '__main__':
     # Uncomment these lines when you want to check your work using python_ta!
-    import python_ta
-    python_ta.check_all(config={
-        'allowed-io': ['create_stations', 'create_rides'],
-        'allowed-import-modules': [
-            'doctest', 'python_ta', 'typing',
-            'csv', 'datetime', 'json',
-            'bikeshare', 'container', 'visualizer'
-        ]
-    })
+    # import python_ta
+    # python_ta.check_all(config={
+    #     'allowed-io': ['create_stations', 'create_rides'],
+    #     'allowed-import-modules': [
+    #         'doctest', 'python_ta', 'typing',
+    #         'csv', 'datetime', 'json',
+    #         'bikeshare', 'container', 'visualizer'
+    #     ]
+    # })
     print(sample_simulation())
