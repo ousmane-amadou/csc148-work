@@ -23,13 +23,11 @@ from visualizer import Visualizer
 # Datetime format to parse the ride data
 DATETIME_FORMAT = '%Y-%m-%d %H:%M'
 
-# Constants for use in statistics referencing
-
 
 class Simulation:
     """Runs the core of the simulation through time.
 
-    === Attributes ===
+    === Public Attributes ===
     all_rides:
         A list of all the rides in this simulation.
         Note that not all rides might be used, depending on the timeframe
@@ -38,20 +36,23 @@ class Simulation:
         A list of all rides currently active in the simulation
     all_stations:
         A dictionary containing all the stations in this simulation.
-    ride_event_pq:
-        A priority queue containing all ride events in order of most recently
-        occurring ride events, to least recently occurring ride events
     visualizer:
         A helper class for visualizing the simulation.
 
+    === Private Attributes ===
+    _ride_event_pq:
+        A priority queue containing all ride events in order of most recently
+        occurring ride events, to least recently occurring ride events
+
     === Representation invariants ==
-    active_rides[i].start.time >= current_time
+    active_rides[i].start.time >= the current time of the simulation
+
     """
     all_stations: Dict[str, 'Station']
     all_rides: List[Ride]
     active_rides: List[Ride]
     visualizer: Visualizer
-    ride_event_pq: PriorityQueue
+    _ride_event_pq: PriorityQueue
 
     def __init__(self, station_file: str, ride_file: str) -> None:
         """Initialize this simulation with the given configuration settings.
@@ -60,7 +61,7 @@ class Simulation:
         self.all_stations = create_stations(station_file)
         self.all_rides = create_rides(ride_file, self.all_stations)
         self.active_rides = []
-        self.ride_event_pq = PriorityQueue()
+        self._ride_event_pq = PriorityQueue()
 
     def update_statistics(self):
         """Updates the statistics of every station. """
@@ -69,12 +70,12 @@ class Simulation:
             station.update_statistics()
 
     def init_ride_event_pq(self, start: datetime):
-        """Initializes the ride_event_pq with RideStartEvents starting at or
+        """Initializes the _ride_event_pq with RideStartEvents starting at or
         after <start> time.
         """
         for ride in self.all_rides:
             if ride.start_time >= start:
-                self.ride_event_pq.add(RideStartEvent(self, ride))
+                self._ride_event_pq.add(RideStartEvent(self, ride))
 
     def run(self, start: datetime, end: datetime) -> None:
         """Run the simulation from <start> to <end>.
@@ -84,7 +85,7 @@ class Simulation:
         st_to_draw = list(self.all_stations.values())
         current = start  # Sets current time to simulation start time
 
-        # Adds all rides that start after or durign start time to ride_event_pq
+        # Adds all rides that start after or durign start time to _ride_event_pq
         self.init_ride_event_pq(start)
 
         # Simulation Loop (halt when current time exceeds end time)
@@ -142,13 +143,13 @@ class Simulation:
             'max_time_low_unoccupied': ('', -1)
         }
 
-        def update_max(stat: 'str', st_id: 'str') -> None:
+        def _update_max(stat: 'str', st_id: 'str') -> None:
             """Updates maximum value of max_<stat>, with the statistics of the
             station with the id <st_id>.
 
             Preconditions:
-                stat in stats.keys(),
-                st_id in self.all_stations.keys()
+                - stat in stats.keys(),
+                - st_id in self.all_stations.keys()
             """
             # Station <st_id>'s value for the <stat> statistic
             st_stat = self.all_stations[st_id].stats[stat[4:]]
@@ -166,7 +167,7 @@ class Simulation:
 
         for st_id in self.all_stations:
             for stat in stats:
-                update_max(stat, st_id)
+                _update_max(stat, st_id)
 
         return stats
 
@@ -174,19 +175,19 @@ class Simulation:
         """Update this simulation's list of active rides for the given time.
         """
 
-        while not self.ride_event_pq.is_empty():
-            ride_event = self.ride_event_pq.remove()
+        while not self._ride_event_pq.is_empty():
+            ride_event = self._ride_event_pq.remove()
 
             # Process event if it occurs during/before current time,
-            # Otherwise add event back to ride_event_pq to be processed at
+            # Otherwise add event back to _ride_event_pq to be processed at
             # a future time
             if Event(self, time) < ride_event:
-                self.ride_event_pq.add(ride_event)
+                self._ride_event_pq.add(ride_event)
                 return
             else:
                 spawned_events = ride_event.process()
                 for event in spawned_events:
-                    self.ride_event_pq.add(event)
+                    self._ride_event_pq.add(event)
 
 
 def create_stations(stations_file: str) -> Dict[str, 'Station']:
