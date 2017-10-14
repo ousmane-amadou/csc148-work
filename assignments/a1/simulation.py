@@ -72,7 +72,7 @@ class Simulation:
         st_to_draw = list(self.all_stations.values())
         current = start  # Sets current time to simulation start time
 
-        # Adds all rides that start after or durign start time to _ride_event_pq
+        # Adds all rides that start after or during start time to _ride_event_pq
         self._init_ride_event_pq(start)
 
         # Simulation Loop (halt when current time exceeds end time)
@@ -107,6 +107,7 @@ class Simulation:
         the maximum value of the quantity specified by that key,
         and the second element is the value of that quantity.
         """
+
         stats = {
             'max_start': ('', -1),
             'max_end': ('', -1),
