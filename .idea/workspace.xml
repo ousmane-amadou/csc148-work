@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1eec9c6e-4093-4dfc-a5b9-605adbf12f3c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignments/a1/a1_test_sample.py" afterPath="$PROJECT_DIR$/assignments/a1/a1_test_sample.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignments/a1/bikeshare.py" afterPath="$PROJECT_DIR$/assignments/a1/bikeshare.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignments/a1/output.html" afterPath="$PROJECT_DIR$/assignments/a1/output.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignments/a1/simulation.py" afterPath="$PROJECT_DIR$/assignments/a1/simulation.py" />
     </list>
@@ -17,18 +20,28 @@
       <file leaf-file-name="simulation.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assignments/a1/simulation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-79">
-              <caret line="69" column="38" lean-forward="true" selection-start-line="69" selection-start-column="38" selection-end-line="69" selection-end-column="38" />
+            <state relative-caret-position="127">
+              <caret line="208" column="0" lean-forward="true" selection-start-line="208" selection-start-column="0" selection-end-line="208" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bikeshare.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="bikeshare.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assignments/a1/bikeshare.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="53" column="13" lean-forward="false" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
+            <state relative-caret-position="133">
+              <caret line="95" column="34" lean-forward="false" selection-start-line="95" selection-start-column="34" selection-end-line="95" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="container.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assignments/a1/container.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="498">
+              <caret line="78" column="55" lean-forward="true" selection-start-line="78" selection-start-column="55" selection-end-line="78" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -37,18 +50,8 @@
       <file leaf-file-name="a1_test_sample.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assignments/a1/a1_test_sample.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="208" column="0" lean-forward="false" selection-start-line="208" selection-start-column="0" selection-end-line="208" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sample_rides.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assignments/a1/sample_rides.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="48" lean-forward="false" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
+            <state relative-caret-position="76">
+              <caret line="195" column="13" lean-forward="true" selection-start-line="195" selection-start-column="13" selection-end-line="195" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -280,21 +283,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Nosetests_in_a1_test_sample_py - 2017.10.13 at 04h 25m 59s.xml">
-      <configuration name="Nosetests in a1_test_sample.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Nosetests_in_a1_test_sample_py - 2017.10.13 at 04h 26m 27s.xml">
-      <configuration name="Nosetests in a1_test_sample.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Nosetests_in_a1_test_sample_py - 2017.10.13 at 04h 27m 52s.xml">
-      <configuration name="Nosetests in a1_test_sample.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Nosetests_in_a1_test_sample_py - 2017.10.13 at 04h 35m 14s.xml">
-      <configuration name="Nosetests in a1_test_sample.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Nosetests_in_a1_test_sample_py - 2017.10.13 at 04h 35m 31s.xml">
-      <configuration name="Nosetests in a1_test_sample.py" configurationId="tests" />
-    </history-entry>
     <history-entry file="Nosetests_in_a1_test_sample_py - 2017.10.13 at 04h 36m 10s.xml">
       <configuration name="Nosetests in a1_test_sample.py" configurationId="tests" />
     </history-entry>
@@ -310,16 +298,31 @@
     <history-entry file="Nosetests_in_a1_test_sample_py - 2017.10.13 at 04h 51m 02s.xml">
       <configuration name="Nosetests in a1_test_sample.py" configurationId="tests" />
     </history-entry>
+    <history-entry file="Nosetests_in_a1_test_sample_py - 2017.10.14 at 03h 18m 37s.xml">
+      <configuration name="Nosetests in a1_test_sample.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_a1_test_sample_py - 2017.10.14 at 03h 19m 35s.xml">
+      <configuration name="Nosetests in a1_test_sample.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_a1_test_sample_py - 2017.10.14 at 03h 22m 21s.xml">
+      <configuration name="Nosetests in a1_test_sample.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_a1_test_sample_py - 2017.10.14 at 03h 23m 04s.xml">
+      <configuration name="Nosetests in a1_test_sample.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_a1_test_sample_py - 2017.10.14 at 03h 44m 25s.xml">
+      <configuration name="Nosetests in a1_test_sample.py" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19547658" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1987076" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38210228" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38210228" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3068182" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -669,19 +672,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assignments/a1/container.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1170">
-          <caret line="78" column="55" lean-forward="true" selection-start-line="78" selection-start-column="55" selection-end-line="78" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assignments/a1/stations.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="0" column="805" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="115763" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -689,7 +683,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="197" column="0" lean-forward="false" selection-start-line="197" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -697,30 +690,37 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="48" lean-forward="false" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assignments/a1/simulation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-79">
-          <caret line="69" column="38" lean-forward="true" selection-start-line="69" selection-start-column="38" selection-end-line="69" selection-end-column="38" />
+        <state relative-caret-position="127">
+          <caret line="208" column="0" lean-forward="true" selection-start-line="208" selection-start-column="0" selection-end-line="208" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assignments/a1/a1_test_sample.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="208" column="0" lean-forward="false" selection-start-line="208" selection-start-column="0" selection-end-line="208" selection-end-column="0" />
+        <state relative-caret-position="76">
+          <caret line="195" column="13" lean-forward="true" selection-start-line="195" selection-start-column="13" selection-end-line="195" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assignments/a1/bikeshare.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="53" column="13" lean-forward="false" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
+        <state relative-caret-position="133">
+          <caret line="95" column="34" lean-forward="false" selection-start-line="95" selection-start-column="34" selection-end-line="95" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignments/a1/container.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="78" column="55" lean-forward="true" selection-start-line="78" selection-start-column="55" selection-end-line="78" selection-end-column="55" />
           <folding />
         </state>
       </provider>

@@ -109,8 +109,9 @@ class Station(Drawable):
             self.num_bikes += 1
 
     def update_statistics(self):
-        # Update statistics as specified in Assignment description
-        # Note: We add 60 seconds, rather than 1 minute
+        """ Update statistics as specified in Assignment description.
+        Note: We add 60 seconds, rather than 1 minute
+        """
         if self.num_bikes <= 5:
             self.stats['time_low_availability'] += 60
 
