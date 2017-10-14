@@ -38,15 +38,14 @@ class Simulation:
         A dictionary containing all the stations in this simulation.
     visualizer:
         A helper class for visualizing the simulation.
-
+        
     === Private Attributes ===
-    _ride_event_pq:
-        A priority queue containing all ride events in order of most recently
-        occurring ride events, to least recently occurring ride events
+      _ride_event_pq:
+         A priority queue containing all ride events in order of most recently
+         occurring ride events, to least recently occurring ride events
 
     === Representation invariants ==
     active_rides[i].start.time >= the current time of the simulation
-
     """
     all_stations: Dict[str, 'Station']
     all_rides: List[Ride]
@@ -55,27 +54,14 @@ class Simulation:
     _ride_event_pq: PriorityQueue
 
     def __init__(self, station_file: str, ride_file: str) -> None:
-        """Initialize this simulation with the given configuration settings.
+        """Initialize this simulation with the stations specified in
+        <station_file> and the rides specified in <ride_file>.
         """
         self.visualizer = Visualizer()
         self.all_stations = create_stations(station_file)
         self.all_rides = create_rides(ride_file, self.all_stations)
         self.active_rides = []
         self._ride_event_pq = PriorityQueue()
-
-    def update_statistics(self):
-        """Updates the statistics of every station. """
-        for st_id in self.all_stations:
-            station = self.all_stations[st_id]
-            station.update_statistics()
-
-    def init_ride_event_pq(self, start: datetime):
-        """Initializes the _ride_event_pq with RideStartEvents starting at or
-        after <start> time.
-        """
-        for ride in self.all_rides:
-            if ride.start_time >= start:
-                self._ride_event_pq.add(RideStartEvent(self, ride))
 
     def run(self, start: datetime, end: datetime) -> None:
         """Run the simulation from <start> to <end>.
@@ -86,7 +72,7 @@ class Simulation:
         current = start  # Sets current time to simulation start time
 
         # Adds all rides that start after or durign start time to _ride_event_pq
-        self.init_ride_event_pq(start)
+        self._init_ride_event_pq(start)
 
         # Simulation Loop (halt when current time exceeds end time)
         while current <= end:
@@ -94,7 +80,7 @@ class Simulation:
             self.visualizer.render_drawables(st_to_draw+self.active_rides,
                                              current)
             if current != end:
-                self.update_statistics()
+                self._update_statistics()
 
             current += step
 
@@ -104,21 +90,6 @@ class Simulation:
         while True:
             if self.visualizer.handle_window_events():
                 return  # Stop the simulation
-
-    def _update_active_rides(self, time: datetime) -> None:
-        """Update this simulation's list of active rides for the given time.
-        """
-
-        for ride in self.all_rides:
-            prev_active = ride in self.active_rides
-            curr_active = (time >= ride.start_time) and (time <= ride.end_time)
-
-            if prev_active and not curr_active:
-                ride.end.update_state('end')
-                self.active_rides.remove(ride)
-            elif not prev_active and curr_active:
-                ride.start.update_state('start')
-                self.active_rides.append(ride)
 
     def calculate_statistics(self) -> Dict[str, Tuple[str, float]]:
         """Return a dictionary containing statistics for this simulation.
@@ -135,7 +106,6 @@ class Simulation:
         the maximum value of the quantity specified by that key,
         and the second element is the value of that quantity.
         """
-
         stats = {
             'max_start': ('', -1),
             'max_end': ('', -1),
@@ -143,36 +113,30 @@ class Simulation:
             'max_time_low_unoccupied': ('', -1)
         }
 
-        def _update_max(stat: 'str', st_id: 'str') -> None:
-            """Updates maximum value of max_<stat>, with the statistics of the
-            station with the id <st_id>.
-
-            Preconditions:
-                - stat in stats.keys(),
-                - st_id in self.all_stations.keys()
-            """
-            # Station <st_id>'s value for the <stat> statistic
-            st_stat = self.all_stations[st_id].stats[stat[4:]]
-
-            # Current value of the max_<stat> statistic
-            max_st_stat = stats[stat][1]
-
-            st_name = self.all_stations[st_id].name
-            max_st_name = stats[stat][0]
-
-            if max_st_stat < st_stat:
-                stats[stat] = (st_name, st_stat)
-            elif (max_st_stat == st_stat) and (st_name < max_st_name):
-                stats[stat] = (st_name, st_stat)
-
         for st_id in self.all_stations:
             for stat in stats:
-                _update_max(stat, st_id)
+                self._update_max(stats, stat, st_id)
 
         return stats
 
-    def _update_active_rides_fast(self, time: datetime) -> None:
+    # Helper Functions
+    def _update_active_rides(self, time: datetime) -> None:
         """Update this simulation's list of active rides for the given time.
+        """
+        for ride in self.all_rides:
+            prev_active = ride in self.active_rides
+            curr_active = (time >= ride.start_time) and (time <= ride.end_time)
+
+            if prev_active and not curr_active:
+                ride.end.update_state('end')
+                self.active_rides.remove(ride)
+            elif not prev_active and curr_active:
+                ride.start.update_state('start')
+                self.active_rides.append(ride)
+
+    def _update_active_rides_fast(self, time: datetime) -> None:
+        """Update this simulation's list of active rides for the given time,
+        using a priority queue.
         """
 
         while not self._ride_event_pq.is_empty():
@@ -188,6 +152,43 @@ class Simulation:
                 spawned_events = ride_event.process()
                 for event in spawned_events:
                     self._ride_event_pq.add(event)
+
+    def _update_max(self, max_stats: Dict[str, Tuple[str, float]],
+                    stat: 'str', st_id: 'str') -> None:
+        """Updates maximum value of max_<stat>, with the statistics of the
+        station with the id <st_id>.
+
+        Preconditions:
+            - stat in stats.keys(),
+            - st_id in self.all_stations.keys()
+        """
+        # Station <st_id>'s value for the <stat> statistic
+        st_stat = self.all_stations[st_id].stats[stat[4:]]
+
+        # Current value of the max_<stat> statistic
+        max_st_stat = max_stats[stat][1]
+
+        st_name = self.all_stations[st_id].name
+        max_st_name = max_stats[stat][0]
+
+        if max_st_stat < st_stat:
+            max_stats[stat] = (st_name, st_stat)
+        elif (max_st_stat == st_stat) and (st_name < max_st_name):
+            max_stats[stat] = (st_name, st_stat)
+
+    def _update_statistics(self):
+        """Updates the statistics of every station. """
+        for st_id in self.all_stations:
+            station = self.all_stations[st_id]
+            station.update_statistics()
+
+    def _init_ride_event_pq(self, start: datetime):
+        """Initializes the _ride_event_pq with RideStartEvents starting at or
+        after <start> time.
+        """
+        for ride in self.all_rides:
+            if ride.start_time >= start:
+                self._ride_event_pq.add(RideStartEvent(self, ride))
 
 
 def create_stations(stations_file: str) -> Dict[str, 'Station']:
