@@ -38,7 +38,7 @@ class Simulation:
         A dictionary containing all the stations in this simulation.
     visualizer:
         A helper class for visualizing the simulation.
-        
+
     === Private Attributes ===
       _ride_event_pq:
          A priority queue containing all ride events in order of most recently
@@ -65,6 +65,7 @@ class Simulation:
 
     def run(self, start: datetime, end: datetime) -> None:
         """Run the simulation from <start> to <end>.
+        Precondition: start < end
         """
         step = timedelta(minutes=1)  # Each iteration spans one minute of time
 
@@ -121,7 +122,8 @@ class Simulation:
 
     # Helper Functions
     def _update_active_rides(self, time: datetime) -> None:
-        """Update this simulation's list of active rides for the given time.
+        """Update this simulation's list of active rides for
+        the time <time>.
         """
         for ride in self.all_rides:
             prev_active = ride in self.active_rides
@@ -135,10 +137,12 @@ class Simulation:
                 self.active_rides.append(ride)
 
     def _update_active_rides_fast(self, time: datetime) -> None:
-        """Update this simulation's list of active rides for the given time,
-        using a priority queue.
-        """
+        """Update this simulation's list of active rides for
+        the time <time>.
 
+        Note: This method should be preferred over _update_active_rides
+        since it is much more efficient, and behaves precisely the same.
+        """
         while not self._ride_event_pq.is_empty():
             ride_event = self._ride_event_pq.remove()
 
@@ -177,7 +181,7 @@ class Simulation:
             max_stats[stat] = (st_name, st_stat)
 
     def _update_statistics(self):
-        """Updates the statistics of every station. """
+        """Updates the stats attribute of every station. """
         for st_id in self.all_stations:
             station = self.all_stations[st_id]
             station.update_statistics()
