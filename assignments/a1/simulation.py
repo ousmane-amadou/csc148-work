@@ -68,7 +68,6 @@ class Simulation:
         Precondition: start < end
         """
         step = timedelta(minutes=1)  # Each iteration spans one minute of time
-
         st_to_draw = list(self.all_stations.values())
         current = start  # Sets current time to simulation start time
 
