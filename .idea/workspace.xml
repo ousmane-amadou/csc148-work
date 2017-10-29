@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1eec9c6e-4093-4dfc-a5b9-605adbf12f3c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/csc148-work.iml" afterPath="$PROJECT_DIR$/.idea/csc148-work.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/exercises/ex4/ex4.py" afterPath="$PROJECT_DIR$/exercises/ex4/ex4.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,8 +18,20 @@
       <file leaf-file-name="ex4.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/exercises/ex4/ex4.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="80" column="39" lean-forward="false" selection-start-line="80" selection-start-column="39" selection-end-line="80" selection-end-column="39" />
+            <state relative-caret-position="210">
+              <caret line="120" column="0" lean-forward="true" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
+              <folding>
+                <element signature="e#3500#3584#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ex4_test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/exercises/ex4/ex4_test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="170" column="0" lean-forward="false" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -54,6 +68,7 @@
         <option value="$PROJECT_DIR$/labs/lab6/linked_list_v2.py" />
         <option value="$PROJECT_DIR$/labs/lab7/lab7.py" />
         <option value="$PROJECT_DIR$/labs/lab7/rec_linked_list.py" />
+        <option value="$PROJECT_DIR$/exercises/ex4/ex4_test.py" />
         <option value="$PROJECT_DIR$/exercises/ex4/ex4.py" />
       </list>
     </option>
@@ -141,7 +156,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Doctests in ex4">
+  <component name="RunManager" selected="Python.ex4">
     <configuration name="Doctest LinkedListRec.__len__" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -196,54 +211,52 @@
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
     </configuration>
-    <configuration name="lab7" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Nosetests in ex4_test.py" type="tests" factoryName="Nosetests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
+      <envs />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/labs/lab7" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/exercises/ex4" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="csc148-work" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/labs/lab7/lab7.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="_new_regexPattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/exercises/ex4/ex4_test.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
     </configuration>
-    <configuration name="linked_list_v2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="ex4" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/labs/lab6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/exercises/ex4" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="csc148-work" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/labs/lab6/linked_list_v2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/exercises/ex4/ex4.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.linked_list_v2" />
-      <item index="1" class="java.lang.String" itemvalue="Python.lab7" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Doctest LinkedListRec.__len__" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Doctests in rec_linked_list" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Doctests in ex4" />
+      <item index="0" class="java.lang.String" itemvalue="Python tests.Doctest LinkedListRec.__len__" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Doctests in rec_linked_list" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Doctests in ex4" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Nosetests in ex4_test.py" />
+      <item index="4" class="java.lang.String" itemvalue="Python.ex4" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Doctests in ex4" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Doctests in rec_linked_list" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Doctest LinkedListRec.__len__" />
-        <item index="3" class="java.lang.String" itemvalue="Python.lab7" />
-        <item index="4" class="java.lang.String" itemvalue="Python.linked_list_v2" />
+        <item index="0" class="java.lang.String" itemvalue="Python.ex4" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Nosetests in ex4_test.py" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Doctests in ex4" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Doctests in rec_linked_list" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Doctest LinkedListRec.__len__" />
       </list>
     </recent_temporary>
   </component>
@@ -264,35 +277,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Doctests_in_ex4 - 2017.10.29 at 14h 26m 54s.xml">
-      <configuration name="Doctests in ex4" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Doctests_in_ex4 - 2017.10.29 at 14h 28m 34s.xml">
-      <configuration name="Doctests in ex4" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Doctests_in_ex4 - 2017.10.29 at 14h 32m 11s.xml">
-      <configuration name="Doctests in ex4" configurationId="tests" />
-    </history-entry>
     <history-entry file="Doctests_in_ex4 - 2017.10.29 at 14h 37m 48s.xml">
       <configuration name="Doctests in ex4" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctests_in_rec_linked_list - 2017.10.26 at 12h 17m 53s.xml">
-      <configuration name="Doctests in rec_linked_list" configurationId="tests" />
+    <history-entry file="Doctests_in_ex4 - 2017.10.29 at 14h 47m 38s.xml">
+      <configuration name="Doctests in ex4" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctests_in_rec_linked_list - 2017.10.26 at 12h 18m 06s.xml">
-      <configuration name="Doctests in rec_linked_list" configurationId="tests" />
+    <history-entry file="Doctests_in_ex4 - 2017.10.29 at 14h 49m 47s.xml">
+      <configuration name="Doctests in ex4" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctests_in_rec_linked_list - 2017.10.26 at 12h 22m 37s.xml">
-      <configuration name="Doctests in rec_linked_list" configurationId="tests" />
+    <history-entry file="Doctests_in_ex4 - 2017.10.29 at 14h 50m 13s.xml">
+      <configuration name="Doctests in ex4" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctests_in_rec_linked_list - 2017.10.26 at 12h 25m 27s.xml">
-      <configuration name="Doctests in rec_linked_list" configurationId="tests" />
+    <history-entry file="Doctests_in_ex4 - 2017.10.29 at 14h 53m 45s.xml">
+      <configuration name="Doctests in ex4" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctests_in_rec_linked_list - 2017.10.26 at 12h 39m 00s.xml">
-      <configuration name="Doctests in rec_linked_list" configurationId="tests" />
+    <history-entry file="Nosetests_in_ex4_test_py - 2017.10.29 at 14h 40m 57s.xml">
+      <configuration name="Nosetests in ex4_test.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctests_in_rec_linked_list - 2017.10.29 at 14h 26m 49s.xml">
-      <configuration name="Doctests in rec_linked_list" configurationId="tests" />
+    <history-entry file="Nosetests_in_ex4_test_py - 2017.10.29 at 14h 45m 46s.xml">
+      <configuration name="Nosetests in ex4_test.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_ex4_test_py - 2017.10.29 at 14h 47m 47s.xml">
+      <configuration name="Nosetests in ex4_test.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_ex4_test_py - 2017.10.29 at 14h 55m 01s.xml">
+      <configuration name="Nosetests in ex4_test.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_ex4_test_py - 2017.10.29 at 14h 55m 33s.xml">
+      <configuration name="Nosetests in ex4_test.py" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -302,7 +315,8 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22132471" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4659091" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4659091" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3068182" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -315,7 +329,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -331,25 +344,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="4" />
+      <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/exercises/ex3/ex3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assignments/a1/simulation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1815">
-          <caret line="121" column="55" lean-forward="false" selection-start-line="121" selection-start-column="55" selection-end-line="121" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assignments/a1/bikeshare.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1095">
@@ -686,11 +685,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exercises/ex4/ex4_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="170" column="0" lean-forward="false" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/exercises/ex4/ex4.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="80" column="39" lean-forward="false" selection-start-line="80" selection-start-column="39" selection-end-line="80" selection-end-column="39" />
-          <folding />
+        <state relative-caret-position="210">
+          <caret line="120" column="0" lean-forward="true" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
+          <folding>
+            <element signature="e#3500#3584#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

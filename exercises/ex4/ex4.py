@@ -19,7 +19,6 @@ from typing import List, Union
 ##############################################################################
 # Task 1: More practice with nested lists
 ##############################################################################
-# TODO: Implement this!
 def duplicate(nested_list: Union[list, int]) -> list:
     """Return a new nested list with all numbers in <nested_list> duplicated.
 
@@ -51,7 +50,6 @@ def duplicate(nested_list: Union[list, int]) -> list:
         return duped_list
 
 
-# TODO: Implement this!
 def add_one(nested_list: Union[list, int]) -> None:
     """Add one to every number stored in <nested_list>.
 
@@ -73,7 +71,6 @@ def add_one(nested_list: Union[list, int]) -> None:
     [2, [3, 4], [[[6]]]]
     """
     if not isinstance(nested_list, int):
-
         for i in range(len(nested_list)):
             if isinstance(nested_list[i], int):
                 nested_list[i] += 1
@@ -83,6 +80,8 @@ def add_one(nested_list: Union[list, int]) -> None:
 ##############################################################################
 # Task 2: Family trees
 ##############################################################################
+
+
 class Person:
     """A person in a family tree.
 
@@ -101,11 +100,16 @@ class Person:
         self.name = new_name
         self.children = new_children
 
-    # TODO: Implement this!
     def count_descendants(self) -> int:
         """Return the number of descendants of this person.
         """
-        pass
+        if len(self.children) == 0:
+            return 0
+        else:
+            num_descendants = 0
+            for child in self.children:
+                num_descendants += (1 + child.count_descendants())
+            return num_descendants
 
 
 if __name__ == '__main__':
