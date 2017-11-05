@@ -75,7 +75,7 @@ class Tree:
         if other.is_empty():
             return self.is_empty()
         else:
-            if (self.root != other._root) or \
+            if (self._root != other._root) or \
                             len(self._subtrees) != len(other._subtrees):
                 return False
             else:
@@ -95,7 +95,7 @@ class Tree:
         else:
             nested_list = [self._root]
             for subtree in self._subtrees:
-                nested_list += subtree.to_nested_list()
+                nested_list += [subtree.to_nested_list()]
             return nested_list
 
 def to_tree(obj: Union[int, List]) -> 'Tree':
@@ -166,7 +166,7 @@ class BinaryTree:
     def preorder(self) -> list:
         """Return a list of this tree's items using a *preorder* traversal.
         """
-        if self is None:
+        if self._root is None:
             return []
         else:
             return [self._root] + self._left.preorder() + self._right.preorder()
@@ -174,7 +174,7 @@ class BinaryTree:
     def inorder(self) -> list:
         """Return a list of this tree's items using an *inorder* traversal.
         """
-        if self is None:
+        if self._root is None:
             return []
         else:
             return self._left.inorder() + [self._root] + self._right.inorder()
@@ -182,7 +182,7 @@ class BinaryTree:
     def postorder(self) -> list:
         """Return a list of this tree's items using a *postorder* traversal.
         """
-        if self is None:
+        if self._root is None:
             return []
         else:
             return self._left.postorder() + self._right.postorder() + [self._root]
