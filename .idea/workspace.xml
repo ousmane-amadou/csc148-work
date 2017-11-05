@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1eec9c6e-4093-4dfc-a5b9-605adbf12f3c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/exercises/ex5/ex5.py" afterPath="$PROJECT_DIR$/exercises/ex5/ex5.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,17 +13,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ex5.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ex5.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/exercises/ex5/ex5.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="184" column="21" lean-forward="false" selection-start-line="184" selection-start-column="21" selection-end-line="184" selection-end-column="21" />
+            <state relative-caret-position="186">
+              <caret line="191" column="0" lean-forward="true" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ex5_test.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ex5_test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/exercises/ex5/ex5_test.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="108">
@@ -101,23 +100,6 @@
             <path>
               <item name="csc148-work" type="b2602c69:ProjectViewProjectNode" />
               <item name="csc148-work" type="462c0819:PsiDirectoryNode" />
-              <item name="exercises" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="csc148-work" type="b2602c69:ProjectViewProjectNode" />
-              <item name="csc148-work" type="462c0819:PsiDirectoryNode" />
-              <item name="exercises" type="462c0819:PsiDirectoryNode" />
-              <item name="ex4" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="csc148-work" type="b2602c69:ProjectViewProjectNode" />
-              <item name="csc148-work" type="462c0819:PsiDirectoryNode" />
-              <item name="exercises" type="462c0819:PsiDirectoryNode" />
-              <item name="ex5" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="csc148-work" type="b2602c69:ProjectViewProjectNode" />
-              <item name="csc148-work" type="462c0819:PsiDirectoryNode" />
               <item name="labs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -160,25 +142,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Nosetests in ex5_test.py">
-    <configuration name="Doctests in ex4" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/exercises/ex4" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="csc148-work" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/exercises/ex4/ex4.py" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-    </configuration>
+  <component name="RunManager" selected="Python.ex5">
     <configuration name="Doctests in ex5" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -244,20 +208,37 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
+    <configuration name="ex5" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/exercises/ex5" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="csc148-work" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/exercises/ex5/ex5.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python tests.Doctests in ex4" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.Nosetests in ex4_test.py" />
-      <item index="2" class="java.lang.String" itemvalue="Python.ex4" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Nosetests in ex5_test.py" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Doctests in ex5" />
+      <item index="0" class="java.lang.String" itemvalue="Python tests.Nosetests in ex4_test.py" />
+      <item index="1" class="java.lang.String" itemvalue="Python.ex4" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Nosetests in ex5_test.py" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Doctests in ex5" />
+      <item index="4" class="java.lang.String" itemvalue="Python.ex5" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Nosetests in ex5_test.py" />
+        <item index="0" class="java.lang.String" itemvalue="Python.ex5" />
         <item index="1" class="java.lang.String" itemvalue="Python tests.Doctests in ex5" />
-        <item index="2" class="java.lang.String" itemvalue="Python.ex4" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Nosetests in ex4_test.py" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Doctests in ex4" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Nosetests in ex5_test.py" />
+        <item index="3" class="java.lang.String" itemvalue="Python.ex4" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Nosetests in ex4_test.py" />
       </list>
     </recent_temporary>
   </component>
@@ -284,11 +265,11 @@
     <history-entry file="Doctests_in_ex5 - 2017.11.05 at 14h 50m 36s.xml">
       <configuration name="Doctests in ex5" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_in_ex4_test_py - 2017.10.29 at 14h 45m 46s.xml">
-      <configuration name="Nosetests in ex4_test.py" configurationId="tests" />
+    <history-entry file="Doctests_in_ex5 - 2017.11.05 at 14h 51m 39s.xml">
+      <configuration name="Doctests in ex5" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_in_ex4_test_py - 2017.10.29 at 14h 47m 47s.xml">
-      <configuration name="Nosetests in ex4_test.py" configurationId="tests" />
+    <history-entry file="Doctests_in_ex5 - 2017.11.05 at 14h 56m 22s.xml">
+      <configuration name="Doctests in ex5" configurationId="tests" />
     </history-entry>
     <history-entry file="Nosetests_in_ex4_test_py - 2017.10.29 at 14h 55m 01s.xml">
       <configuration name="Nosetests in ex4_test.py" configurationId="tests" />
@@ -316,7 +297,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23101777" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4659091" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4659091" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3068182" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -698,18 +679,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/exercises/ex5/ex5.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="184" column="21" lean-forward="false" selection-start-line="184" selection-start-column="21" selection-end-line="184" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/exercises/ex5/ex5_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="146" column="4" lean-forward="false" selection-start-line="146" selection-start-column="4" selection-end-line="146" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exercises/ex5/ex5.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="191" column="0" lean-forward="true" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
           <folding />
         </state>
       </provider>

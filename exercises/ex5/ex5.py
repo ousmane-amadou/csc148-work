@@ -78,10 +78,9 @@ class Tree:
             if (self._root != other._root) or \
                             len(self._subtrees) != len(other._subtrees):
                 return False
-            else:
-                for i in range(len(self._subtrees)):
-                    if (self._subtrees[i] != other._subtrees[i]):
-                        return False
+            for i in range(len(self._subtrees)):
+                if self._subtrees[i] != other._subtrees[i]:
+                    return False
         return True
 
 ##############################################################################
@@ -98,6 +97,7 @@ class Tree:
                 nested_list += [subtree.to_nested_list()]
             return nested_list
 
+
 def to_tree(obj: Union[int, List]) -> 'Tree':
     """Return the Tree which <obj> represents.
 
@@ -112,7 +112,6 @@ def to_tree(obj: Union[int, List]) -> 'Tree':
         for sub_tree in obj[1:]:
             sub_trees.append(to_tree(sub_tree))
         return Tree(root, sub_trees)
-
 
 
 ##############################################################################
@@ -162,7 +161,6 @@ class BinaryTree:
         """
         return self._root is None
 
-
     def preorder(self) -> list:
         """Return a list of this tree's items using a *preorder* traversal.
         """
@@ -185,7 +183,7 @@ class BinaryTree:
         if self._root is None:
             return []
         else:
-            return self._left.postorder() + self._right.postorder() + [self._root]
+            return self._left.postorder()+self._right.postorder()+[self._root]
 
 
 if __name__ == '__main__':
