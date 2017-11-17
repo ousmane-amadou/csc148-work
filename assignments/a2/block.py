@@ -19,7 +19,6 @@ from renderer import COLOUR_LIST, TEMPTING_TURQUOISE, BLACK
 HIGHLIGHT_COLOUR = TEMPTING_TURQUOISE
 FRAME_COLOUR = BLACK
 
-
 class Block:
     """A square block in the Blocky game.
 
@@ -84,7 +83,16 @@ class Block:
         and max_depth) to 0.  (All attributes can be updated later, as
         appropriate.)
         """
-        pass
+        self.highlighted = False
+        self.parent = None
+
+        self.level = level
+        self.colour = colour
+        self.children = children
+
+        self.position = (0, 0)
+        self.size = 0
+        self.max_depth = 0
 
     def rectangles_to_draw(self) -> List[Tuple[Tuple[int, int, int],
                                                Tuple[float, float],
@@ -116,7 +124,19 @@ class Block:
 
         The order of the rectangles does not matter.
         """
-        pass
+        to_draw = []
+
+        if self.children is None:
+            to_draw += [(self.colour, self.position, (self.size, self.size), 0)]
+            to_draw += [(FRAME_COLOUR, self.position, (self.size, self.size), 3)]
+        else:
+            for i in range(len(self.children)):
+                to_draw += self.children[i].rectangles_to_draw()
+
+        if self.highlighted:
+            to_draw += [(HIGHLIGHT_COLOUR, self.position, (self.size, self.size), 5)]
+
+        return to_draw
 
     def swap(self, direction: int) -> None:
         """Swap the child Blocks of this Block.
@@ -149,6 +169,7 @@ class Block:
         """
         pass
 
+
     def update_block_locations(self, top_left: Tuple[float, float],
                                size: float) -> None:
         """
@@ -160,7 +181,20 @@ class Block:
         <top_left> is the (x, y) coordinates of the top left corner of
         this Block.  <size> is the height and width of this Block.
         """
-        pass
+        if self.children is None:
+            self.max_depth = self.level
+        else:
+            for i in range(len(self.children)):
+                child = self.children[i]
+                child.size = round(size / 2.0)
+
+                child_x = top_left[0] + ((i==0) | (i==3)) * child.size  # Adds x for upper-right, bottom-right
+                child_y = top_left[1] + ((i==2) | (i==3)) * child.size  # Adds y for bottom-left, bottom-right
+
+                child.position = (child_x, child_y)
+                child.update_block_locations(child.position, child.size)
+
+            self.max_depth = self.children[0].max_depth
 
     def get_selected_block(self, location: Tuple[float, float], level: int) \
             -> 'Block':
@@ -179,7 +213,12 @@ class Block:
         Preconditions:
         - 0 <= level <= max_depth
         """
-        pass
+        if (self.children is None) or (self.level == level):
+            return self
+        else:
+            p = ((location[0] - self.position[0]) < 0) + ((location[1] - self.position[1]) < 0)
+            return self.children[p].get_selected_block(location, level)
+
 
     def flatten(self) -> List[List[Tuple[int, int, int]]]:
         """Return a two-dimensional list representing this Block as rows
@@ -210,8 +249,14 @@ def random_init(level: int, max_depth: int) -> 'Block':
     # If this Block is not already at the maximum allowed depth, it can
     # be subdivided. Use a random number to decide whether or not to
     # subdivide it further.
-    pass
+    if level != max_depth: ## subdivide
+        if random.random() <= math.exp(-0.25 * level):
+            return Block(level, children=[random_init(level+1, max_depth) for i in range(4)])
 
+    ## or not to subdivide
+    blck = Block(level, children=None)
+    blck.colour = COLOUR_LIST[random.randint(0, 3)]
+    return blck
 
 if __name__ == '__main__':
     import python_ta

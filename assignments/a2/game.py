@@ -50,7 +50,27 @@ class Game:
         Precondition:
             2 <= max_depth <= 5
         """
-        pass
+        self.renderer = Renderer(num_players=(num_human+random_players+len(smart_players)))
+        self.players = []
+
+        self.board = random_init(0, max_depth)
+        self.board.update_block_locations((0, 0), 750)
+
+        # Generate a Random Goal type for all players to share
+        common_goal_type = round(random.random())
+
+        for i in range(num_human + random_players + len(smart_players)):
+            goal = generate_random_goal(common_goal_type)
+            if i < num_human:
+                self.players.append(HumanPlayer(self.renderer, i, goal))
+            elif i < num_human + random_players:
+                self.players.append(RandomPlayer(self.renderer, i, goal))
+            else:
+                self.players.append(SmartPlayer(self.renderer, i, goal))
+
+            self.renderer.display_goal(self.players[i])
+
+        self.renderer.draw(self.board, 0)
 
     def run_game(self, num_turns: int) -> None:
         """Run the game for the number of turns specified.
@@ -94,6 +114,11 @@ class Game:
                   f'goal = \n\t{player.goal.description()}: ' +
                   f'{colour_name(player.goal.colour)}')
 
+
+def generate_random_goal(type: int) -> 'Goal':
+    if type == 0:
+        return BlobGoal()
+    return PerimeterGoal()
 
 def auto_game() -> None:
     """Run a game with two computer players of different difficulty.

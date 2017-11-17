@@ -55,6 +55,10 @@ class Player:
         """
         raise NotImplementedError
 
+class SmartPlayer(Player):
+    pass
+class RandomPlayer(Player):
+    pass
 
 class HumanPlayer(Player):
     """A human player.
@@ -115,6 +119,7 @@ class HumanPlayer(Player):
              trying to smash in an invalid location or when the player is not
              allowed further smashes).
         """
+
         # Get the new "selected" block from the position of the cursor
         block = board.get_selected_block(pygame.mouse.get_pos(), self._level)
 

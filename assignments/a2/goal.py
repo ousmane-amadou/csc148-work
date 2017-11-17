@@ -45,10 +45,34 @@ class Goal:
         raise NotImplementedError
 
 
+class PerimeterGoal(Goal):
+    """A goal to create the most possible units of a given
+    colour c on the outer perimeter of the board.
+    """
+
+    def description(self) -> str:
+        return "The player must aim to put the most possible units " \
+               "of a given colour c on the outer perimeter of the board"
+
+    def score(self, board: Block) -> int:
+        pass
+
 class BlobGoal(Goal):
     """A goal to create the largest connected blob of this goal's target
     colour, anywhere within the Block.
     """
+
+    def description(self):
+        return "The player must aim for the largest 'blob' of a given colour c."
+
+    def score(self, board: Block) -> int:
+        if board.children is None:
+            return (4**(board.max_depth - board.level))*(self.colour == board.colour)
+        else:
+            scr = 0
+            for child in board.children:
+                scr += self.score(child)
+            return scr
 
     def _undiscovered_blob_size(self, pos: Tuple[int, int],
                                 board: List[List[Tuple[int, int, int]]],
