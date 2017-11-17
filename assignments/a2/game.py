@@ -114,11 +114,15 @@ class Game:
                   f'goal = \n\t{player.goal.description()}: ' +
                   f'{colour_name(player.goal.colour)}')
 
+# === Helper Functions === 
 
-def generate_random_goal(type: int) -> 'Goal':
-    if type == 0:
-        return BlobGoal()
-    return PerimeterGoal()
+def generate_random_goal(goal_type: int) -> 'Goal':
+    """Generate a BlobGoal if type = 0, otherwise generate a PerimeterGoal.
+    """
+    if goal_type == 0:
+        return BlobGoal(random.choice(COLOUR_LIST))
+    else:
+        return PerimeterGoal(random.choice(COLOUR_LIST))
 
 def auto_game() -> None:
     """Run a game with two computer players of different difficulty.

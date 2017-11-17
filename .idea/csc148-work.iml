@@ -9,8 +9,9 @@
       <sourceFolder url="file://$MODULE_DIR$/exercises/ex3" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/exercises/ex4" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/exercises/ex5" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/assignments/a2" isTestSource="false" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="Python 3.6.2 (C:\Users\Acer\AppData\Local\Programs\Python\Python36-32\python.exe)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TestRunnerService">

@@ -172,6 +172,7 @@ class BinaryTree:
     def inorder(self) -> list:
         """Return a list of this tree's items using an *inorder* traversal.
         """
+        hghgkjhggkjhgkhjgkjggkh
         if self._root is None:
             return []
         else:
