@@ -265,7 +265,7 @@ class LinkedList:
         >>> str(lst)
         '[]'
         """
-        pass
+        self._first = None
 
     def append(self, item: object) -> None:
         """Append <item> to the end of this list.
@@ -277,7 +277,13 @@ class LinkedList:
         >>> str(lst)
         '[1 -> 2 -> 3 -> 4]'
         """
-        pass
+        if self._first is None:
+            self._first = _Node(item)
+        else:
+            curr = self._first
+            while curr.next is not None:
+                curr = curr.next
+            curr.next = _Node(item)
 
     def __setitem__(self, index: int, item: object) -> None:
         """Store item at position <index> in this list.
@@ -291,7 +297,15 @@ class LinkedList:
         >>> str(lst)
         '[100 -> 200 -> 300]'
         """
-        pass
+        curr = self._first
+        c = 0
+        while curr is not None:
+            if index == c:
+                curr.item = item
+                return
+            c += 1
+            curr = curr.next
+        raise IndexError
 
     def extend(self, items: list) -> None:
         """Extend this list by appending elements from <items>.
@@ -303,7 +317,8 @@ class LinkedList:
         >>> str(lst)
         '[1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7]'
         """
-        pass
+        for i in items:
+            self.append(i)
 
     def map(self, f: Callable[[object], object]) -> 'LinkedList':
         """Return a new LinkedList whose nodes store items that are
@@ -323,7 +338,12 @@ class LinkedList:
         >>> str(lst.map(len))
         '[5 -> 7]'
         """
-        pass
+        transformed = []
+        curr = self._first
+        while curr is not None:
+            transformed.append(f(curr.item))
+            curr = curr.next
+        return LinkedList(transformed)
 
     def filter(self, f: Callable[[object], bool]) -> 'LinkedList':
         """Return a new LinkedList whose nodes store the items in this
@@ -343,7 +363,16 @@ class LinkedList:
         >>> str(lst.filter(func))
         '[goodbye -> see you later]'
         """
-        pass
+        # Initialize new list
+        new_ll = LinkedList([])
+        curr = self._first
+
+        while curr is not None:
+            if f(curr.item):
+                new_ll.append(curr.item)
+            curr = curr.next
+
+        return new_ll
 
     ###########################################################################
     # Additional Exercises
@@ -359,7 +388,7 @@ class LinkedList:
         of the list, you'll need the new private attribute for this class which
         keeps track of where in the list the iterator is currently at.
         """
-
+        self._iter_node = self._first
         return self
 
     def __next__(self) -> object:
@@ -381,12 +410,12 @@ class LinkedList:
         >>> iterator.__next__()
         3
         """
-        if self._iter_node.next is None:
+        if self._iter_node is None:
             raise StopIteration
         else:
+            next_item = self._iter_node.item
             self._iter_node = self._iter_node.next
-
-        return self._iter_node
+        return next_item
 
 
 if __name__ == '__main__':

@@ -67,7 +67,6 @@ class Game:
                 self.players.append(RandomPlayer(self.renderer, i, goal))
             else:
                 self.players.append(SmartPlayer(self.renderer, i, goal))
-
             self.renderer.display_goal(self.players[i])
 
         self.renderer.draw(self.board, 0)
@@ -115,6 +114,7 @@ class Game:
                   f'{colour_name(player.goal.colour)}')
 
 
+## TODO: FOR STELLA
 def generate_random_goal(type: int) -> 'Goal':
     if type == 0:
         return BlobGoal()

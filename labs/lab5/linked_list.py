@@ -130,7 +130,12 @@ class LinkedList:
         >>> len(lst)
         3
         """
-        pass
+        curr = self._first
+        l = 0
+        while curr is not None:
+            l += 1
+            curr = curr.next
+        return l
 
     def __contains__(self, item: object) -> bool:
         """Return whether <item> is in this list.
@@ -143,7 +148,12 @@ class LinkedList:
         >>> 4 in lst
         False
         """
-        pass
+        curr = self._first
+        while curr is not None:
+            if curr.item == item:
+                return True
+            curr = curr.next
+        return False
 
     def count(self, item: object) -> int:
         """Return the number of times <item> occurs in this list.
@@ -158,7 +168,13 @@ class LinkedList:
         >>> lst.count(3)
         1
         """
-        pass
+        curr = self._first
+        c = 0
+        while curr is not None:
+            if curr.item == item:
+                c += 1
+            curr = curr.next
+        return c
 
     def index(self, item: object) -> int:
         """Return the index of the first occurrence of <item> in this list.
@@ -176,7 +192,14 @@ class LinkedList:
         Traceback (most recent call last):
         ValueError
         """
-        pass
+        curr = self._first
+        c = 0
+        while curr is not None:
+            if curr.item == item:
+                return c
+            c += 1
+            curr = curr.next
+        raise ValueError
 
 
 if __name__ == '__main__':

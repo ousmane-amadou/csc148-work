@@ -43,10 +43,20 @@ def profile_len(list_size: int, n: int) -> Tuple[float, float]:
     # Make both a Python list and a LinkedList of size <list_size>.
     lst = list(range(list_size))
     ll = LinkedList(lst)
+    time1 = 0
+    time2 = 0
 
-    # TODO: n times, call len on lst.  Set time1 to the average time taken.
+    for i in range(n):
+        with Timer('', is_verbose=False) as time:
+            len(lst)
+        time1 += time.interval
+    time1 /= n
 
-    # TODO: n times, call len on ll.  Set time2 to the average time taken.
+    for i in range(n):
+        with Timer('', is_verbose=False) as time:
+            len(ll)
+        time2 += time.interval
+    time2 /= n
 
     return time1, time2
 
