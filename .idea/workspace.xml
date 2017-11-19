@@ -5,9 +5,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/csc148-work.iml" afterPath="$PROJECT_DIR$/.idea/csc148-work.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignments/a2/game.py" afterPath="$PROJECT_DIR$/assignments/a2/game.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/labs/lab5/linked_list.py" afterPath="$PROJECT_DIR$/labs/lab5/linked_list.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/labs/lab5/time_lists.py" afterPath="$PROJECT_DIR$/labs/lab5/time_lists.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/labs/lab6/linked_list_v2.py" afterPath="$PROJECT_DIR$/labs/lab6/linked_list_v2.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,51 +15,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="block.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assignments/a2/block.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="605">
-              <caret line="214" column="11" lean-forward="false" selection-start-line="214" selection-start-column="11" selection-end-line="214" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="renderer.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assignments/a2/renderer.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1410">
-              <caret line="104" column="13" lean-forward="false" selection-start-line="104" selection-start-column="13" selection-end-line="104" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="game.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="game.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assignments/a2/game.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="604">
-              <caret line="68" column="72" lean-forward="false" selection-start-line="68" selection-start-column="72" selection-end-line="68" selection-end-column="72" />
+            <state relative-caret-position="162">
+              <caret line="114" column="0" lean-forward="true" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="player.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assignments/a2/player.py">
+      <file leaf-file-name="goal.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assignments/a2/goal.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="62" column="26" lean-forward="true" selection-start-line="62" selection-start-column="26" selection-end-line="62" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="rectangle_test.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assignments/a2/rectangle_test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-113">
-              <caret line="35" column="4" lean-forward="false" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="44" />
+            <state relative-caret-position="317">
+              <caret line="65" column="58" lean-forward="false" selection-start-line="65" selection-start-column="58" selection-end-line="65" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -114,6 +81,9 @@
         <option value="$PROJECT_DIR$/assignments/a2/player.py" />
         <option value="$PROJECT_DIR$/assignments/a2/goal.py" />
         <option value="$PROJECT_DIR$/assignments/a2/block.py" />
+        <option value="$PROJECT_DIR$/exercises/ex6/ex6_test.py" />
+        <option value="$PROJECT_DIR$/labs/lab9/bst.py" />
+        <option value="$PROJECT_DIR$/exercises/ex6/ex6.py" />
         <option value="$PROJECT_DIR$/assignments/a2/game.py" />
       </list>
     </option>
@@ -197,18 +167,18 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Nosetests in rectangle_test.py">
-    <configuration name="Doctests in linked_list" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.Nosetests in ex6_test.py">
+    <configuration name="Doctests in bst" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/labs/lab5" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/labs/lab9" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="csc148-work" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/labs/lab5/linked_list.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/labs/lab9/bst.py" />
       <option name="CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
       <option name="FOLDER_NAME" value="" />
@@ -216,17 +186,17 @@
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
     </configuration>
-    <configuration name="Doctests in linked_list_v2" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
+    <configuration name="Doctests in ex6 (1)" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/labs/lab6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/exercises/ex6" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="csc148-work" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/labs/lab6/linked_list_v2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/exercises/ex6/ex6.py" />
       <option name="CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
       <option name="FOLDER_NAME" value="" />
@@ -234,69 +204,70 @@
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
     </configuration>
-    <configuration name="Nosetests in rectangle_test.py" type="tests" factoryName="Nosetests" temporary="true" nameIsGenerated="true">
+    <configuration name="Doctests in ex6" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/assignments/a2" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/exercises/ex6" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="csc148-work" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/exercises/ex6/ex6.py" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+    </configuration>
+    <configuration name="Nosetests in ex6_test.py" type="tests" factoryName="Nosetests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/exercises/ex6" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="csc148-work" />
       <option name="_new_regexPattern" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/assignments/a2/rectangle_test.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/exercises/ex6/ex6_test.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
     </configuration>
-    <configuration name="block" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="ex6" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/assignments/a2" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/exercises/ex6" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="csc148-work" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/assignments/a2/block.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
-    <configuration name="time_lists" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/labs/lab5" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="csc148-work" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/labs/lab5/time_lists.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/exercises/ex6/ex6.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python tests.Doctests in linked_list" />
-      <item index="1" class="java.lang.String" itemvalue="Python.time_lists" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Doctests in linked_list_v2" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Nosetests in rectangle_test.py" />
-      <item index="4" class="java.lang.String" itemvalue="Python.block" />
+      <item index="0" class="java.lang.String" itemvalue="Python tests.Nosetests in ex6_test.py" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Doctests in ex6" />
+      <item index="2" class="java.lang.String" itemvalue="Python.ex6" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Doctests in ex6 (1)" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Doctests in bst" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Nosetests in rectangle_test.py" />
-        <item index="1" class="java.lang.String" itemvalue="Python.block" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Doctests in linked_list_v2" />
-        <item index="3" class="java.lang.String" itemvalue="Python.time_lists" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Doctests in linked_list" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Nosetests in ex6_test.py" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Doctests in ex6" />
+        <item index="2" class="java.lang.String" itemvalue="Python.ex6" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Doctests in bst" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Doctests in ex6 (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -317,42 +288,42 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Nosetests_in_rectangle_test_py - 2017.11.16 at 14h 07m 41s.xml">
-      <configuration name="Nosetests in rectangle_test.py" configurationId="tests" />
+    <history-entry file="Doctests_in_bst - 2017.11.18 at 23h 59m 46s.xml">
+      <configuration name="Doctests in bst" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_in_rectangle_test_py - 2017.11.16 at 14h 09m 42s.xml">
-      <configuration name="Nosetests in rectangle_test.py" configurationId="tests" />
+    <history-entry file="Doctests_in_bst - 2017.11.19 at 00h 05m 20s.xml">
+      <configuration name="Doctests in bst" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_in_rectangle_test_py - 2017.11.16 at 14h 09m 46s.xml">
-      <configuration name="Nosetests in rectangle_test.py" configurationId="tests" />
+    <history-entry file="Doctests_in_bst - 2017.11.19 at 00h 05m 54s.xml">
+      <configuration name="Doctests in bst" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_in_rectangle_test_py - 2017.11.16 at 14h 09m 58s.xml">
-      <configuration name="Nosetests in rectangle_test.py" configurationId="tests" />
+    <history-entry file="Doctests_in_bst - 2017.11.19 at 00h 06m 50s.xml">
+      <configuration name="Doctests in bst" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_in_rectangle_test_py - 2017.11.16 at 14h 22m 28s.xml">
-      <configuration name="Nosetests in rectangle_test.py" configurationId="tests" />
+    <history-entry file="Doctests_in_bst - 2017.11.19 at 00h 22m 21s.xml">
+      <configuration name="Doctests in bst" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_in_rectangle_test_py - 2017.11.16 at 14h 23m 43s.xml">
-      <configuration name="Nosetests in rectangle_test.py" configurationId="tests" />
+    <history-entry file="Doctests_in_ex6 - 2017.11.19 at 00h 30m 58s.xml">
+      <configuration name="Doctests in ex6" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_in_rectangle_test_py - 2017.11.16 at 14h 24m 19s.xml">
-      <configuration name="Nosetests in rectangle_test.py" configurationId="tests" />
+    <history-entry file="Doctests_in_ex6 - 2017.11.19 at 00h 31m 33s.xml">
+      <configuration name="Doctests in ex6" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_in_rectangle_test_py - 2017.11.16 at 14h 24m 25s.xml">
-      <configuration name="Nosetests in rectangle_test.py" configurationId="tests" />
+    <history-entry file="Doctests_in_ex6 - 2017.11.19 at 00h 34m 57s.xml">
+      <configuration name="Doctests in ex6" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_in_rectangle_test_py - 2017.11.16 at 14h 59m 51s.xml">
-      <configuration name="Nosetests in rectangle_test.py" configurationId="tests" />
+    <history-entry file="Nosetests_in_ex6_test_py - 2017.11.19 at 00h 31m 12s.xml">
+      <configuration name="Nosetests in ex6_test.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_in_rectangle_test_py - 2017.11.16 at 15h 49m 10s.xml">
-      <configuration name="Nosetests in rectangle_test.py" configurationId="tests" />
+    <history-entry file="Nosetests_in_ex6_test_py - 2017.11.19 at 00h 35m 05s.xml">
+      <configuration name="Nosetests in ex6_test.py" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2358643" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24313408" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29829547" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -396,34 +367,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/exercises/ex2/ex2_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exercises/ex2/ex2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exercises/ex2/ex2_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="28" lean-forward="false" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/welcome.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -522,13 +465,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/exercises/ex1/ex1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-444">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/labs/lab2/reigistry.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1272">
@@ -540,13 +476,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2014">
           <caret line="43" column="33" lean-forward="false" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exercises/ex2/ex2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -700,7 +629,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
           <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -708,54 +636,98 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
           <caret line="197" column="0" lean-forward="false" selection-start-line="197" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assignments/a2/goal.py">
+    <entry file="file://$PROJECT_DIR$/exercises/ex1/ex1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="65" column="58" lean-forward="false" selection-start-line="65" selection-start-column="58" selection-end-line="65" selection-end-column="58" />
+        <state relative-caret-position="83">
+          <caret line="188" column="16" lean-forward="true" selection-start-line="188" selection-start-column="16" selection-end-line="188" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exercises/ex2/ex2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1420">
+          <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignments/a2/rectangle_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="4" lean-forward="false" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignments/a2/player.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-602">
+          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assignments/a2/renderer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1410">
+        <state relative-caret-position="414">
           <caret line="104" column="13" lean-forward="false" selection-start-line="104" selection-start-column="13" selection-end-line="104" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assignments/a2/player.py">
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm/docrunner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="62" column="26" lean-forward="true" selection-start-line="62" selection-start-column="26" selection-end-line="62" selection-end-column="26" />
+        <state relative-caret-position="155">
+          <caret line="139" column="0" lean-forward="false" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/labs/lab9/bst.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1139">
+          <caret line="301" column="0" lean-forward="true" selection-start-line="301" selection-start-column="0" selection-end-line="301" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exercises/ex6/ex6.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="219" column="0" lean-forward="false" selection-start-line="219" selection-start-column="0" selection-end-line="219" selection-end-column="0" />
+          <folding>
+            <element signature="e#5046#5260#1" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exercises/ex6/ex6_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="59" column="36" lean-forward="false" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assignments/a2/game.py">
+    <entry file="file://$PROJECT_DIR$/assignments/a2/goal.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="604">
-          <caret line="68" column="72" lean-forward="false" selection-start-line="68" selection-start-column="72" selection-end-line="68" selection-end-column="72" />
+        <state relative-caret-position="317">
+          <caret line="65" column="58" lean-forward="false" selection-start-line="65" selection-start-column="58" selection-end-line="65" selection-end-column="58" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assignments/a2/block.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="605">
+        <state relative-caret-position="2880">
           <caret line="214" column="11" lean-forward="false" selection-start-line="214" selection-start-column="11" selection-end-line="214" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assignments/a2/rectangle_test.py">
+    <entry file="file://$PROJECT_DIR$/assignments/a2/game.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-113">
-          <caret line="35" column="4" lean-forward="false" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="44" />
+        <state relative-caret-position="162">
+          <caret line="114" column="0" lean-forward="true" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
           <folding />
         </state>
       </provider>
