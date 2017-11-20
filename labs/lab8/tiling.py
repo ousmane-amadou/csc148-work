@@ -164,11 +164,11 @@ def _tile_2_by_2() -> List['Domino']:
 
 
 if __name__ == '__main__':
-    import python_ta
-    python_ta.check_all(config={
-        'allowed-import-modules': ['pygame', 'random', 'typing', 'python_ta'],
-        'generated-members': 'pygame.*'
-    })
+    # import python_ta
+    # python_ta.check_all(config={
+    #     'allowed-import-modules': ['pygame', 'random', 'typing', 'python_ta'],
+    #     'generated-members': 'pygame.*'
+    # })
 
     draw_grid(5)
     input('Press Enter to exit\n')
