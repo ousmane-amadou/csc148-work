@@ -300,9 +300,8 @@ class BinarySearchTree:
         pivot._left._left = self._left
         pivot._left._right = self._right
 
-        self._root = pivot._root
-        self._left = pivot._left
-        self._right = pivot._right
+        self._root, self._left, self._right \
+            = pivot._root, pivot._left, pivot._right
 
     # ------------------------------------------------------------------------
     # Code to be profiled in Lab 9 Task 3

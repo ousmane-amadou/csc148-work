@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1eec9c6e-4093-4dfc-a5b9-605adbf12f3c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/labs/lab7/nested.py" afterPath="$PROJECT_DIR$/labs/lab7/nested.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/csc148-work.iml" afterPath="$PROJECT_DIR$/.idea/csc148-work.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/labs/lab7/rec_linked_list.py" afterPath="$PROJECT_DIR$/labs/lab7/rec_linked_list.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/labs/lab9/bst.py" afterPath="$PROJECT_DIR$/labs/lab9/bst.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,8 +19,8 @@
       <file leaf-file-name="rec_linked_list.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/labs/lab7/rec_linked_list.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="271" column="18" lean-forward="false" selection-start-line="271" selection-start-column="18" selection-end-line="271" selection-end-column="18" />
+            <state relative-caret-position="388">
+              <caret line="248" column="28" lean-forward="false" selection-start-line="248" selection-start-column="28" selection-end-line="248" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -58,7 +61,6 @@
         <option value="$PROJECT_DIR$/assignments/a1/simulation.py" />
         <option value="$PROJECT_DIR$/random/test.py" />
         <option value="$PROJECT_DIR$/labs/lab7/lab7.py" />
-        <option value="$PROJECT_DIR$/labs/lab7/rec_linked_list.py" />
         <option value="$PROJECT_DIR$/exercises/ex4/ex4_test.py" />
         <option value="$PROJECT_DIR$/exercises/ex4/ex4.py" />
         <option value="$PROJECT_DIR$/exercises/ex5/ex5.py" />
@@ -69,11 +71,12 @@
         <option value="$PROJECT_DIR$/assignments/a2/player.py" />
         <option value="$PROJECT_DIR$/assignments/a2/goal.py" />
         <option value="$PROJECT_DIR$/exercises/ex6/ex6_test.py" />
-        <option value="$PROJECT_DIR$/labs/lab9/bst.py" />
         <option value="$PROJECT_DIR$/exercises/ex6/ex6.py" />
         <option value="$PROJECT_DIR$/assignments/a2/game.py" />
         <option value="$PROJECT_DIR$/assignments/a2/block.py" />
         <option value="$PROJECT_DIR$/labs/lab7/nested.py" />
+        <option value="$PROJECT_DIR$/labs/lab9/bst.py" />
+        <option value="$PROJECT_DIR$/labs/lab7/rec_linked_list.py" />
       </list>
     </option>
   </component>
@@ -113,7 +116,7 @@
               <item name="csc148-work" type="b2602c69:ProjectViewProjectNode" />
               <item name="csc148-work" type="462c0819:PsiDirectoryNode" />
               <item name="labs" type="462c0819:PsiDirectoryNode" />
-              <item name="lab7" type="462c0819:PsiDirectoryNode" />
+              <item name="lab8" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="csc148-work" type="b2602c69:ProjectViewProjectNode" />
@@ -156,7 +159,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Doctests in nested">
+  <component name="RunManager" selected="Python tests.Doctests in rec_linked_list">
     <configuration name="Doctests in nested" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -175,20 +178,23 @@
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
     </configuration>
-    <configuration name="Nosetests in ex6_test.py" type="tests" factoryName="Nosetests" temporary="true" nameIsGenerated="true">
+    <configuration name="Doctests in rec_linked_list" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/exercises/ex6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/labs/lab7" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="csc148-work" />
-      <option name="_new_regexPattern" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/exercises/ex6/ex6_test.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/labs/lab7/rec_linked_list.py" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
     </configuration>
     <configuration name="block" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -242,19 +248,19 @@
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python tests.Nosetests in ex6_test.py" />
-      <item index="1" class="java.lang.String" itemvalue="Python.game" />
-      <item index="2" class="java.lang.String" itemvalue="Python.block" />
-      <item index="3" class="java.lang.String" itemvalue="Python.lab7" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Doctests in nested" />
+      <item index="0" class="java.lang.String" itemvalue="Python.game" />
+      <item index="1" class="java.lang.String" itemvalue="Python.block" />
+      <item index="2" class="java.lang.String" itemvalue="Python.lab7" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Doctests in nested" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Doctests in rec_linked_list" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Doctests in nested" />
-        <item index="1" class="java.lang.String" itemvalue="Python.lab7" />
-        <item index="2" class="java.lang.String" itemvalue="Python.game" />
-        <item index="3" class="java.lang.String" itemvalue="Python.block" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Nosetests in ex6_test.py" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Doctests in rec_linked_list" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Doctests in nested" />
+        <item index="2" class="java.lang.String" itemvalue="Python.lab7" />
+        <item index="3" class="java.lang.String" itemvalue="Python.game" />
+        <item index="4" class="java.lang.String" itemvalue="Python.block" />
       </list>
     </recent_temporary>
   </component>
@@ -275,45 +281,44 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Doctests_in_ex6 - 2017.11.19 at 00h 34m 57s.xml">
-      <configuration name="Doctests in ex6" configurationId="tests" />
+    <history-entry file="Doctests_in_rec_linked_list - 2017.11.20 at 16h 03m 48s.xml">
+      <configuration name="Doctests in rec_linked_list" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctests_in_nested - 2017.11.19 at 22h 27m 45s.xml">
-      <configuration name="Doctests in nested" configurationId="tests" />
+    <history-entry file="Doctests_in_rec_linked_list - 2017.11.20 at 16h 09m 51s.xml">
+      <configuration name="Doctests in rec_linked_list" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctests_in_nested - 2017.11.19 at 22h 33m 09s.xml">
-      <configuration name="Doctests in nested" configurationId="tests" />
+    <history-entry file="Doctests_in_rec_linked_list - 2017.11.20 at 16h 10m 02s.xml">
+      <configuration name="Doctests in rec_linked_list" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctests_in_nested - 2017.11.19 at 22h 33m 40s.xml">
-      <configuration name="Doctests in nested" configurationId="tests" />
+    <history-entry file="Doctests_in_rec_linked_list - 2017.11.20 at 16h 10m 40s.xml">
+      <configuration name="Doctests in rec_linked_list" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctests_in_nested - 2017.11.19 at 22h 34m 24s.xml">
-      <configuration name="Doctests in nested" configurationId="tests" />
+    <history-entry file="Doctests_in_rec_linked_list - 2017.11.20 at 16h 17m 00s.xml">
+      <configuration name="Doctests in rec_linked_list" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctests_in_nested - 2017.11.19 at 22h 38m 46s.xml">
-      <configuration name="Doctests in nested" configurationId="tests" />
+    <history-entry file="Doctests_in_rec_linked_list - 2017.11.20 at 16h 17m 29s.xml">
+      <configuration name="Doctests in rec_linked_list" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctests_in_nested - 2017.11.19 at 22h 39m 22s.xml">
-      <configuration name="Doctests in nested" configurationId="tests" />
+    <history-entry file="Doctests_in_rec_linked_list - 2017.11.20 at 16h 17m 50s.xml">
+      <configuration name="Doctests in rec_linked_list" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_in_ex6_test_py - 2017.11.19 at 00h 31m 12s.xml">
-      <configuration name="Nosetests in ex6_test.py" configurationId="tests" />
+    <history-entry file="Doctests_in_rec_linked_list - 2017.11.20 at 16h 19m 35s.xml">
+      <configuration name="Doctests in rec_linked_list" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_in_ex6_test_py - 2017.11.19 at 00h 35m 05s.xml">
-      <configuration name="Nosetests in ex6_test.py" configurationId="tests" />
+    <history-entry file="Doctests_in_rec_linked_list - 2017.11.20 at 16h 20m 03s.xml">
+      <configuration name="Doctests in rec_linked_list" configurationId="tests" />
     </history-entry>
-    <history-entry file="Nosetests_in_ex6_test_py - 2017.11.19 at 00h 58m 02s.xml">
-      <configuration name="Nosetests in ex6_test.py" configurationId="tests" />
+    <history-entry file="Doctests_in_rec_linked_list - 2017.11.20 at 16h 20m 36s.xml">
+      <configuration name="Doctests in rec_linked_list" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24313408" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24717286" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29829547" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29829547" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3068182" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -633,20 +638,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/labs/lab9/bst.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1139">
-          <caret line="301" column="0" lean-forward="true" selection-start-line="301" selection-start-column="0" selection-end-line="301" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/exercises/ex6/ex6.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
           <caret line="219" column="0" lean-forward="false" selection-start-line="219" selection-start-column="0" selection-end-line="219" selection-end-column="0" />
-          <folding>
-            <element signature="e#5046#5260#1" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -654,7 +649,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="59" column="36" lean-forward="false" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -662,7 +656,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="307">
           <caret line="78" column="37" lean-forward="true" selection-start-line="78" selection-start-column="37" selection-end-line="78" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -670,7 +663,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
           <caret line="234" column="51" lean-forward="true" selection-start-line="234" selection-start-column="51" selection-end-line="234" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -678,7 +670,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="104" column="13" lean-forward="false" selection-start-line="104" selection-start-column="13" selection-end-line="104" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -686,7 +677,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1560">
           <caret line="148" column="0" lean-forward="false" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -694,7 +684,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="248">
           <caret line="65" column="58" lean-forward="false" selection-start-line="65" selection-start-column="58" selection-end-line="65" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -702,7 +691,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="13" column="26" lean-forward="true" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -710,14 +698,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="251">
           <caret line="71" column="29" lean-forward="true" selection-start-line="71" selection-start-column="29" selection-end-line="71" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/labs/lab9/bst.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2783">
+          <caret line="303" column="12" lean-forward="false" selection-start-line="303" selection-start-column="12" selection-end-line="303" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/labs/lab7/rec_linked_list.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="271" column="18" lean-forward="false" selection-start-line="271" selection-start-column="18" selection-end-line="271" selection-end-column="18" />
+        <state relative-caret-position="388">
+          <caret line="248" column="28" lean-forward="false" selection-start-line="248" selection-start-column="28" selection-end-line="248" selection-end-column="28" />
           <folding />
         </state>
       </provider>

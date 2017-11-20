@@ -53,13 +53,13 @@ class LinkedListRec:
         """Return whether this linked list is empty.
 
         >>> lst1 = LinkedListRec([])
-        >>> lst1 = is_empty()
+        >>> lst1.is_empty()
         True
         >>> lst2 = LinkedListRec([1, 2, 3])
-        >>> lst2 = is_empty()
+        >>> lst2.is_empty()
         False
         """
-        return self._first is None
+        return (self._first is None)
 
     def __str__(self) -> str:
         """Return a string representation of this list..
@@ -197,10 +197,8 @@ class LinkedListRec:
         >>> str(lst)
         ''
         """
-        if self._rest is None:
-            raise IndexError
-
         self._first = self._rest._first
+        self._rest = self._rest._rest
 
     def insert_first(self, item: object) -> None:
         """Insert item at the front of the list.
@@ -218,8 +216,12 @@ class LinkedListRec:
         >>> str(lst)
         '1 -> 2 -> 3'
         """
-        self._rest = self
+        rest = LinkedListRec([self._first])
+        rest._rest = self._rest
+
         self._first = item
+        self._rest = rest
+
 
     def pop(self, index: int) -> None:
         """Remove node at position <index>.
@@ -243,11 +245,10 @@ class LinkedListRec:
         """
         if self._first is None:
             raise IndexError
-
-        if index == 0:
+        elif index == 0:
             self.pop_first()
         else:
-            self.pop(index-1)
+            self._rest.pop(index-1)
 
     def insert(self, index: int, item: object) -> None:
         """Insert item in to the list at position <index>.
@@ -271,7 +272,12 @@ class LinkedListRec:
         ...
         IndexError
         """
-        pass
+        if index == 0:
+            self.insert_first(item)
+        elif self._first is None:
+            raise IndexError
+        else:
+            self._rest.insert(index-1, item)
 
     # --- Additional Exercises ---
 
@@ -290,4 +296,12 @@ class LinkedListRec:
         >>> str(lst.map(len))
         '5 -> 7'
         """
-        pass
+        new_LLR = LinkedListRec([])
+
+        c = 0
+        curr = self
+        while curr._first is not None:
+            new_LLR.insert(c, f(curr._first))
+            curr = curr._rest
+            c += 1
+        return new_LLR
