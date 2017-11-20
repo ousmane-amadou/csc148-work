@@ -201,7 +201,7 @@ pre {
     <body>
         <header>
             <h1 class="title">PyTA Error Report</h1>
-            <time>Thu. Nov. 16 2017, 02:22:22 PM</time>
+            <time>Sun. Nov. 19 2017, 08:50:26 PM</time>
         </header>
         <main>
             
@@ -240,7 +240,7 @@ pre {
                                     <a href="http://www.cs.toronto.edu/~david/pyta/&#35;C0301" target="_blank">&#10064; C0301 (line-too-long)</a>
                                 </span>
                                 <span class="occurrences">
-                                3 occurrences.
+                                5 occurrences.
                                 </span>
                                 <span class="slider">
                                    <button> Expand/Collapse </button>
@@ -251,28 +251,139 @@ pre {
                                 
                                 <div class="message">
                                     <h4 class="message-name">
-                                        [Line 131] Line too long (81/80)
+                                        [Line 132] Line too long (81/80)
                                     </h4>
                                     
-                                    <pre>&nbsp;&nbsp;<span class="grey">129</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">if&nbsp;self.children&nbsp;is&nbsp;None:</span><br/>&nbsp;&nbsp;<span class="grey">130</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">to_draw&nbsp;+=&nbsp;[(self.colour,&nbsp;self.position,&nbsp;(self.size,&nbsp;self.size),&nbsp;0)]</span><br/>&nbsp;&nbsp;<span class="gbold">131</span>&nbsp;&nbsp;<span class="black"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight">to_draw&nbsp;+=&nbsp;[(FRAME_COLOUR,&nbsp;self.position,&nbsp;(self.size,&nbsp;self.size),&nbsp;3)]</span><span class="black"></span><br/>&nbsp;&nbsp;<span class="grey">132</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">else:</span><br/>&nbsp;&nbsp;<span class="grey">133</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">for&nbsp;i&nbsp;in&nbsp;range(len(self.children)):</span><br/></pre>
+                                    <pre>&nbsp;&nbsp;<span class="grey">130</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">print(self.colour,&nbsp;"p")</span><br/>&nbsp;&nbsp;<span class="grey">131</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">to_draw&nbsp;+=&nbsp;[(self.colour,&nbsp;self.position,&nbsp;(self.size,&nbsp;self.size),&nbsp;0)]</span><br/>&nbsp;&nbsp;<span class="gbold">132</span>&nbsp;&nbsp;<span class="black"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight">to_draw&nbsp;+=&nbsp;[(FRAME_COLOUR,&nbsp;self.position,&nbsp;(self.size,&nbsp;self.size),&nbsp;3)]</span><span class="black"></span><br/>&nbsp;&nbsp;<span class="grey">133</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">else:</span><br/>&nbsp;&nbsp;<span class="grey">134</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">for&nbsp;i&nbsp;in&nbsp;range(len(self.children)):</span><br/></pre>
                                     
                                 </div>
                                 
                                 <div class="message">
                                     <h4 class="message-name">
-                                        [Line 137] Line too long (85/80)
+                                        [Line 138] Line too long (85/80)
                                     </h4>
                                     
-                                    <pre>&nbsp;&nbsp;<span class="grey">135</span>&nbsp;&nbsp;<span class="grey"></span><br/>&nbsp;&nbsp;<span class="grey">136</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">if&nbsp;self.highlighted:</span><br/>&nbsp;&nbsp;<span class="gbold">137</span>&nbsp;&nbsp;<span class="black"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight">to_draw&nbsp;+=&nbsp;[(HIGHLIGHT_COLOUR,&nbsp;self.position,&nbsp;(self.size,&nbsp;self.size),&nbsp;5)]</span><span class="black"></span><br/>&nbsp;&nbsp;<span class="grey">138</span>&nbsp;&nbsp;<span class="grey"></span><br/>&nbsp;&nbsp;<span class="grey">139</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">return&nbsp;to_draw</span><br/></pre>
+                                    <pre>&nbsp;&nbsp;<span class="grey">136</span>&nbsp;&nbsp;<span class="grey"></span><br/>&nbsp;&nbsp;<span class="grey">137</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">if&nbsp;self.highlighted:</span><br/>&nbsp;&nbsp;<span class="gbold">138</span>&nbsp;&nbsp;<span class="black"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight">to_draw&nbsp;+=&nbsp;[(HIGHLIGHT_COLOUR,&nbsp;self.position,&nbsp;(self.size,&nbsp;self.size),&nbsp;5)]</span><span class="black"></span><br/>&nbsp;&nbsp;<span class="grey">139</span>&nbsp;&nbsp;<span class="grey"></span><br/>&nbsp;&nbsp;<span class="grey">140</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">return&nbsp;to_draw</span><br/></pre>
                                     
                                 </div>
                                 
                                 <div class="message">
                                     <h4 class="message-name">
-                                        [Line 248] Line too long (93/80)
+                                        [Line 192] Line too long (110/80)
                                     </h4>
                                     
-                                    <pre>&nbsp;&nbsp;<span class="grey">246</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">if&nbsp;level&nbsp;!=&nbsp;max_depth:&nbsp;##&nbsp;subdivide</span><br/>&nbsp;&nbsp;<span class="grey">247</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">if&nbsp;random.random()&nbsp;<=&nbsp;math.exp(-0.25&nbsp;*&nbsp;level):</span><br/>&nbsp;&nbsp;<span class="gbold">248</span>&nbsp;&nbsp;<span class="black"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight">return&nbsp;Block(level,&nbsp;children=[random_init(level+1,&nbsp;max_depth)&nbsp;for&nbsp;i&nbsp;in&nbsp;range(4)])</span><span class="black"></span><br/>&nbsp;&nbsp;<span class="grey">249</span>&nbsp;&nbsp;<span class="grey"></span><br/>&nbsp;&nbsp;<span class="grey">250</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">##&nbsp;or&nbsp;not&nbsp;to&nbsp;subdivide</span><br/></pre>
+                                    <pre>&nbsp;&nbsp;<span class="grey">190</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">child.size&nbsp;=&nbsp;round(size&nbsp;/&nbsp;2.0)</span><br/>&nbsp;&nbsp;<span class="grey">191</span>&nbsp;&nbsp;<span class="grey"></span><br/>&nbsp;&nbsp;<span class="gbold">192</span>&nbsp;&nbsp;<span class="black"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight">child_x&nbsp;=&nbsp;top_left[0]&nbsp;+&nbsp;((i==0)&nbsp;|&nbsp;(i==3))&nbsp;*&nbsp;child.size&nbsp;&nbsp;#&nbsp;Adds&nbsp;x&nbsp;for&nbsp;upper-right,&nbsp;bottom-right</span><span class="black"></span><br/>&nbsp;&nbsp;<span class="grey">193</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">child_y&nbsp;=&nbsp;top_left[1]&nbsp;+&nbsp;((i==2)&nbsp;|&nbsp;(i==3))&nbsp;*&nbsp;child.size&nbsp;&nbsp;#&nbsp;Adds&nbsp;y&nbsp;for&nbsp;bottom-left,&nbsp;bottom-right</span><br/>&nbsp;&nbsp;<span class="grey">194</span>&nbsp;&nbsp;<span class="grey"></span><br/></pre>
+                                    
+                                </div>
+                                
+                                <div class="message">
+                                    <h4 class="message-name">
+                                        [Line 193] Line too long (110/80)
+                                    </h4>
+                                    
+                                    <pre>&nbsp;&nbsp;<span class="grey">191</span>&nbsp;&nbsp;<span class="grey"></span><br/>&nbsp;&nbsp;<span class="grey">192</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">child_x&nbsp;=&nbsp;top_left[0]&nbsp;+&nbsp;((i==0)&nbsp;|&nbsp;(i==3))&nbsp;*&nbsp;child.size&nbsp;&nbsp;#&nbsp;Adds&nbsp;x&nbsp;for&nbsp;upper-right,&nbsp;bottom-right</span><br/>&nbsp;&nbsp;<span class="gbold">193</span>&nbsp;&nbsp;<span class="black"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight">child_y&nbsp;=&nbsp;top_left[1]&nbsp;+&nbsp;((i==2)&nbsp;|&nbsp;(i==3))&nbsp;*&nbsp;child.size&nbsp;&nbsp;#&nbsp;Adds&nbsp;y&nbsp;for&nbsp;bottom-left,&nbsp;bottom-right</span><span class="black"></span><br/>&nbsp;&nbsp;<span class="grey">194</span>&nbsp;&nbsp;<span class="grey"></span><br/>&nbsp;&nbsp;<span class="grey">195</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">child.position&nbsp;=&nbsp;(child_x,&nbsp;child_y)</span><br/></pre>
+                                    
+                                </div>
+                                
+                                <div class="message">
+                                    <h4 class="message-name">
+                                        [Line 268] Line too long (93/80)
+                                    </h4>
+                                    
+                                    <pre>&nbsp;&nbsp;<span class="grey">266</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">if&nbsp;level&nbsp;<=&nbsp;max_depth:&nbsp;##&nbsp;subdivide</span><br/>&nbsp;&nbsp;<span class="grey">267</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">if&nbsp;random.random()&nbsp;<=&nbsp;math.exp(-0.25&nbsp;*&nbsp;level):</span><br/>&nbsp;&nbsp;<span class="gbold">268</span>&nbsp;&nbsp;<span class="black"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight">return&nbsp;Block(level,&nbsp;children=[random_init(level+1,&nbsp;max_depth)&nbsp;for&nbsp;i&nbsp;in&nbsp;range(4)])</span><span class="black"></span><br/>&nbsp;&nbsp;<span class="grey">269</span>&nbsp;&nbsp;<span class="grey"></span><br/>&nbsp;&nbsp;<span class="grey">270</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">##&nbsp;or&nbsp;not&nbsp;to&nbsp;subdivide</span><br/></pre>
+                                    
+                                </div>
+                                
+                            </div>
+
+                        </div>
+                        
+                        <div class="error-instance">
+
+                            <div class="info">
+                                <span class="error-link style-error-id">
+                                    <a href="http://www.cs.toronto.edu/~david/pyta/&#35;C0326" target="_blank">&#10064; C0326 (bad-whitespace)</a>
+                                </span>
+                                <span class="occurrences">
+                                4 occurrences.
+                                </span>
+                                <span class="slider">
+                                   <button> Expand/Collapse </button>
+                                </span>
+                            </div>
+
+                            <div class="message-container collapsible">
+                                
+                                <div class="message">
+                                    <h4 class="message-name">
+                                        [Line 192] Exactly one space required around comparison
+                child_x = top_left[0] + ((i==0) | (i==3)) * child.size  # Adds x for upper-right, bottom-right
+                                           ^^
+                                    </h4>
+                                    
+                                    <pre>&nbsp;&nbsp;<span class="grey">190</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">child.size&nbsp;=&nbsp;round(size&nbsp;/&nbsp;2.0)</span><br/>&nbsp;&nbsp;<span class="grey">191</span>&nbsp;&nbsp;<span class="grey"></span><br/>&nbsp;&nbsp;<span class="gbold">192</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="black">child_x&nbsp;=&nbsp;top_left[0]&nbsp;+&nbsp;((i</span><span class="highlight">=</span><span class="black">=0)&nbsp;|&nbsp;(i==3))&nbsp;*&nbsp;child.size&nbsp;&nbsp;#&nbsp;Adds&nbsp;x&nbsp;for&nbsp;upper-right,&nbsp;bottom-right</span><br/>&nbsp;&nbsp;<span class="grey">193</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">child_y&nbsp;=&nbsp;top_left[1]&nbsp;+&nbsp;((i==2)&nbsp;|&nbsp;(i==3))&nbsp;*&nbsp;child.size&nbsp;&nbsp;#&nbsp;Adds&nbsp;y&nbsp;for&nbsp;bottom-left,&nbsp;bottom-right</span><br/>&nbsp;&nbsp;<span class="grey">194</span>&nbsp;&nbsp;<span class="grey"></span><br/></pre>
+                                    
+                                </div>
+                                
+                                <div class="message">
+                                    <h4 class="message-name">
+                                        [Line 192] Exactly one space required around comparison
+                child_x = top_left[0] + ((i==0) | (i==3)) * child.size  # Adds x for upper-right, bottom-right
+                                                    ^^
+                                    </h4>
+                                    
+                                    <pre>&nbsp;&nbsp;<span class="grey">190</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">child.size&nbsp;=&nbsp;round(size&nbsp;/&nbsp;2.0)</span><br/>&nbsp;&nbsp;<span class="grey">191</span>&nbsp;&nbsp;<span class="grey"></span><br/>&nbsp;&nbsp;<span class="gbold">192</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="black">child_x&nbsp;=&nbsp;top_left[0]&nbsp;+&nbsp;((i==0)&nbsp;|&nbsp;(i</span><span class="highlight">=</span><span class="black">=3))&nbsp;*&nbsp;child.size&nbsp;&nbsp;#&nbsp;Adds&nbsp;x&nbsp;for&nbsp;upper-right,&nbsp;bottom-right</span><br/>&nbsp;&nbsp;<span class="grey">193</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">child_y&nbsp;=&nbsp;top_left[1]&nbsp;+&nbsp;((i==2)&nbsp;|&nbsp;(i==3))&nbsp;*&nbsp;child.size&nbsp;&nbsp;#&nbsp;Adds&nbsp;y&nbsp;for&nbsp;bottom-left,&nbsp;bottom-right</span><br/>&nbsp;&nbsp;<span class="grey">194</span>&nbsp;&nbsp;<span class="grey"></span><br/></pre>
+                                    
+                                </div>
+                                
+                                <div class="message">
+                                    <h4 class="message-name">
+                                        [Line 193] Exactly one space required around comparison
+                child_y = top_left[1] + ((i==2) | (i==3)) * child.size  # Adds y for bottom-left, bottom-right
+                                           ^^
+                                    </h4>
+                                    
+                                    <pre>&nbsp;&nbsp;<span class="grey">191</span>&nbsp;&nbsp;<span class="grey"></span><br/>&nbsp;&nbsp;<span class="grey">192</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">child_x&nbsp;=&nbsp;top_left[0]&nbsp;+&nbsp;((i==0)&nbsp;|&nbsp;(i==3))&nbsp;*&nbsp;child.size&nbsp;&nbsp;#&nbsp;Adds&nbsp;x&nbsp;for&nbsp;upper-right,&nbsp;bottom-right</span><br/>&nbsp;&nbsp;<span class="gbold">193</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="black">child_y&nbsp;=&nbsp;top_left[1]&nbsp;+&nbsp;((i</span><span class="highlight">=</span><span class="black">=2)&nbsp;|&nbsp;(i==3))&nbsp;*&nbsp;child.size&nbsp;&nbsp;#&nbsp;Adds&nbsp;y&nbsp;for&nbsp;bottom-left,&nbsp;bottom-right</span><br/>&nbsp;&nbsp;<span class="grey">194</span>&nbsp;&nbsp;<span class="grey"></span><br/>&nbsp;&nbsp;<span class="grey">195</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">child.position&nbsp;=&nbsp;(child_x,&nbsp;child_y)</span><br/></pre>
+                                    
+                                </div>
+                                
+                                <div class="message">
+                                    <h4 class="message-name">
+                                        [Line 193] Exactly one space required around comparison
+                child_y = top_left[1] + ((i==2) | (i==3)) * child.size  # Adds y for bottom-left, bottom-right
+                                                    ^^
+                                    </h4>
+                                    
+                                    <pre>&nbsp;&nbsp;<span class="grey">191</span>&nbsp;&nbsp;<span class="grey"></span><br/>&nbsp;&nbsp;<span class="grey">192</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">child_x&nbsp;=&nbsp;top_left[0]&nbsp;+&nbsp;((i==0)&nbsp;|&nbsp;(i==3))&nbsp;*&nbsp;child.size&nbsp;&nbsp;#&nbsp;Adds&nbsp;x&nbsp;for&nbsp;upper-right,&nbsp;bottom-right</span><br/>&nbsp;&nbsp;<span class="gbold">193</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="black">child_y&nbsp;=&nbsp;top_left[1]&nbsp;+&nbsp;((i==2)&nbsp;|&nbsp;(i</span><span class="highlight">=</span><span class="black">=3))&nbsp;*&nbsp;child.size&nbsp;&nbsp;#&nbsp;Adds&nbsp;y&nbsp;for&nbsp;bottom-left,&nbsp;bottom-right</span><br/>&nbsp;&nbsp;<span class="grey">194</span>&nbsp;&nbsp;<span class="grey"></span><br/>&nbsp;&nbsp;<span class="grey">195</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">child.position&nbsp;=&nbsp;(child_x,&nbsp;child_y)</span><br/></pre>
+                                    
+                                </div>
+                                
+                            </div>
+
+                        </div>
+                        
+                        <div class="error-instance">
+
+                            <div class="info">
+                                <span class="error-link style-error-id">
+                                    <a href="http://www.cs.toronto.edu/~david/pyta/&#35;E9998" target="_blank">&#10064; E9998 (IO-function-not-allowed)</a>
+                                </span>
+                                <span class="occurrences">
+                                1 occurrences.
+                                </span>
+                                <span class="slider">
+                                   <button> Expand/Collapse </button>
+                                </span>
+                            </div>
+
+                            <div class="message-container collapsible">
+                                
+                                <div class="message">
+                                    <h4 class="message-name">
+                                        [Line 130] Used IO function print
+                                    </h4>
+                                    
+                                    <pre>&nbsp;&nbsp;<span class="grey">128</span>&nbsp;&nbsp;<span class="grey"></span><br/>&nbsp;&nbsp;<span class="grey">129</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">if&nbsp;self.children&nbsp;is&nbsp;None:</span><br/>&nbsp;&nbsp;<span class="gbold">130</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="black"></span><span class="highlight">print(self.colour,&nbsp;"p")</span><span class="black"></span><br/>&nbsp;&nbsp;<span class="grey">131</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">to_draw&nbsp;+=&nbsp;[(self.colour,&nbsp;self.position,&nbsp;(self.size,&nbsp;self.size),&nbsp;0)]</span><br/>&nbsp;&nbsp;<span class="grey">132</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">to_draw&nbsp;+=&nbsp;[(FRAME_COLOUR,&nbsp;self.position,&nbsp;(self.size,&nbsp;self.size),&nbsp;3)]</span><br/></pre>
                                     
                                 </div>
                                 

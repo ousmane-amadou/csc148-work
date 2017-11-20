@@ -68,7 +68,6 @@ class Game:
             else:
                 self.players.append(SmartPlayer(self.renderer, i, goal))
             self.renderer.display_goal(self.players[i])
-
         self.renderer.draw(self.board, 0)
 
     def run_game(self, num_turns: int) -> None:
@@ -161,6 +160,6 @@ if __name__ == '__main__':
     #     ],
     # })
     # sample_game()
-    auto_game()
-    # two_player_game()
+    # auto_game()
+    two_player_game()
     # solitaire_game()
