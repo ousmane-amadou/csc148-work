@@ -33,9 +33,12 @@ def draw_grid(n: int) -> None:
     Precondition: n >= 1
     """
     # Initialize a pygame screen filled in black.
+
     pygame.init()
-    screen = pygame.display.set_mode((2**n * SQUARE_SIZE, 2**n * SQUARE_SIZE))
+    screen = pygame.display.set_mode((2 ** n * SQUARE_SIZE, 2 ** n * SQUARE_SIZE))
     screen.fill(BLACK)
+
+    done = False
 
     # Draw white gridlines in the screen.
     for i in range(2 ** n):
@@ -47,14 +50,20 @@ def draw_grid(n: int) -> None:
                     SQUARE_SIZE, SQUARE_SIZE)
             pygame.draw.rect(screen, WHITE, rect, 1)
 
-    # Uncomment the following part after you've implemented tile_with_dominoes
-    tiling = tile_with_dominoes(n)
-    for domino in tiling:
-        print(domino.position)
-        domino.draw(screen)
+            # Uncomment the following part after you've implemented tile_with_dominoes
+            tiling = tile_with_dominoes(n)
+            for domino in tiling:
+                domino.draw(screen)
 
-    # Display the screen to the user.
     pygame.display.flip()
+
+    while not done:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                done = True
+
+
+        # Display the screen to the user.
 
 
 class Domino:
@@ -118,7 +127,6 @@ class Domino:
                           (max(y_coords) - min(y_coords) + 1) * SQUARE_SIZE))
 
 
-# TODO: implement this function!
 def tile_with_dominoes(n: int) -> List['Domino']:
     """Return a random tiling of a 2^n by 2^n grid by dominoes.
 
@@ -135,7 +143,6 @@ def tile_with_dominoes(n: int) -> List['Domino']:
     if n == 1:
         return _tile_2_by_2()
     else:
-        # TODO (1)
         # Compute four different tilings of a 2^(n-1) by 2^(n-1) grid,
         # for the four different quadrants.
         upper_left_tiling = tile_with_dominoes(n-1)
@@ -143,19 +150,6 @@ def tile_with_dominoes(n: int) -> List['Domino']:
         lower_left_tiling = tile_with_dominoes(n-1)
         lower_right_tiling = tile_with_dominoes(n-1)
 
-        for t in upper_right_tiling:
-            t.add_offset(2, 0)
-
-        for t in lower_left_tiling:
-            t.add_offset(0, 2)
-
-        for t in lower_right_tiling:
-            t.add_offset(2, 2)
-
-        return upper_right_tiling + upper_left_tiling + \
-               lower_left_tiling + lower_right_tiling
-
-        # TODO (2)
         # Each tiling will have square coordinates between 0 and 2^(n-1),
         # but these coordinates are only good for the *upper-left* quadrant.
         # Add an offset to the upper-right, lower-left, and lower-right tilings
@@ -163,8 +157,22 @@ def tile_with_dominoes(n: int) -> List['Domino']:
         #
         # Remember that the positions here do *not* depend on SQUARE_SIZE.
 
-        # TODO (3)
+        for t in upper_right_tiling:
+            t.add_offset(2**(n-1), 0)
+
+        for t in lower_left_tiling:
+            t.add_offset(0, 2 ** (n-1))
+
+        for t in lower_right_tiling:
+            t.add_offset(2 ** (n-1), 2 ** (n-1))
+
         # Return the combined tiling for all four quadrants.
+
+        return upper_right_tiling + upper_left_tiling + \
+               lower_left_tiling + lower_right_tiling
+
+
+
 
 
 def _tile_2_by_2() -> List['Domino']:
@@ -175,9 +183,9 @@ def _tile_2_by_2() -> List['Domino']:
     # Remember that the positions here do *not* depend on SQUARE_SIZE.
     choice = round(random.random())
     if choice == 0:
-        return [Domino((0, 0), (0, 1))]
+        return [Domino((0, 0), (0, 1)), Domino((1, 0), (1, 1))]
     else:
-        return [Domino((0, 0), (1, 0))]
+        return [Domino((0, 0), (1, 0)), Domino((0, 1), (1, 1))]
 
 if __name__ == '__main__':
     # import python_ta
@@ -186,5 +194,4 @@ if __name__ == '__main__':
     #     'generated-members': 'pygame.*'
     # })
 
-    draw_grid(2)
-    input('Press Enter to exit\n')
+    draw_grid(5)
