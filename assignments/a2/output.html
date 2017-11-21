@@ -201,7 +201,7 @@ pre {
     <body>
         <header>
             <h1 class="title">PyTA Error Report</h1>
-            <time>Sun. Nov. 19 2017, 08:50:26 PM</time>
+            <time>Tue. Nov. 21 2017, 02:52:56 PM</time>
         </header>
         <main>
             
@@ -240,7 +240,7 @@ pre {
                                     <a href="http://www.cs.toronto.edu/~david/pyta/&#35;C0301" target="_blank">&#10064; C0301 (line-too-long)</a>
                                 </span>
                                 <span class="occurrences">
-                                5 occurrences.
+                                9 occurrences.
                                 </span>
                                 <span class="slider">
                                    <button> Expand/Collapse </button>
@@ -251,19 +251,19 @@ pre {
                                 
                                 <div class="message">
                                     <h4 class="message-name">
-                                        [Line 132] Line too long (81/80)
+                                        [Line 131] Line too long (81/80)
                                     </h4>
                                     
-                                    <pre>&nbsp;&nbsp;<span class="grey">130</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">print(self.colour,&nbsp;"p")</span><br/>&nbsp;&nbsp;<span class="grey">131</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">to_draw&nbsp;+=&nbsp;[(self.colour,&nbsp;self.position,&nbsp;(self.size,&nbsp;self.size),&nbsp;0)]</span><br/>&nbsp;&nbsp;<span class="gbold">132</span>&nbsp;&nbsp;<span class="black"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight">to_draw&nbsp;+=&nbsp;[(FRAME_COLOUR,&nbsp;self.position,&nbsp;(self.size,&nbsp;self.size),&nbsp;3)]</span><span class="black"></span><br/>&nbsp;&nbsp;<span class="grey">133</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">else:</span><br/>&nbsp;&nbsp;<span class="grey">134</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">for&nbsp;i&nbsp;in&nbsp;range(len(self.children)):</span><br/></pre>
+                                    <pre>&nbsp;&nbsp;<span class="grey">129</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">if&nbsp;self.children&nbsp;==&nbsp;[]:</span><br/>&nbsp;&nbsp;<span class="grey">130</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">to_draw&nbsp;+=&nbsp;[(self.colour,&nbsp;self.position,&nbsp;(self.size,&nbsp;self.size),&nbsp;0)]</span><br/>&nbsp;&nbsp;<span class="gbold">131</span>&nbsp;&nbsp;<span class="black"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight">to_draw&nbsp;+=&nbsp;[(FRAME_COLOUR,&nbsp;self.position,&nbsp;(self.size,&nbsp;self.size),&nbsp;3)]</span><span class="black"></span><br/>&nbsp;&nbsp;<span class="grey">132</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">else:</span><br/>&nbsp;&nbsp;<span class="grey">133</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">for&nbsp;i&nbsp;in&nbsp;range(len(self.children)):</span><br/></pre>
                                     
                                 </div>
                                 
                                 <div class="message">
                                     <h4 class="message-name">
-                                        [Line 138] Line too long (85/80)
+                                        [Line 137] Line too long (85/80)
                                     </h4>
                                     
-                                    <pre>&nbsp;&nbsp;<span class="grey">136</span>&nbsp;&nbsp;<span class="grey"></span><br/>&nbsp;&nbsp;<span class="grey">137</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">if&nbsp;self.highlighted:</span><br/>&nbsp;&nbsp;<span class="gbold">138</span>&nbsp;&nbsp;<span class="black"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight">to_draw&nbsp;+=&nbsp;[(HIGHLIGHT_COLOUR,&nbsp;self.position,&nbsp;(self.size,&nbsp;self.size),&nbsp;5)]</span><span class="black"></span><br/>&nbsp;&nbsp;<span class="grey">139</span>&nbsp;&nbsp;<span class="grey"></span><br/>&nbsp;&nbsp;<span class="grey">140</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">return&nbsp;to_draw</span><br/></pre>
+                                    <pre>&nbsp;&nbsp;<span class="grey">135</span>&nbsp;&nbsp;<span class="grey"></span><br/>&nbsp;&nbsp;<span class="grey">136</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">if&nbsp;self.highlighted:</span><br/>&nbsp;&nbsp;<span class="gbold">137</span>&nbsp;&nbsp;<span class="black"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight">to_draw&nbsp;+=&nbsp;[(HIGHLIGHT_COLOUR,&nbsp;self.position,&nbsp;(self.size,&nbsp;self.size),&nbsp;5)]</span><span class="black"></span><br/>&nbsp;&nbsp;<span class="grey">138</span>&nbsp;&nbsp;<span class="grey"></span><br/>&nbsp;&nbsp;<span class="grey">139</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">return&nbsp;to_draw</span><br/></pre>
                                     
                                 </div>
                                 
@@ -287,10 +287,54 @@ pre {
                                 
                                 <div class="message">
                                     <h4 class="message-name">
-                                        [Line 268] Line too long (93/80)
+                                        [Line 226] Line too long (82/80)
                                     </h4>
                                     
-                                    <pre>&nbsp;&nbsp;<span class="grey">266</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">if&nbsp;level&nbsp;<=&nbsp;max_depth:&nbsp;##&nbsp;subdivide</span><br/>&nbsp;&nbsp;<span class="grey">267</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">if&nbsp;random.random()&nbsp;<=&nbsp;math.exp(-0.25&nbsp;*&nbsp;level):</span><br/>&nbsp;&nbsp;<span class="gbold">268</span>&nbsp;&nbsp;<span class="black"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight">return&nbsp;Block(level,&nbsp;children=[random_init(level+1,&nbsp;max_depth)&nbsp;for&nbsp;i&nbsp;in&nbsp;range(4)])</span><span class="black"></span><br/>&nbsp;&nbsp;<span class="grey">269</span>&nbsp;&nbsp;<span class="grey"></span><br/>&nbsp;&nbsp;<span class="grey">270</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">##&nbsp;or&nbsp;not&nbsp;to&nbsp;subdivide</span><br/></pre>
+                                    <pre>&nbsp;&nbsp;<span class="grey">224</span>&nbsp;&nbsp;<span class="grey"></span><br/>&nbsp;&nbsp;<span class="grey">225</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">selected_child&nbsp;=&nbsp;0</span><br/>&nbsp;&nbsp;<span class="gbold">226</span>&nbsp;&nbsp;<span class="black"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight">left_child&nbsp;=&nbsp;location[0]&nbsp;<&nbsp;(self.position[0]&nbsp;+&nbsp;round(self.size&nbsp;/&nbsp;2.0))</span><span class="black"></span><br/>&nbsp;&nbsp;<span class="grey">227</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">upper_child&nbsp;=&nbsp;location[1]&nbsp;<&nbsp;(self.position[1]&nbsp;+&nbsp;round(self.size&nbsp;/&nbsp;2.0))</span><br/>&nbsp;&nbsp;<span class="grey">228</span>&nbsp;&nbsp;<span class="grey"></span><br/></pre>
+                                    
+                                </div>
+                                
+                                <div class="message">
+                                    <h4 class="message-name">
+                                        [Line 227] Line too long (83/80)
+                                    </h4>
+                                    
+                                    <span class="empty-placeholder">Nothing here.
+
+</span>
+                                    
+                                </div>
+                                
+                                <div class="message">
+                                    <h4 class="message-name">
+                                        [Line 236] Line too long (112/80)
+                                    </h4>
+                                    
+                                    <span class="empty-placeholder">Nothing here.
+
+</span>
+                                    
+                                </div>
+                                
+                                <div class="message">
+                                    <h4 class="message-name">
+                                        [Line 237] Line too long (86/80)
+                                    </h4>
+                                    
+                                    <span class="empty-placeholder">Nothing here.
+
+</span>
+                                    
+                                </div>
+                                
+                                <div class="message">
+                                    <h4 class="message-name">
+                                        [Line 271] Line too long (93/80)
+                                    </h4>
+                                    
+                                    <span class="empty-placeholder">Nothing here.
+
+</span>
                                     
                                 </div>
                                 
@@ -369,7 +413,7 @@ pre {
                                     <a href="http://www.cs.toronto.edu/~david/pyta/&#35;E9998" target="_blank">&#10064; E9998 (IO-function-not-allowed)</a>
                                 </span>
                                 <span class="occurrences">
-                                1 occurrences.
+                                2 occurrences.
                                 </span>
                                 <span class="slider">
                                    <button> Expand/Collapse </button>
@@ -380,10 +424,19 @@ pre {
                                 
                                 <div class="message">
                                     <h4 class="message-name">
-                                        [Line 130] Used IO function print
+                                        [Line 221] Used IO function print
                                     </h4>
                                     
-                                    <pre>&nbsp;&nbsp;<span class="grey">128</span>&nbsp;&nbsp;<span class="grey"></span><br/>&nbsp;&nbsp;<span class="grey">129</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">if&nbsp;self.children&nbsp;is&nbsp;None:</span><br/>&nbsp;&nbsp;<span class="gbold">130</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="black"></span><span class="highlight">print(self.colour,&nbsp;"p")</span><span class="black"></span><br/>&nbsp;&nbsp;<span class="grey">131</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">to_draw&nbsp;+=&nbsp;[(self.colour,&nbsp;self.position,&nbsp;(self.size,&nbsp;self.size),&nbsp;0)]</span><br/>&nbsp;&nbsp;<span class="grey">132</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">to_draw&nbsp;+=&nbsp;[(FRAME_COLOUR,&nbsp;self.position,&nbsp;(self.size,&nbsp;self.size),&nbsp;3)]</span><br/></pre>
+                                    <pre>&nbsp;&nbsp;<span class="grey">219</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">return&nbsp;self</span><br/>&nbsp;&nbsp;<span class="grey">220</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">elif&nbsp;level&nbsp;==&nbsp;0:</span><br/>&nbsp;&nbsp;<span class="gbold">221</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="black"></span><span class="highlight">print(self.position,&nbsp;location)</span><span class="black"></span><br/>&nbsp;&nbsp;<span class="grey">222</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">return&nbsp;self</span><br/>&nbsp;&nbsp;<span class="grey">223</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">else:</span><br/></pre>
+                                    
+                                </div>
+                                
+                                <div class="message">
+                                    <h4 class="message-name">
+                                        [Line 236] Used IO function print
+                                    </h4>
+                                    
+                                    <pre>&nbsp;&nbsp;<span class="grey">234</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">selected_child&nbsp;=&nbsp;3</span><br/>&nbsp;&nbsp;<span class="grey">235</span>&nbsp;&nbsp;<span class="grey"></span><br/>&nbsp;&nbsp;<span class="gbold">236</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="black"></span><span class="highlight">print(self.position,&nbsp;self.size,&nbsp;self.level,&nbsp;level,&nbsp;location,&nbsp;self.children[selected_child].position)</span><span class="black"></span><br/>&nbsp;&nbsp;<span class="grey">237</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">return&nbsp;self.children[selected_child].get_selected_block(location,&nbsp;level-1)</span><br/>&nbsp;&nbsp;<span class="grey">238</span>&nbsp;&nbsp;<span class="grey"></span><br/></pre>
                                     
                                 </div>
                                 

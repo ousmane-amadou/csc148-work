@@ -184,6 +184,7 @@ class Block:
         if self.children == []:
             self.max_depth = self.level
         else:
+            self.size = size
             for i in range(len(self.children)):
                 child = self.children[i]
                 child.size = round(size / 2.0)
@@ -214,13 +215,16 @@ class Block:
         Preconditions:
         - 0 <= level <= max_depth
         """
-
         if self.children == []:
             return self
+        elif level == 0:
+            print(self.position, location)
+            return self
         else:
+
             selected_child = 0
-            left_child = (location[0] - self.position[0]) < 0
-            upper_child = (location[1] - self.position[1]) < 0
+            left_child = location[0] < (self.position[0] + round(self.size / 2.0))
+            upper_child = location[1] < (self.position[1] + round(self.size / 2.0))
 
             if left_child and upper_child:
                 selected_child = 1
@@ -229,10 +233,8 @@ class Block:
             elif not upper_child and not left_child:
                 selected_child = 3
 
-            if self.level == level:
-                return self.children[selected_child]
-            else:
-                return self.children[selected_child].get_selected_block(location, level)
+            # print(self.position, self.size, self.level, level, location, self.children[selected_child].position)
+            return self.children[selected_child].get_selected_block(location, level-1)
 
 
     def flatten(self) -> List[List[Tuple[int, int, int]]]:
