@@ -48,9 +48,10 @@ def draw_grid(n: int) -> None:
             pygame.draw.rect(screen, WHITE, rect, 1)
 
     # Uncomment the following part after you've implemented tile_with_dominoes
-    # tiling = tile_with_dominoes(n)
-    # for domino in tiling:
-    #     domino.draw(screen)
+    tiling = tile_with_dominoes(n)
+    for domino in tiling:
+        print(domino.position)
+        domino.draw(screen)
 
     # Display the screen to the user.
     pygame.display.flip()
@@ -137,10 +138,22 @@ def tile_with_dominoes(n: int) -> List['Domino']:
         # TODO (1)
         # Compute four different tilings of a 2^(n-1) by 2^(n-1) grid,
         # for the four different quadrants.
-        upper_left_tiling = []
-        upper_right_tiling = []
-        lower_left_tiling = []
-        lower_right_tiling = []
+        upper_left_tiling = tile_with_dominoes(n-1)
+        upper_right_tiling = tile_with_dominoes(n-1)
+        lower_left_tiling = tile_with_dominoes(n-1)
+        lower_right_tiling = tile_with_dominoes(n-1)
+
+        for t in upper_right_tiling:
+            t.add_offset(2, 0)
+
+        for t in lower_left_tiling:
+            t.add_offset(0, 2)
+
+        for t in lower_right_tiling:
+            t.add_offset(2, 2)
+
+        return upper_right_tiling + upper_left_tiling + \
+               lower_left_tiling + lower_right_tiling
 
         # TODO (2)
         # Each tiling will have square coordinates between 0 and 2^(n-1),
@@ -160,8 +173,11 @@ def _tile_2_by_2() -> List['Domino']:
     Randomly choose between tiling the grid vertically or horizontally.
     """
     # Remember that the positions here do *not* depend on SQUARE_SIZE.
-    pass
-
+    choice = round(random.random())
+    if choice == 0:
+        return [Domino((0, 0), (0, 1))]
+    else:
+        return [Domino((0, 0), (1, 0))]
 
 if __name__ == '__main__':
     # import python_ta
@@ -170,5 +186,5 @@ if __name__ == '__main__':
     #     'generated-members': 'pygame.*'
     # })
 
-    draw_grid(5)
+    draw_grid(2)
     input('Press Enter to exit\n')
