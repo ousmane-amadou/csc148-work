@@ -68,7 +68,6 @@ class Game:
             else:
                 self.players.append(SmartPlayer(self.renderer, i, goal))
             self.renderer.display_goal(self.players[i])
-
         self.renderer.draw(self.board, 0)
 
     def run_game(self, num_turns: int) -> None:
@@ -113,6 +112,7 @@ class Game:
                   f'goal = \n\t{player.goal.description()}: ' +
                   f'{colour_name(player.goal.colour)}')
 
+<<<<<<< HEAD
 # === Helper Functions === 
 
 <<<<<<< HEAD
@@ -130,6 +130,12 @@ def generate_random_goal(type: int) -> 'Goal':
         return BlobGoal()
     return PerimeterGoal()
 >>>>>>> 82ff63da0ff1717f1145642a126fb55295a4f379
+=======
+def generate_random_goal(type: int) -> 'Goal':
+    if type == 0:
+        return BlobGoal(random.choice(COLOUR_LIST))
+    return PerimeterGoal(random.choice(COLOUR_LIST))
+>>>>>>> b25db774aa7c81c44c088b8af4922e0ae08561bf
 
 def auto_game() -> None:
     """Run a game with two computer players of different difficulty.
@@ -174,6 +180,6 @@ if __name__ == '__main__':
     #     ],
     # })
     # sample_game()
-    auto_game()
-    # two_player_game()
+    # auto_game()
+    two_player_game()
     # solitaire_game()

@@ -12,7 +12,7 @@ implementing recursively.
 from typing import Union, List
 
 
-def nested_max(obj: Union[object, List]) -> int:
+def nested_max(obj: Union[int, List]) -> int:
     """Return the maximum item stored in nested list <obj>.
 
     You may assume all the items are positive, and calling
@@ -23,7 +23,13 @@ def nested_max(obj: Union[object, List]) -> int:
     >>> nested_max([1, 2, [1, 2, [3], 4, 5], 4])
     5
     """
-    pass
+    if isinstance(obj, int):
+        return obj
+    else:
+        m = 0
+        for item in obj:
+            m = max(m, nested_max(item))
+        return m
 
 
 def max_length(obj: Union[object, List]) -> int:
@@ -34,15 +40,20 @@ def max_length(obj: Union[object, List]) -> int:
     2. The maximum of len(obj) and the lengths of the nested lists contained
        in <obj>, if <obj> is a list.
 
-    >>> length(17)
+    >>> max_length(17)
     0
-    >>> length([1, 2, [1, 2], 4])
+    >>> max_length([1, 2, [1, 2], 4])
     4
-    >>> length([1, 2, [1, 2, [3], 4, 5], 4])
+    >>> max_length([1, 2, [1, 2, [3], 4, 5], 4])
     5
     """
-    pass
-
+    if isinstance(obj, int):
+        return 0
+    else:
+        m = len(obj)
+        for item in obj:
+            m = max(m, max_length(item))
+        return m
 
 def equal(obj1: Union[object, List], obj2: Union[object, List]) -> bool:
     """Return whether two nested lists are equal, i.e., have the same value.
@@ -56,4 +67,13 @@ def equal(obj1: Union[object, List], obj2: Union[object, List]) -> bool:
     >>> equal([1, 2, [1, 2], 4], [4, 2, [2, 1], 3])
     False
     """
-    pass
+    if obj1 is None or obj2 is None:
+        return False
+    elif isinstance(obj1, int) or isinstance(obj2, int):
+        return obj1 == obj2
+    else:
+        if len(obj1) != len(obj2):
+            return False
+        else:
+            for i in range(len(obj1)):
+                return equal(obj1[i], obj2[i])

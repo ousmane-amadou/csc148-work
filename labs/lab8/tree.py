@@ -106,8 +106,15 @@ class Tree:
         >>> 4 in t
         False
         """
-        # TODO: implement this method
-        pass
+        if self._root is None:
+            return False
+        elif self._root == item:
+            return True
+        else:
+            for tree in self._subtrees:
+                if item in tree:
+                    return True
+            return False
 
     def leaves(self) -> list:
         """Return a list of all of the leaf items in the tree.
@@ -123,8 +130,15 @@ class Tree:
         >>> t.leaves()
         [4, 5, 6, 7]
         """
-        # TODO: implement this method
-        pass
+        if self._root is None:
+            return []
+        elif len(self._subtrees) == 0:
+            return [self._root]
+        else:
+            ls = []
+            for tree in self._subtrees:
+                ls += tree.leaves()
+            return ls
 
     def branching_factor(self) -> float:
         """Return the average branching factor of this tree.
@@ -144,9 +158,11 @@ class Tree:
         >>> t.branching_factor()
         3.0
         """
-        # TODO: implement this method
-        # Note: you'll want to first implement _branching_factor_helper here.
-        pass
+        if len(self._subtrees) == 0:
+            return 0.0
+        else:
+            a = self._branching_factor_helper()
+            return a[0] / a[1]
 
     def _branching_factor_helper(self) -> Tuple[int, int]:
         """Return a tuple (x,y) where:
@@ -154,8 +170,17 @@ class Tree:
         x is the total branching factor of all non-leaf nodes in this tree, and
         y is the total number of non-leaf nodes in this tree.
         """
-        # TODO: implement this method
-        pass
+
+        if len(self._subtrees) == 0:
+            return (0, 0)
+        else:
+            x = len(self._subtrees)
+            y = 1
+            for tree in self._subtrees:
+                xst, yst = tree._branching_factor_helper()
+                x += xst
+                y += yst
+            return (x, y)
 
     def insert(self, item: object) -> None:
         """Insert <item> into this tree using the following algorithm.
@@ -187,7 +212,7 @@ class Tree:
         # >>> random.randint(1, 3)
         # 2  # Randomly returns 1, 2, or 3
 
-        # TODO: implement this method
+        # NOT WORTH IMPLEMENTING
         pass
 
 
