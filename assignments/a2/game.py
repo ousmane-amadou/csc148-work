@@ -67,7 +67,6 @@ class Game:
                 self.players.append(RandomPlayer(self.renderer, i, goal))
             else:
                 self.players.append(SmartPlayer(self.renderer, i, goal))
-
             self.renderer.display_goal(self.players[i])
 
         self.renderer.draw(self.board, 0)
@@ -116,6 +115,7 @@ class Game:
 
 # === Helper Functions === 
 
+<<<<<<< HEAD
 def generate_random_goal(goal_type: int) -> 'Goal':
     """Generate a BlobGoal if type = 0, otherwise generate a PerimeterGoal.
     """
@@ -123,6 +123,13 @@ def generate_random_goal(goal_type: int) -> 'Goal':
         return BlobGoal(random.choice(COLOUR_LIST))
     else:
         return PerimeterGoal(random.choice(COLOUR_LIST))
+=======
+## TODO: FOR STELLA
+def generate_random_goal(type: int) -> 'Goal':
+    if type == 0:
+        return BlobGoal()
+    return PerimeterGoal()
+>>>>>>> 82ff63da0ff1717f1145642a126fb55295a4f379
 
 def auto_game() -> None:
     """Run a game with two computer players of different difficulty.

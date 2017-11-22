@@ -9,6 +9,11 @@
       <sourceFolder url="file://$MODULE_DIR$/exercises/ex3" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/exercises/ex4" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/exercises/ex5" isTestSource="false" />
+<<<<<<< HEAD
+=======
+      <sourceFolder url="file://$MODULE_DIR$/labs/lab5" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/labs/lab6" isTestSource="false" />
+>>>>>>> 82ff63da0ff1717f1145642a126fb55295a4f379
       <sourceFolder url="file://$MODULE_DIR$/assignments/a2" isTestSource="false" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.6.2 (C:\Users\Acer\AppData\Local\Programs\Python\Python36-32\python.exe)" jdkType="Python SDK" />
