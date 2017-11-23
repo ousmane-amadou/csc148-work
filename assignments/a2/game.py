@@ -120,10 +120,30 @@ class Game:
                   f'goal = \n\t{player.goal.description()}: ' +
                   f'{colour_name(player.goal.colour)}')
 
+<<<<<<< HEAD
+# === Helper Functions === 
+
+<<<<<<< HEAD
+def generate_random_goal(goal_type: int) -> 'Goal':
+    """Generate a BlobGoal if type = 0, otherwise generate a PerimeterGoal.
+    """
+    if goal_type == 0:
+        return BlobGoal(random.choice(COLOUR_LIST))
+    else:
+        return PerimeterGoal(random.choice(COLOUR_LIST))
+=======
+## TODO: FOR STELLA
+def generate_random_goal(type: int) -> 'Goal':
+    if type == 0:
+        return BlobGoal()
+    return PerimeterGoal()
+>>>>>>> 82ff63da0ff1717f1145642a126fb55295a4f379
+=======
 def generate_random_goal(type: int) -> 'Goal':
     if type == 0:
         return BlobGoal(random.choice(COLOUR_LIST))
     return PerimeterGoal(random.choice(COLOUR_LIST))
+>>>>>>> b25db774aa7c81c44c088b8af4922e0ae08561bf
 
 def auto_game() -> None:
     """Run a game with two computer players of different difficulty.
