@@ -144,7 +144,17 @@ class Block:
         If <direction> is 1, swap vertically.  If <direction> is 0, swap
         horizontally. If this Block has no children, do nothing.
         """
-        pass
+        if self.children == []:
+            pass
+
+        if direction == 1:
+            self.children = [self.children[3], self.children[2],
+                             self.children[1], self.children[0]]
+        elif direction == 0:
+            self.children = [self.children[1], self.children[0],
+                             self.children[3], self.children[2]]
+        self.update_block_locations(self.position, self.size)
+
 
     def rotate(self, direction: int) -> None:
         """Rotate this Block and all its descendants.
@@ -152,7 +162,28 @@ class Block:
         If <direction> is 1, rotate clockwise.  If <direction> is 3, rotate
         counterclockwise. If this Block has no children, do nothing.
         """
-        pass
+        if len(self.children) == 0:
+            pass
+        else:
+            self.rotate_helper(direction)
+            for i in range(4):
+                self.children[i].rotate(direction)
+            self.update_block_locations(self.position, self.size)
+
+    def rotate_helper(self, direction: int):
+        """
+
+        """
+        new_children = []
+        if direction == 1:
+            new_children = [self.children[1], self.children[2],
+                             self.children[3], self.children[0]]
+        elif direction == 1:
+            new_children = [self.children[3], self.children[0],
+                             self.children[1], self.children[0]]
+
+        self.children = new_children
+
 
     def smash(self, max_depth: int) -> bool:
         """Smash this block.
@@ -167,7 +198,16 @@ class Block:
 
         Return True if this Block was smashed and False otherwise.
         """
-        pass
+        if 0 < self.level < self.max_depth:
+            new_children = []
+            for i in range(4):
+                new_children.append(random_init(self.level + 1, max_depth))
+            self.children = new_children
+            self.update_block_locations(self.position, self.size)
+            return True
+        else:
+            return False
+
 
 
     def update_block_locations(self, top_left: Tuple[float, float],
@@ -182,9 +222,10 @@ class Block:
         this Block.  <size> is the height and width of this Block.
         """
         if self.children == []:
-            self.max_depth = self.level
+            pass
         else:
             self.size = size
+            self.max_depth = self.level
             for i in range(len(self.children)):
                 child = self.children[i]
                 child.size = round(size / 2.0)
@@ -194,9 +235,11 @@ class Block:
 
                 child.position = (child_x, child_y)
                 child.update_block_locations(child.position, child.size)
+                self.max_depth = max(self.max_depth, child.max_depth)
 
-            self.max_depth = self.children[0].max_depth
-            #print(self.max_depth)
+            for i in range(len(self.children)):
+                child = self.children[i]
+                child.max_depth = self.max_depth
 
     def get_selected_block(self, location: Tuple[float, float], level: int) \
             -> 'Block':
@@ -218,10 +261,8 @@ class Block:
         if self.children == []:
             return self
         elif level == 0:
-            print(self.position, location)
             return self
         else:
-
             selected_child = 0
             left_child = location[0] < (self.position[0] + round(self.size / 2.0))
             upper_child = location[1] < (self.position[1] + round(self.size / 2.0))
