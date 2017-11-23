@@ -54,15 +54,7 @@ class Game:
         self.players = []
 
         self.board = random_init(0, max_depth)
-        self.board.update_block_locations((0, 0), 500)
-
-        v = [self.board]
-        while v:
-            block = v.pop()
-            if len(block.children) > 0:
-                for i in range(4):
-                    v.append(block.children[i])
-            print(block.max_depth)
+        self.board.update_block_locations((0, 0), 750)
 
         # Generate a Random Goal type for all players to share
         common_goal_type = round(random.random())
