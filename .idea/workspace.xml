@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1eec9c6e-4093-4dfc-a5b9-605adbf12f3c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/csc148-work.iml" afterPath="$PROJECT_DIR$/.idea/csc148-work.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/misc/midterm_2016.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/random/test.py" afterPath="$PROJECT_DIR$/misc/test.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignments/a2/block.py" afterPath="$PROJECT_DIR$/assignments/a2/block.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignments/a2/game.py" afterPath="$PROJECT_DIR$/assignments/a2/game.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignments/a2/output.html" afterPath="$PROJECT_DIR$/assignments/a2/output.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignments/a2/renderer.py" afterPath="$PROJECT_DIR$/assignments/a2/renderer.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,31 +15,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="game.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assignments/a2/game.py">
+      <file leaf-file-name="midterm_2016.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/misc/midterm_2016.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-636">
-              <caret line="86" column="37" lean-forward="false" selection-start-line="86" selection-start-column="37" selection-end-line="86" selection-end-column="37" />
+            <state relative-caret-position="98">
+              <caret line="91" column="28" lean-forward="false" selection-start-line="91" selection-start-column="28" selection-end-line="91" selection-end-column="28" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="block.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assignments/a2/block.py">
+      <file leaf-file-name="tree.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/labs/lab8/tree.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1643">
-              <caret line="241" column="48" lean-forward="false" selection-start-line="241" selection-start-column="48" selection-end-line="241" selection-end-column="48" />
+            <state relative-caret-position="-2039">
+              <caret line="40" column="45" lean-forward="true" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="renderer.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assignments/a2/renderer.py">
+      <file leaf-file-name="linked_list.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/labs/lab5/linked_list.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1560">
-              <caret line="104" column="13" lean-forward="false" selection-start-line="104" selection-start-column="13" selection-end-line="104" selection-end-column="13" />
+            <state relative-caret-position="-414">
+              <caret line="89" column="45" lean-forward="true" selection-start-line="75" selection-start-column="3" selection-end-line="89" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -104,6 +100,8 @@
         <option value="$PROJECT_DIR$/assignments/a1/visualizer.py" />
         <option value="$PROJECT_DIR$/labs/lab8/tiling.py" />
         <option value="$PROJECT_DIR$/assignments/a2/block.py" />
+        <option value="$PROJECT_DIR$/misc/test.py" />
+        <option value="$PROJECT_DIR$/misc/midterm_2016.py" />
       </list>
     </option>
   </component>
@@ -144,7 +142,13 @@
             <path>
               <item name="csc148-work" type="b2602c69:ProjectViewProjectNode" />
               <item name="csc148-work" type="462c0819:PsiDirectoryNode" />
-              <item name="random" type="462c0819:PsiDirectoryNode" />
+              <item name="labs" type="462c0819:PsiDirectoryNode" />
+              <item name="lab8" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="csc148-work" type="b2602c69:ProjectViewProjectNode" />
+              <item name="csc148-work" type="462c0819:PsiDirectoryNode" />
+              <item name="misc" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -170,6 +174,11 @@
       </console-settings>
     </option>
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/misc" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -182,18 +191,18 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.game">
-    <configuration name="Doctests in rec_linked_list" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.Doctests in midterm_2016">
+    <configuration name="Doctests in midterm_2016" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/labs/lab7" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/misc" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="csc148-work" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/labs/lab7/rec_linked_list.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/misc/midterm_2016.py" />
       <option name="CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
       <option name="FOLDER_NAME" value="" />
@@ -271,19 +280,19 @@
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python tests.Doctests in rec_linked_list" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.Doctests in tree" />
-      <item index="2" class="java.lang.String" itemvalue="Python.tiling" />
-      <item index="3" class="java.lang.String" itemvalue="Python.game" />
-      <item index="4" class="java.lang.String" itemvalue="Python.block" />
+      <item index="0" class="java.lang.String" itemvalue="Python tests.Doctests in tree" />
+      <item index="1" class="java.lang.String" itemvalue="Python.tiling" />
+      <item index="2" class="java.lang.String" itemvalue="Python.game" />
+      <item index="3" class="java.lang.String" itemvalue="Python.block" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Doctests in midterm_2016" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.game" />
-        <item index="1" class="java.lang.String" itemvalue="Python.block" />
-        <item index="2" class="java.lang.String" itemvalue="Python.tiling" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Doctests in tree" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Doctests in rec_linked_list" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Doctests in midterm_2016" />
+        <item index="1" class="java.lang.String" itemvalue="Python.game" />
+        <item index="2" class="java.lang.String" itemvalue="Python.block" />
+        <item index="3" class="java.lang.String" itemvalue="Python.tiling" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Doctests in tree" />
       </list>
     </recent_temporary>
   </component>
@@ -304,32 +313,32 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Doctests_in_rec_linked_list - 2017.11.20 at 16h 17m 00s.xml">
-      <configuration name="Doctests in rec_linked_list" configurationId="tests" />
+    <history-entry file="Doctests_in_midterm_2016 - 2017.11.23 at 14h 12m 22s.xml">
+      <configuration name="Doctests in midterm_2016" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctests_in_rec_linked_list - 2017.11.20 at 16h 17m 29s.xml">
-      <configuration name="Doctests in rec_linked_list" configurationId="tests" />
+    <history-entry file="Doctests_in_midterm_2016 - 2017.11.23 at 14h 13m 38s.xml">
+      <configuration name="Doctests in midterm_2016" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctests_in_rec_linked_list - 2017.11.20 at 16h 17m 50s.xml">
-      <configuration name="Doctests in rec_linked_list" configurationId="tests" />
+    <history-entry file="Doctests_in_midterm_2016 - 2017.11.23 at 14h 13m 49s.xml">
+      <configuration name="Doctests in midterm_2016" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctests_in_rec_linked_list - 2017.11.20 at 16h 19m 35s.xml">
-      <configuration name="Doctests in rec_linked_list" configurationId="tests" />
+    <history-entry file="Doctests_in_midterm_2016 - 2017.11.23 at 14h 18m 14s.xml">
+      <configuration name="Doctests in midterm_2016" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctests_in_rec_linked_list - 2017.11.20 at 16h 20m 03s.xml">
-      <configuration name="Doctests in rec_linked_list" configurationId="tests" />
+    <history-entry file="Doctests_in_midterm_2016 - 2017.11.23 at 14h 18m 54s.xml">
+      <configuration name="Doctests in midterm_2016" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctests_in_rec_linked_list - 2017.11.20 at 16h 20m 36s.xml">
-      <configuration name="Doctests in rec_linked_list" configurationId="tests" />
+    <history-entry file="Doctests_in_midterm_2016 - 2017.11.23 at 14h 22m 37s.xml">
+      <configuration name="Doctests in midterm_2016" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctests_in_tree - 2017.11.20 at 16h 38m 47s.xml">
-      <configuration name="Doctests in tree" configurationId="tests" />
+    <history-entry file="Doctests_in_midterm_2016 - 2017.11.23 at 14h 22m 56s.xml">
+      <configuration name="Doctests in midterm_2016" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctests_in_tree - 2017.11.20 at 16h 52m 54s.xml">
-      <configuration name="Doctests in tree" configurationId="tests" />
+    <history-entry file="Doctests_in_midterm_2016 - 2017.11.23 at 14h 57m 18s.xml">
+      <configuration name="Doctests in midterm_2016" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctests_in_tree - 2017.11.20 at 16h 54m 24s.xml">
-      <configuration name="Doctests in tree" configurationId="tests" />
+    <history-entry file="Doctests_in_midterm_2016 - 2017.11.23 at 14h 57m 46s.xml">
+      <configuration name="Doctests in midterm_2016" configurationId="tests" />
     </history-entry>
     <history-entry file="Doctests_in_tree - 2017.11.20 at 16h 55m 18s.xml">
       <configuration name="Doctests in tree" configurationId="tests" />
@@ -337,9 +346,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2552504" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2552504" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29829547" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -383,20 +391,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/hypothesis/executors.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/hypothesis/core.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="117" column="0" lean-forward="true" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/exercises/ex3/ex3_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -514,13 +508,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/random/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="56" column="11" lean-forward="false" selection-start-line="56" selection-start-column="11" selection-end-line="56" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/exercises/ex4/ex4_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -554,20 +541,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/labs/lab5/time_lists.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="46" column="13" lean-forward="false" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/labs/lab5/linked_list.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2940">
-          <caret line="196" column="31" lean-forward="false" selection-start-line="196" selection-start-column="31" selection-end-line="196" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -610,13 +583,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1420">
           <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm/docrunner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="139" column="0" lean-forward="false" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -704,25 +670,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/labs/lab8/tree.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="214" column="32" lean-forward="false" selection-start-line="214" selection-start-column="32" selection-end-line="214" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assignments/a2/rectangle_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-449">
           <caret line="35" column="4" lean-forward="false" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assignments/a2/renderer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1560">
-          <caret line="104" column="13" lean-forward="false" selection-start-line="104" selection-start-column="13" selection-end-line="104" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -738,6 +689,70 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1643">
           <caret line="241" column="48" lean-forward="false" selection-start-line="241" selection-start-column="48" selection-end-line="241" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/misc/timer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-693">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignments/a2/renderer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="104" column="13" lean-forward="false" selection-start-line="104" selection-start-column="13" selection-end-line="104" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/misc/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/labs/lab5/time_lists.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="46" column="13" lean-forward="false" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/labs/lab5/linked_list.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-414">
+          <caret line="89" column="45" lean-forward="true" selection-start-line="75" selection-start-column="3" selection-end-line="89" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm/docrunner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-904">
+          <caret line="139" column="0" lean-forward="false" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/labs/lab8/tree.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2039">
+          <caret line="40" column="45" lean-forward="true" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/misc/midterm_2016.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="91" column="28" lean-forward="false" selection-start-line="91" selection-start-column="28" selection-end-line="91" selection-end-column="28" />
           <folding />
         </state>
       </provider>

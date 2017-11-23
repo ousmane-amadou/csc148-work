@@ -54,7 +54,6 @@ class Stack(Generic[T]):
         else:
             return self._items.pop()
 
-    def __i
 class EmptyStackError(Exception):
     """Exception raised when an error occurs."""
     pass
