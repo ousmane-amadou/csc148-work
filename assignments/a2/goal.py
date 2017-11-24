@@ -51,11 +51,22 @@ class PerimeterGoal(Goal):
     """
 
     def description(self) -> str:
-        return "The player must aim to put the most possible units " \
-               "of a given colour c on the outer perimeter of the board"
+        return "The player must aim to put the most possible units of a " \
+               "given colour c on the outer perimeter of the board"
 
     def score(self, board: Block) -> int:
-        pass
+        s = 0
+        rep = board.flatten()
+        for i in range(0, len(rep[0])):
+            if rep[i][0] == self.colour:
+                s += 1
+            if rep[0][i] == self.colour:
+                s += 1
+            if rep[len(rep[0])-1][0] == self.colour:
+                s += 1
+            if rep[0][len(rep[0])-1] == self.colour:
+                s += 1
+        return s
 
 class BlobGoal(Goal):
     """A goal to create the largest connected blob of this goal's target
@@ -66,20 +77,27 @@ class BlobGoal(Goal):
         return "The player must aim for the largest 'blob' of a given colour c."
 
     def score(self, board: Block) -> int:
-        if board.children is None:
-            return (4**(board.max_depth - board.level))*(self.colour == board.colour)
-        else:
-            scr = 0
-            for child in board.children:
-                scr += self.score(child)
-            return scr
+        return self._undiscovered_blob_size((0, 0), board.flatten(),
+                                            self._init_matrix(len(board.flatten())))
 
+    def _init_matrix(self, size:int) -> List[List[int]]:
+        """
+        Returns a size by size matrix whose entries are all -1.
+        """
+        L = []
+        for i in range(size):
+            L.append([])
+            for j in range(size):
+                L[i].append(-1)
+
+        return L
     def _undiscovered_blob_size(self, pos: Tuple[int, int],
                                 board: List[List[Tuple[int, int, int]]],
                                 visited: List[List[int]]) -> int:
-        """Return the size of the largest connected blob that (a) is of this
-        Goal's target colour, (b) includes the cell at <pos>, and (c) involves
-        only cells that have never been visited.
+        """Return the size of the largest connected blob that
+        (a) is of this Goal's target colour,
+        (b) includes the cell at <pos>, and
+        (c) involves only cells that have never been visited.
 
         If <pos> is out of bounds for <board>, return 0.
 
@@ -94,8 +112,17 @@ class BlobGoal(Goal):
         Update <visited> so that all cells that are visited are marked with
         either 0 or 1.
         """
-        pass
 
+        if pos[0] >= len(board[0]) or pos[1] >= len(board[1]):
+            return 0
+        elif not visited[pos[0]][pos[1]]:
+            visited[pos[0]][pos[1]] = 1 if board[pos[0]][pos[1]] == self.colour else 0
+            largest_connected_blob = \
+                max( self._undiscovered_blob_size((pos[0]+1, pos[1]), board, visited),
+                     self._undiscovered_blob_size((pos[0], pos[1]+1), board, visited) )
+            return 1 + largest_connected_blob
+        else:
+            return 0
 
 if __name__ == '__main__':
     import python_ta

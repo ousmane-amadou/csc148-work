@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1eec9c6e-4093-4dfc-a5b9-605adbf12f3c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignments/a2/block.py" afterPath="$PROJECT_DIR$/assignments/a2/block.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignments/a2/game.py" afterPath="$PROJECT_DIR$/assignments/a2/game.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignments/a2/goal.py" afterPath="$PROJECT_DIR$/assignments/a2/goal.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,28 +16,38 @@
       <file leaf-file-name="game.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assignments/a2/game.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
+            <state relative-caret-position="-166">
               <caret line="57" column="66" lean-forward="false" selection-start-line="57" selection-start-column="66" selection-end-line="57" selection-end-column="66" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="block.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assignments/a2/block.py">
+      <file leaf-file-name="player.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assignments/a2/player.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="302" column="16" lean-forward="true" selection-start-line="302" selection-start-column="16" selection-end-line="302" selection-end-column="16" />
+            <state relative-caret-position="-660">
+              <caret line="148" column="0" lean-forward="false" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="renderer.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assignments/a2/renderer.py">
+      <file leaf-file-name="goal.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assignments/a2/goal.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2310">
-              <caret line="19" column="24" lean-forward="true" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+            <state relative-caret-position="174">
+              <caret line="80" column="83" lean-forward="false" selection-start-line="80" selection-start-column="83" selection-end-line="80" selection-end-column="83" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="block.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assignments/a2/block.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="92">
+              <caret line="293" column="8" lean-forward="true" selection-start-line="293" selection-start-column="8" selection-end-line="293" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -89,7 +97,6 @@
         <option value="$PROJECT_DIR$/labs/lab6/linked_list_v2.py" />
         <option value="$PROJECT_DIR$/assignments/a2/rectangle_test.py" />
         <option value="$PROJECT_DIR$/assignments/a2/player.py" />
-        <option value="$PROJECT_DIR$/assignments/a2/goal.py" />
         <option value="$PROJECT_DIR$/exercises/ex6/ex6_test.py" />
         <option value="$PROJECT_DIR$/exercises/ex6/ex6.py" />
         <option value="$PROJECT_DIR$/labs/lab7/nested.py" />
@@ -102,6 +109,7 @@
         <option value="$PROJECT_DIR$/labs/lab9/bst.py" />
         <option value="$PROJECT_DIR$/assignments/a2/game.py" />
         <option value="$PROJECT_DIR$/assignments/a2/block.py" />
+        <option value="$PROJECT_DIR$/assignments/a2/goal.py" />
       </list>
     </option>
   </component>
@@ -346,7 +354,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25928918" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29829547" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29829547" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3068182" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -596,20 +604,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assignments/a2/player.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1560">
-          <caret line="148" column="0" lean-forward="false" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assignments/a2/goal.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="65" column="58" lean-forward="false" selection-start-line="65" selection-start-column="58" selection-end-line="65" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/labs/lab7/lab7.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -732,16 +726,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assignments/a2/game.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
+        <state relative-caret-position="-166">
           <caret line="57" column="66" lean-forward="false" selection-start-line="57" selection-start-column="66" selection-end-line="57" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignments/a2/player.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-660">
+          <caret line="148" column="0" lean-forward="false" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assignments/a2/block.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="302" column="16" lean-forward="true" selection-start-line="302" selection-start-column="16" selection-end-line="302" selection-end-column="16" />
+        <state relative-caret-position="92">
+          <caret line="293" column="8" lean-forward="true" selection-start-line="293" selection-start-column="8" selection-end-line="293" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignments/a2/goal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="80" column="83" lean-forward="false" selection-start-line="80" selection-start-column="83" selection-end-line="80" selection-end-column="83" />
           <folding />
         </state>
       </provider>
