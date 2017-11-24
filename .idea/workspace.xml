@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1eec9c6e-4093-4dfc-a5b9-605adbf12f3c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/misc/midterm_2016.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/random/test.py" afterPath="$PROJECT_DIR$/misc/test.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/labs/lab9/bst.py" afterPath="$PROJECT_DIR$/labs/lab9/bst.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/misc/midterm_2016.py" afterPath="$PROJECT_DIR$/misc/midterm_2016.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,31 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="midterm_2016.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/misc/midterm_2016.py">
+      <file leaf-file-name="bst.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/labs/lab9/bst.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
-              <caret line="91" column="28" lean-forward="false" selection-start-line="91" selection-start-column="28" selection-end-line="91" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tree.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/labs/lab8/tree.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2039">
-              <caret line="40" column="45" lean-forward="true" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="linked_list.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/labs/lab5/linked_list.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-414">
-              <caret line="89" column="45" lean-forward="true" selection-start-line="75" selection-start-column="3" selection-end-line="89" selection-end-column="45" />
+            <state relative-caret-position="-603">
+              <caret line="200" column="34" lean-forward="false" selection-start-line="200" selection-start-column="34" selection-end-line="200" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -94,7 +73,6 @@
         <option value="$PROJECT_DIR$/exercises/ex6/ex6.py" />
         <option value="$PROJECT_DIR$/assignments/a2/game.py" />
         <option value="$PROJECT_DIR$/labs/lab7/nested.py" />
-        <option value="$PROJECT_DIR$/labs/lab9/bst.py" />
         <option value="$PROJECT_DIR$/labs/lab7/rec_linked_list.py" />
         <option value="$PROJECT_DIR$/labs/lab8/tree.py" />
         <option value="$PROJECT_DIR$/assignments/a1/visualizer.py" />
@@ -102,6 +80,7 @@
         <option value="$PROJECT_DIR$/assignments/a2/block.py" />
         <option value="$PROJECT_DIR$/misc/test.py" />
         <option value="$PROJECT_DIR$/misc/midterm_2016.py" />
+        <option value="$PROJECT_DIR$/labs/lab9/bst.py" />
       </list>
     </option>
   </component>
@@ -144,6 +123,12 @@
               <item name="csc148-work" type="462c0819:PsiDirectoryNode" />
               <item name="labs" type="462c0819:PsiDirectoryNode" />
               <item name="lab8" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="csc148-work" type="b2602c69:ProjectViewProjectNode" />
+              <item name="csc148-work" type="462c0819:PsiDirectoryNode" />
+              <item name="labs" type="462c0819:PsiDirectoryNode" />
+              <item name="lab9" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="csc148-work" type="b2602c69:ProjectViewProjectNode" />
@@ -191,7 +176,25 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Doctests in midterm_2016">
+  <component name="RunManager" selected="Python tests.Doctests in bst">
+    <configuration name="Doctests in bst" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/labs/lab9" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="csc148-work" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/labs/lab9/bst.py" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+    </configuration>
     <configuration name="Doctests in midterm_2016" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -203,24 +206,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="csc148-work" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/misc/midterm_2016.py" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-    </configuration>
-    <configuration name="Doctests in tree" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/labs/lab8" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="csc148-work" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/labs/lab8/tree.py" />
       <option name="CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
       <option name="FOLDER_NAME" value="" />
@@ -280,19 +265,19 @@
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python tests.Doctests in tree" />
-      <item index="1" class="java.lang.String" itemvalue="Python.tiling" />
-      <item index="2" class="java.lang.String" itemvalue="Python.game" />
-      <item index="3" class="java.lang.String" itemvalue="Python.block" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Doctests in midterm_2016" />
+      <item index="0" class="java.lang.String" itemvalue="Python.tiling" />
+      <item index="1" class="java.lang.String" itemvalue="Python.game" />
+      <item index="2" class="java.lang.String" itemvalue="Python.block" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Doctests in midterm_2016" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Doctests in bst" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Doctests in midterm_2016" />
-        <item index="1" class="java.lang.String" itemvalue="Python.game" />
-        <item index="2" class="java.lang.String" itemvalue="Python.block" />
-        <item index="3" class="java.lang.String" itemvalue="Python.tiling" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Doctests in tree" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Doctests in bst" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Doctests in midterm_2016" />
+        <item index="2" class="java.lang.String" itemvalue="Python.game" />
+        <item index="3" class="java.lang.String" itemvalue="Python.block" />
+        <item index="4" class="java.lang.String" itemvalue="Python.tiling" />
       </list>
     </recent_temporary>
   </component>
@@ -313,8 +298,11 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Doctests_in_midterm_2016 - 2017.11.23 at 14h 12m 22s.xml">
-      <configuration name="Doctests in midterm_2016" configurationId="tests" />
+    <history-entry file="Doctests_in_bst - 2017.11.23 at 16h 07m 56s.xml">
+      <configuration name="Doctests in bst" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Doctests_in_bst - 2017.11.23 at 16h 08m 06s.xml">
+      <configuration name="Doctests in bst" configurationId="tests" />
     </history-entry>
     <history-entry file="Doctests_in_midterm_2016 - 2017.11.23 at 14h 13m 38s.xml">
       <configuration name="Doctests in midterm_2016" configurationId="tests" />
@@ -340,14 +328,12 @@
     <history-entry file="Doctests_in_midterm_2016 - 2017.11.23 at 14h 57m 46s.xml">
       <configuration name="Doctests in midterm_2016" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctests_in_tree - 2017.11.20 at 16h 55m 18s.xml">
-      <configuration name="Doctests in tree" configurationId="tests" />
-    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2552504" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2552504" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29829547" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -628,13 +614,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/labs/lab9/bst.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2783">
-          <caret line="303" column="12" lean-forward="false" selection-start-line="303" selection-start-column="12" selection-end-line="303" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/labs/lab7/rec_linked_list.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="388">
@@ -741,6 +720,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/misc/midterm_2016.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/labs/lab8/tree.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2039">
@@ -749,10 +736,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/misc/midterm_2016.py">
+    <entry file="file://$PROJECT_DIR$/labs/lab9/bst.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="91" column="28" lean-forward="false" selection-start-line="91" selection-start-column="28" selection-end-line="91" selection-end-column="28" />
+        <state relative-caret-position="-603">
+          <caret line="200" column="34" lean-forward="false" selection-start-line="200" selection-start-column="34" selection-end-line="200" selection-end-column="34" />
           <folding />
         </state>
       </provider>

@@ -198,12 +198,13 @@ class BinarySearchTree:
         """
         if self._root is None:
             self._root = item
+            self._left = BinarySearchTree(None)
+            self._right = BinarySearchTree(None)
         else:
             if item < self._root:
                 self._left.insert(item)
             else:
                 self._right.insert(item)
-        pass
 
     # ------------------------------------------------------------------------
     # Lab 9 Task 4

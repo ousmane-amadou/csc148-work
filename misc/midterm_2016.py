@@ -3,6 +3,7 @@
 """
 
 from typing import Optional, Callable, List
+
 class _Node:
     """A node in a linked list.
 
