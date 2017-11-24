@@ -225,7 +225,7 @@ class Block:
             pass
         else:
             self.size = size
-            self.max_depth = self.level
+            self.max_depth = self.level + 1
             for i in range(len(self.children)):
                 child = self.children[i]
                 child.size = round(size / 2.0)
@@ -290,8 +290,17 @@ class Block:
 
         L[0][0] represents the unit cell in the upper left corner of the Block.
         """
-        pass
+        unit = 2**(self.max_depth - self.level)
+        L = []
+        for i in range(0, unit):
+            L.append(list(range(0, unit)))
+            for j in range(0, unit):
+                x = self.position[0] + 5 + (self.size/unit) * i
+                y = self.position[1] + 5 + (self.size/unit) * j
 
+                L[i][j] = self.get_selected_block((x, y), self.max_depth).colour
+                print(i, j, x, y, L[i][j])
+        return L
 
 def random_init(level: int, max_depth: int) -> 'Block':
     """Return a randomly-generated Block with level <level> and subdivided

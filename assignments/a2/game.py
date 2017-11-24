@@ -53,16 +53,9 @@ class Game:
         self.renderer = Renderer(num_players=(num_human+random_players+len(smart_players)))
         self.players = []
 
-        self.board = random_init(0, max_depth)
+        self.board = random_init(0, 2)
         self.board.update_block_locations((0, 0), 500)
-
-        v = [self.board]
-        while v:
-            block = v.pop()
-            if len(block.children) > 0:
-                for i in range(4):
-                    v.append(block.children[i])
-            print(block.max_depth)
+        a = self.board.get_selected_block((5.0, 192.5), max_depth)
 
         # Generate a Random Goal type for all players to share
         common_goal_type = round(random.random())
@@ -77,6 +70,9 @@ class Game:
                 self.players.append(SmartPlayer(self.renderer, i, goal))
             self.renderer.display_goal(self.players[i])
         self.renderer.draw(self.board, 0)
+
+        a = self.board.flatten()
+        print(a[0])
 
     def run_game(self, num_turns: int) -> None:
         """Run the game for the number of turns specified.
