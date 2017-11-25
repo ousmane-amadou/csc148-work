@@ -299,7 +299,7 @@ class Block:
                 y = self.position[1] + 5 + (self.size/unit) * j
 
                 L[i][j] = self.get_selected_block((x, y), self.max_depth).colour
-                print(i, j, x, y, L[i][j])
+                #print(i, j, x, y, L[i][j])
         return L
 
 def random_init(level: int, max_depth: int) -> 'Block':
