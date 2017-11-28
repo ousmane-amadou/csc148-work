@@ -57,8 +57,37 @@ class Player:
 
 class SmartPlayer(Player):
     pass
+
 class RandomPlayer(Player):
-    pass
+    def __init__(self, renderer: Renderer, player_id: int, goal: Goal) -> None:
+        """"""
+        super().__init__(renderer, player_id, goal)
+
+    def make_move(self, board: Block):
+        # Choose Random block
+        random_loc = (random.randint(0, board.size), random.randint(0, board.size))
+        random_level = random.randint(1, board.max_depth)
+
+        move_block = board.get_selected_block(random_loc, random_level)
+        move_block.highlighted = True
+
+        pygame.time.wait(TIME_DELAY)
+        random_action = random.randint(0, 4)
+
+        if random_action == 0:   # Rotate the selected block either clockwise or counter clock wise
+            move_block.rotate(1)
+        elif random_action == 1:
+            move_block.rotate(0)
+        elif random_action == 2: # Swap the 4 sub blocks within the selcted block horizontally or vertically
+            move_block.swap(1)
+        elif random_action == 3:
+            move_block.swap(1)
+        elif random_action == 4:
+            move_block.smash(random.randint(0, move_block.max_depth))
+
+        move_block.highlighted = False
+        self.renderer.draw(board.rectangles_to_draw(), self.id)
+
 
 class HumanPlayer(Player):
     """A human player.

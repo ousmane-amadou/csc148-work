@@ -87,9 +87,12 @@ class BlobGoal(Goal):
         s = 0
         size = len(board.flatten())
         adj = self._init_matrix(size)
+        adj2 = self._init_matrix(size)
         for i in range(size):
             for j in range(size):
-                s = max(s, self._undiscovered_blob_size((i, j), board.flatten(), adj))
+                adj2[i][j] = self._undiscovered_blob_size((i, j), board.flatten(), adj)
+                s = max(s, adj2[i][j])
+        print(adj2)
         return s
 
     def _init_matrix(self, size:int) -> List[List[int]]:
@@ -124,18 +127,24 @@ class BlobGoal(Goal):
         Update <visited> so that all cells that are visited are marked with
         either 0 or 1.
         """
-        if pos[0] >= len(board[0]) or pos[1] >= len(board[1]):
+        out_of_bounds = pos[0] >= len(board[0]) or pos[0] < 0 or pos[1] >= len(board[1]) or pos[1] < 0
+        if out_of_bounds or visited[pos[0]][pos[1]] != -1:
             return 0
-        elif (visited[pos[0]][pos[1]] == -1) and (board[pos[0]][pos[1]] != self.colour):
+        elif board[pos[0]][pos[1]] != self.colour:  # Not of target colour
             visited[pos[0]][pos[1]] = 0
-            return 0
-        elif (visited[pos[0]][pos[1]] == -1) and (board[pos[0]][pos[1]] == self.colour):
-            visited[pos[0]][pos[1]] = 1
-            connected_blob = self._undiscovered_blob_size((pos[0]+1, pos[1]), board, visited) + \
-                             self._undiscovered_blob_size((pos[0], pos[1]+1), board, visited)
-            return 1 + connected_blob
-        else:
             return visited[pos[0]][pos[1]]
+        else:   # The only remaining case should be unvisited target colour nodes
+            visited[pos[0]][pos[1]] = 1
+            # print("Before", pos)
+            connected_blobs_above = self._undiscovered_blob_size((pos[0]-1, pos[1]), board, visited)
+            connected_blobs_below = self._undiscovered_blob_size((pos[0]+1, pos[1]), board, visited)
+            connected_blobs_left = self._undiscovered_blob_size((pos[0], pos[1]-1), board, visited)
+            connected_blobs_right = self._undiscovered_blob_size((pos[0], pos[1]+1), board, visited)
+
+            connected_blob = connected_blobs_above + connected_blobs_below + connected_blobs_left + connected_blobs_right
+            # print("After", pos, visited, connected_blob)
+            return 1 + connected_blob
+
 
 if __name__ == '__main__':
     import python_ta

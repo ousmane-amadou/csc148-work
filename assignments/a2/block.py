@@ -178,9 +178,11 @@ class Block:
         if direction == 1:
             new_children = [self.children[1], self.children[2],
                              self.children[3], self.children[0]]
-        elif direction == 1:
+        if direction == 3:
             new_children = [self.children[3], self.children[0],
-                             self.children[1], self.children[0]]
+                             self.children[1], self.children[2]]
+
+
 
         self.children = new_children
 
@@ -201,7 +203,7 @@ class Block:
         if 0 < self.level < self.max_depth:
             new_children = []
             for i in range(4):
-                new_children.append(random_init(self.level + 1, max_depth))
+                new_children.append(random_init(self.level + 1, max_depth - 1))
             self.children = new_children
             self.update_block_locations(self.position, self.size)
             return True
@@ -295,8 +297,8 @@ class Block:
         for i in range(0, unit):
             L.append(list(range(0, unit)))
             for j in range(0, unit):
-                x = self.position[0] + 5 + (self.size/unit) * i
-                y = self.position[1] + 5 + (self.size/unit) * j
+                x = self.position[0] + 5 + (self.size/unit) * j
+                y = self.position[1] + 5 + (self.size/unit) * i
 
                 L[i][j] = self.get_selected_block((x, y), self.max_depth).colour
                 #print(i, j, x, y, L[i][j])
