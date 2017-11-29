@@ -59,7 +59,6 @@ class PerimeterGoal(Goal):
 
     def score(self, board: Block) -> int:
         s = 0
-        print("a")
         rep = board.flatten()
         for i in range(0, len(rep[0])):
             if rep[i][0] == self.colour:

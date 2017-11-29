@@ -53,7 +53,7 @@ class Game:
         self.renderer = Renderer(num_players=(num_human+random_players+len(smart_players)))
         self.players = []
 
-        self.board = random_init(0, 1)
+        self.board = random_init(0, max_depth)
         self.board.update_block_locations((0, 0), 500)
 
         # Generate a Random Goal type for all players to share
@@ -66,9 +66,9 @@ class Game:
             elif i < num_human + random_players:
                 self.players.append(RandomPlayer(self.renderer, i, goal))
             else:
-                self.players.append(SmartPlayer(self.renderer, i, goal))
+                # TODO: SMART PLAYER INITIALIZATION
+                self.players.append(SmartPlayer(self.renderer, i, goal, smart_players[0]))
 
-            print(i, colour_name(goal.colour))
             self.renderer.display_goal(self.players[i])
         self.renderer.draw(self.board, 0)
 
@@ -114,7 +114,9 @@ class Game:
                   f'goal = \n\t{player.goal.description()}: ' +
                   f'{colour_name(player.goal.colour)}')
 
+# TODO: STELLA [STYLE]
 def generate_random_goal(type: int) -> 'Goal':
+    """"""
     if type == 0:
         return BlobGoal(random.choice(COLOUR_LIST))
     return PerimeterGoal(random.choice(COLOUR_LIST))
@@ -162,6 +164,6 @@ if __name__ == '__main__':
     #     ],
     # })
     # sample_game()
-    # auto_game()
-    two_player_game()
+    auto_game()
+    # two_player_game()
     # solitaire_game()

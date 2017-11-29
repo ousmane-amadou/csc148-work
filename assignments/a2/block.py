@@ -170,6 +170,7 @@ class Block:
                 self.children[i].rotate(direction)
             self.update_block_locations(self.position, self.size)
 
+    #TODO: STELLA
     def rotate_helper(self, direction: int):
         """
 
@@ -181,8 +182,6 @@ class Block:
         if direction == 3:
             new_children = [self.children[3], self.children[0],
                              self.children[1], self.children[2]]
-
-
 
         self.children = new_children
 
@@ -297,8 +296,8 @@ class Block:
         for i in range(0, unit):
             L.append(list(range(0, unit)))
             for j in range(0, unit):
-                x = self.position[0] + 5 + (self.size/unit) * j
-                y = self.position[1] + 5 + (self.size/unit) * i
+                y = self.position[0] + 5 + (self.size/unit) * j
+                x = self.position[1] + 5 + (self.size/unit) * i
 
                 L[i][j] = self.get_selected_block((x, y), self.max_depth).colour
                 #print(i, j, x, y, L[i][j])
@@ -324,7 +323,6 @@ def random_init(level: int, max_depth: int) -> 'Block':
 
     ## or not to subdivide
     blck = Block(level, random.choice(COLOUR_LIST), children=None)
-    #print(blck.colour)
     return blck
 
 if __name__ == '__main__':

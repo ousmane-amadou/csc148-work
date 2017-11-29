@@ -12,7 +12,7 @@ This file contains the player class hierarchy.
 """
 
 import random
-from typing import Optional, Dict
+from typing import Optional, Dict, List
 import pygame
 from renderer import Renderer
 from block import Block
@@ -71,8 +71,6 @@ class SmartPlayer(Player):
            This player's assigned goal for the game.
        """
     difficulty: int
-    board_state: GameState                 # PRIVATE
-    move_memory: Dict[GameState, MoveHeap] # PRIVATE
 
     def __init__(self, renderer: Renderer, player_id: int, goal: Goal, difficulty: int) -> None:
         """"""
@@ -103,158 +101,7 @@ class SmartPlayer(Player):
         else:
             num_moves = moves_legend[self.difficulty]
 
-        # Prep: Update Current State of board, and add it to memory
-        board_state = GameState(board, self.goal.score(board))
-        self._add_state(board_state)
 
-        # First: Generate 'n' new moves, and
-        # add the associated states and moves to memory
-        self._generate_moves(num_moves, move_breadth)
-
-        # Second: Get the next best move, from memory
-        my_move = self._get_next_move()
-
-        # Select block that is to be moved
-        my_move.move_block.highlighted = True
-
-        self.renderer.draw(board, self.id)
-        pygame.time.wait(TIME_DELAY)
-
-        # Third: Execute the move
-        if my_move.move_type == 0:   # Rotate the selected block either clockwise or counter clock wise
-            my_move.move_block.rotate(1)
-        elif my_move.move_type == 1:   # Rotate the selected block either clockwise or counter clock wise
-            my_move.move_block.rotate(3)
-        elif my_move.move_type == 2: # Swap the 4 sub blocks within the selcted block horizontally or vertically
-            my_move.move_block.rotate(0)
-        elif my_move.move_type == 3:
-            my_move.move_block.swap(1)
-
-        my_move.move_block.highlighted = False
-        self.renderer.draw(board.rectangles_to_draw(), self.id)
-
-    def wipe_memory(self):
-        """
-        """
-        self.move_memory = {}
-
-    def _add_state(self, board_state: GameState) -> int:
-        """ Add board_state to move_memory, if board_state isnt already in memory.
-        Otherwise, return 0.
-        """
-        if board_state in self.move_memory:
-            return 0
-        else:
-            self.move_memory[board_state] = MoveHeap()
-            return 1
-
-    def _add_move(self, move: Move) -> int:
-        if move.start_state in self.move_memory:
-            self.move_memory[move.start_state].insert(move)
-            self.move_memory[move.end_state].insert(move)
-            return 0
-        else:
-            self.move_memory[move.start_state] = MoveHeap()
-            self.move_memory[move.end_state] = MoveHeap()
-
-            self.move_memory[move.start_state].insert(move)
-            self.move_memory[move.end_state].insert(move)
-            return 1
-
-    def _get_next_move(self):
-        return self.move_memory[self.board_state].getBestMove()
-
-    def _generate_move(self, board: Block) -> Move:
-        """ Return a random move based on board_state.
-        """
-        random_loc = (random.randint(0, board.size), random.randint(0, board.size))
-        random_level = random.randint(1, board.max_depth)
-
-        move_block = board.get_selected_block(random_loc, random_level)
-        move_type = random.randint(0, 4)
-        end_state = None
-        if move_type == 0:
-            move_block.rotate(1)
-            end_state = GameState(board, self.goal.score(board))
-            move_block.rotate(3)
-        elif move_type == 1:
-            move_block.rotate(3)
-            end_state = GameState(board, self.goal.score(board))
-            move_block.rotate(1)
-        elif move_type == 2:
-            move_block.swap(0)
-            end_state = GameState(board, self.goal.score(board))
-            move_block.swap(1)
-        elif move_type == 3:
-            move_block.swap(1)
-            end_state = GameState(board, self.goal.score(board))
-            move_block.swap(0)
-
-        return Move(self.board_state, end_state, move_type, move_block)
-
-    def _grow_move_memory(self, num_moves: int, move_breadth: int, board: Block):
-        """ Add <num_moves> more moves to the move_memory. Limit the number
-        of moves generated per state (or turn) to <move_breadth>.
-        """
-        moves_added = 0
-        state_stk = [self.board_state]
-        while state_stk and moves_added <= num_moves:
-            state = state_stk.pop()
-            state_move_count = self.move_memory[state].size()
-
-            while state_move_count < move_breadth:
-                m = self._generate_move(board)
-                familar_end_state = self._add_move(m)
-                state_move_count += 1
-                moves_added += 1
-
-                if not familar_end_state:
-                    state_stk.append(m.end_state)
-
-class MoveHeap:
-    """"""
-    items: List[Move]
-
-    def __init__(self):
-        self.items = []
-
-    def insert(self):
-        pass
-
-    def size(self):
-        pass
-
-    def getBestMove(self):
-        pass
-
-
-class GameState:
-    """
-    """
-    board: Block
-    score: int
-
-    def __init__(self, board: Block, score: int):
-        self.board = board
-        self.score = score
-
-    def __eq__(self, other):
-        pass
-
-class Move:
-    """
-    """
-    start_state: GameState
-    end_state: GameState
-    move_type: int
-    move_block: Block
-
-    def __init__(self, start_state: GameState, end_state: GameState,
-                       move_type: int, move_block: Block):
-        self.start_state = start_state
-        self.end_state = end_state
-        self.move_type = move_type
-        self.move_block = move_block
 
 class RandomPlayer(Player):
     def __init__(self, renderer: Renderer, player_id: int, goal: Goal) -> None:
