@@ -71,8 +71,8 @@ class SmartPlayer(Player):
            This player's assigned goal for the game.
        """
     difficulty: int
-    board_state: GameState
-    move_memory: Dict[GameState, MoveHeap]
+    board_state: GameState                 # PRIVATE
+    move_memory: Dict[GameState, MoveHeap] # PRIVATE
 
     def __init__(self, renderer: Renderer, player_id: int, goal: Goal, difficulty: int) -> None:
         """"""
@@ -164,9 +164,35 @@ class SmartPlayer(Player):
     def _get_next_move(self):
         return self.move_memory[self.board_state].getBestMove()
 
-    def _generate_move(self) -> Move:
+    def _generate_move(self, board: Block) -> Move:
+        """ Return a random move based on board_state.
+        """
+        random_loc = (random.randint(0, board.size), random.randint(0, board.size))
+        random_level = random.randint(1, board.max_depth)
 
-    def _grow_move_memory(self, num_moves: int, move_breadth: int):
+        move_block = board.get_selected_block(random_loc, random_level)
+        move_type = random.randint(0, 4)
+        end_state = None
+        if move_type == 0:
+            move_block.rotate(1)
+            end_state = GameState(board, self.goal.score(board))
+            move_block.rotate(3)
+        elif move_type == 1:
+            move_block.rotate(3)
+            end_state = GameState(board, self.goal.score(board))
+            move_block.rotate(1)
+        elif move_type == 2:
+            move_block.swap(0)
+            end_state = GameState(board, self.goal.score(board))
+            move_block.swap(1)
+        elif move_type == 3:
+            move_block.swap(1)
+            end_state = GameState(board, self.goal.score(board))
+            move_block.swap(0)
+
+        return Move(self.board_state, end_state, move_type, move_block)
+
+    def _grow_move_memory(self, num_moves: int, move_breadth: int, board: Block):
         """ Add <num_moves> more moves to the move_memory. Limit the number
         of moves generated per state (or turn) to <move_breadth>.
         """
@@ -174,24 +200,36 @@ class SmartPlayer(Player):
         state_stk = [self.board_state]
         while state_stk and moves_added <= num_moves:
             state = state_stk.pop()
-
             state_move_count = self.move_memory[state].size()
 
             while state_move_count < move_breadth:
-                m = self._generate_move()
+                m = self._generate_move(board)
                 familar_end_state = self._add_move(m)
                 state_move_count += 1
+                moves_added += 1
 
                 if not familar_end_state:
                     state_stk.append(m.end_state)
 
-
 class MoveHeap:
-    pass
+    """"""
+    items: List[Move]
+
+    def __init__(self):
+        self.items = []
+
+    def insert(self):
+        pass
+
+    def size(self):
+        pass
+
+    def getBestMove(self):
+        pass
+
 
 class GameState:
     """
-
     """
     board: Block
     score: int
@@ -200,9 +238,11 @@ class GameState:
         self.board = board
         self.score = score
 
+    def __eq__(self, other):
+        pass
+
 class Move:
     """
-
     """
     start_state: GameState
     end_state: GameState
