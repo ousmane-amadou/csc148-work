@@ -86,12 +86,9 @@ class BlobGoal(Goal):
         s = 0
         size = len(board.flatten())
         adj = self._init_matrix(size)
-        adj2 = self._init_matrix(size)
         for i in range(size):
             for j in range(size):
-                adj2[i][j] = self._undiscovered_blob_size((i, j), board.flatten(), adj)
-                s = max(s, adj2[i][j])
-        print(adj2)
+                s = max(s, self._undiscovered_blob_size((i, j), board.flatten(), adj))
         return s
 
     def _init_matrix(self, size:int) -> List[List[int]]:

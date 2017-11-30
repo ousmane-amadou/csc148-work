@@ -145,7 +145,7 @@ class Block:
         horizontally. If this Block has no children, do nothing.
         """
         if self.children == []:
-            pass
+            return
 
         if direction == 1:
             self.children = [self.children[3], self.children[2],
@@ -179,7 +179,7 @@ class Block:
         if direction == 1:
             new_children = [self.children[1], self.children[2],
                              self.children[3], self.children[0]]
-        if direction == 3:
+        elif direction == 3:
             new_children = [self.children[3], self.children[0],
                              self.children[1], self.children[2]]
 

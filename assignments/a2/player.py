@@ -20,7 +20,6 @@ from goal import Goal
 
 TIME_DELAY = 600
 
-
 class Player:
     """A player in the Blocky game.
 
@@ -101,7 +100,57 @@ class SmartPlayer(Player):
         else:
             num_moves = moves_legend[self.difficulty]
 
+        best_move = [-1, -1, None]
+        for i in range(num_moves):
+            random_loc = (random.randint(0, board.size), random.randint(0, board.size))
+            random_level = random.randint(1, board.max_depth)
 
+            move_block = board.get_selected_block(random_loc, random_level)
+            random_action = random.randint(0, 3)
+
+            if random_action == 0:
+                move_block.rotate(1)
+            elif random_action == 1:
+                move_block.rotate(3)
+            elif random_action == 2:
+                move_block.swap(0)
+            elif random_action == 3:
+                move_block.swap(1)
+
+            if self.goal.score(board) > best_move[0]:
+                best_move = [self.goal.score(board), random_action, move_block]
+
+            # UNDO MOVE
+            if random_action == 0:
+                move_block.rotate(3)
+            elif random_action == 1:
+                move_block.rotate(1)
+            elif random_action == 2:
+                move_block.swap(0)
+            elif random_action == 3:
+                move_block.swap(1)
+
+        pygame.time.wait(TIME_DELAY*2)
+        best_move[2].highlighted = True
+        self.renderer.draw(board, self.id)
+
+        pygame.time.wait(TIME_DELAY*2)
+
+        if best_move[1] == 0:
+            best_move[2].rotate(1)
+        elif best_move[1] == 1:
+            best_move[2].rotate(3)
+        elif best_move[1] == 2:
+            best_move[2].swap(0)
+        elif best_move[1] == 3:
+            best_move[2].swap(1)
+
+        best_move[2].highlighted = False
+        self.renderer.draw(board, self.id)
+
+class Move:
+    score: int
+    move_type: int
 
 class RandomPlayer(Player):
     def __init__(self, renderer: Renderer, player_id: int, goal: Goal) -> None:
@@ -117,7 +166,7 @@ class RandomPlayer(Player):
         move_block.highlighted = True
 
         self.renderer.draw(board, self.id)
-        pygame.time.wait(TIME_DELAY)
+        pygame.time.wait(600)
 
         random_action = random.randint(0, 4)
 
@@ -133,7 +182,7 @@ class RandomPlayer(Player):
             move_block.smash(random.randint(0, move_block.max_depth))
 
         move_block.highlighted = False
-        self.renderer.draw(board.rectangles_to_draw(), self.id)
+        self.renderer.draw(board, self.id)
 
 
 class HumanPlayer(Player):
