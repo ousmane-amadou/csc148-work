@@ -20,13 +20,17 @@ from goal import Goal
 
 TIME_DELAY = 600
 
-def get_random_block(board: Block):
+def get_random_block(board: Block) -> Block:
+    """ Returns a random block at a random depth within <board>.
+    """
     random_loc = (random.randint(0, board.size), random.randint(0, board.size))
     random_level = random.randint(1, board.max_depth)
 
     return board.get_selected_block(random_loc, random_level)
 
-def execute_move(selected_block: Block, selected_move: int):
+def execute_move(selected_block: Block, selected_move: int) -> None:
+    """ Executes <selected_move> with <selected_block>.
+    """
     if selected_move == 0 or selected_move == 13:
         selected_block.rotate(1)
     elif selected_move == 1 or selected_move == 11:
@@ -130,7 +134,7 @@ class SmartPlayer(Player):
         best_move[2].highlighted = False
         self.renderer.draw(board, self.id)
 
-        return 1
+        return 0
 
 
 class RandomPlayer(Player):
@@ -155,7 +159,7 @@ class RandomPlayer(Player):
         move_block.highlighted = False
         self.renderer.draw(board, self.id)
 
-        return 1
+        return 0
 
 class HumanPlayer(Player):
     """A human player.

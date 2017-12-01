@@ -54,8 +54,7 @@ class PerimeterGoal(Goal):
         Goal.__init__(self, target_colour)
 
     def description(self) -> str:
-        return "The player must aim to put the most possible units of a " + \
-                colour_name(self.colour) + "on the outer perimeter of the board."
+        return "Get the most most possible units of the given colour on the outer perimeter of the board."
 
     def score(self, board: Block) -> int:
         s = 0
@@ -80,7 +79,7 @@ class BlobGoal(Goal):
         Goal.__init__(self, target_colour)
 
     def description(self):
-        return "The player must aim for the largest 'blob' of " + colour_name(self.colour) + "."
+        return "Create the largest connected blob of the target colour"
 
     def score(self, board: Block) -> int:
         s = 0
