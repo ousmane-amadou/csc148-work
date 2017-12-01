@@ -13,7 +13,6 @@ This file contains the Goal class hierarchy.
 
 from typing import List, Tuple
 from block import Block
-from renderer import colour_name
 
 
 class Goal:
@@ -54,7 +53,7 @@ class PerimeterGoal(Goal):
         Goal.__init__(self, target_colour)
 
     def description(self) -> str:
-        return "Get the most most possible units of the given colour on the outer perimeter of the board."
+        return "Create the most most possible units on the outer perimeter of the board"
 
     def score(self, board: Block) -> int:
         s = 0
@@ -79,7 +78,7 @@ class BlobGoal(Goal):
         Goal.__init__(self, target_colour)
 
     def description(self):
-        return "Create the largest connected blob of the target colour"
+        return "Create the largest connected blob "
 
     def score(self, board: Block) -> int:
         s = 0
@@ -130,14 +129,14 @@ class BlobGoal(Goal):
             return visited[pos[0]][pos[1]]
         else:   # The only remaining case should be unvisited target colour nodes
             visited[pos[0]][pos[1]] = 1
-            # print("Before", pos)
+
             connected_blobs_above = self._undiscovered_blob_size((pos[0]-1, pos[1]), board, visited)
             connected_blobs_below = self._undiscovered_blob_size((pos[0]+1, pos[1]), board, visited)
             connected_blobs_left = self._undiscovered_blob_size((pos[0], pos[1]-1), board, visited)
             connected_blobs_right = self._undiscovered_blob_size((pos[0], pos[1]+1), board, visited)
 
             connected_blob = connected_blobs_above + connected_blobs_below + connected_blobs_left + connected_blobs_right
-            # print("After", pos, visited, connected_blob)
+
             return 1 + connected_blob
 
 

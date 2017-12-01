@@ -169,26 +169,20 @@ class Block:
         if len(self.children) == 0:
             pass
         else:
-            self.rotate_helper(direction)
+            new_children = []
+            if direction == 1:
+                new_children = [self.children[1], self.children[2],
+                                self.children[3], self.children[0]]
+            elif direction == 3:
+                new_children = [self.children[3], self.children[0],
+                                self.children[1], self.children[2]]
+
+            self.children = new_children
+
             for i in range(4):
                 self.children[i].rotate(direction)
+
             self.update_block_locations(self.position, self.size)
-
-    #TODO: STELLA
-    def rotate_helper(self, direction: int):
-        """
-
-        """
-        new_children = []
-        if direction == 1:
-            new_children = [self.children[1], self.children[2],
-                             self.children[3], self.children[0]]
-        elif direction == 3:
-            new_children = [self.children[3], self.children[0],
-                             self.children[1], self.children[2]]
-
-        self.children = new_children
-
 
     def smash(self, max_depth: int) -> bool:
         """Smash this block.
@@ -285,7 +279,6 @@ class Block:
             elif not upper_child and not left_child:
                 selected_child = 3
 
-            # print(self.position, self.size, self.level, level, location, self.children[selected_child].position)
             return self.children[selected_child].get_selected_block(location, level-1)
 
 
