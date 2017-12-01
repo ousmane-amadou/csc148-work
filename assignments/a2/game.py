@@ -66,8 +66,10 @@ class Game:
             elif i < num_human + random_players:
                 self.players.append(RandomPlayer(self.renderer, i, goal))
             else:
-                # TODO: SMART PLAYER INITIALIZATION
-                self.players.append(SmartPlayer(self.renderer, i, goal, smart_players[0]))
+                # TO CHECK
+                for player_difficulty in smart_players:
+                     self.players.append(SmartPlayer(self.renderer, i,
+                                                     goal, player_difficulty)
 
             self.renderer.display_goal(self.players[i])
         self.renderer.draw(self.board, 0)
@@ -114,9 +116,11 @@ class Game:
                   f'goal = \n\t{player.goal.description()}: ' +
                   f'{colour_name(player.goal.colour)}')
 
-# TODO: STELLA [STYLE]
+# Helper function for Game initializer. 
 def generate_random_goal(type: int) -> 'Goal':
-    """"""
+    """Returns a random goal of type and colour. If <type> is 0 a 
+    BlobGoal is created and if <type> is 1 a Perimeter Goal is created.
+    """
     if type == 0:
         return BlobGoal(random.choice(COLOUR_LIST))
     return PerimeterGoal(random.choice(COLOUR_LIST))
