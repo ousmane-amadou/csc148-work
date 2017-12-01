@@ -148,18 +148,14 @@ class Block:
         if self.children == []:
             pass
         else:
-            new_children = []
-
             if direction == 1:
-                new_children = [self.children[3], self.children[2],
-                             self.children[1], self.children[0]]
+                self.children = [self.children[3], self.children[2],
+                                self.children[1], self.children[0]]
             elif direction == 0:
-                new_children = [self.children[1], self.children[0],
-                             self.children[3], self.children[2]]
+                self.children = [self.children[1], self.children[0],
+                                self.children[3], self.children[2]]
 
-            self.children = new_children
             self.update_block_locations(self.position, self.size)
-
 
     def rotate(self, direction: int) -> None:
         """Rotate this Block and all its descendants.
@@ -170,15 +166,14 @@ class Block:
         if len(self.children) == 0:
             pass
         else:
-            new_children = []
-            if direction == 1:
-                new_children = [self.children[1], self.children[2],
-                                self.children[3], self.children[0]]
-            elif direction == 3:
-                new_children = [self.children[3], self.children[0],
+            if direction == 3:
+                self.children = [self.children[3], self.children[0],
                                 self.children[1], self.children[2]]
-
-            self.children = new_children
+            elif direction == 1:
+                self.children = [self.children[1], self.children[2],
+                                self.children[3], self.children[0]]
+            else:
+                return
 
             for i in range(4):
                 self.children[i].rotate(direction)
@@ -199,15 +194,13 @@ class Block:
         Return True if this Block was smashed and False otherwise.
         """
         if 0 < self.level < self.max_depth:
-            new_children = []
+            self.children = []
             for i in range(4):
-                new_children.append(random_init(self.level + 1, max_depth - 1))
-            self.children = new_children
+                self.children.append(random_init(self.level + 1, max_depth - 1))
             self.update_block_locations(self.position, self.size)
             return True
         else:
             return False
-
 
 
     def update_block_locations(self, top_left: Tuple[float, float],
@@ -282,7 +275,6 @@ class Block:
                 selected_child = 3
 
             return self.children[selected_child].get_selected_block(location, level-1)
-
 
     def flatten(self) -> List[List[Tuple[int, int, int]]]:
         """Return a two-dimensional list representing this Block as rows

@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1eec9c6e-4093-4dfc-a5b9-605adbf12f3c" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/assignments/a2/block.py" afterPath="$PROJECT_DIR$/assignments/a2/block.py" />
-      <change beforePath="$PROJECT_DIR$/assignments/a2/game.py" afterPath="$PROJECT_DIR$/assignments/a2/game.py" />
-      <change beforePath="$PROJECT_DIR$/assignments/a2/goal.py" afterPath="$PROJECT_DIR$/assignments/a2/goal.py" />
-      <change beforePath="$PROJECT_DIR$/assignments/a2/player.py" afterPath="$PROJECT_DIR$/assignments/a2/player.py" />
-      <change beforePath="$PROJECT_DIR$/assignments/a2/renderer.py" afterPath="$PROJECT_DIR$/assignments/a2/renderer.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,28 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="player.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assignments/a2/player.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="252" column="0" lean-forward="true" selection-start-line="252" selection-start-column="0" selection-end-line="252" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="block.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assignments/a2/block.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="183" column="0" lean-forward="false" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -94,9 +70,9 @@
         <option value="$PROJECT_DIR$/labs/lab10/sorting.py" />
         <option value="$PROJECT_DIR$/labs/lab10/timsort.py" />
         <option value="$PROJECT_DIR$/assignments/a2/renderer.py" />
-        <option value="$PROJECT_DIR$/assignments/a2/player.py" />
         <option value="$PROJECT_DIR$/assignments/a2/goal.py" />
         <option value="$PROJECT_DIR$/assignments/a2/game.py" />
+        <option value="$PROJECT_DIR$/assignments/a2/player.py" />
         <option value="$PROJECT_DIR$/assignments/a2/block.py" />
       </list>
     </option>
@@ -132,6 +108,12 @@
               <item name="csc148-work" type="b2602c69:ProjectViewProjectNode" />
               <item name="csc148-work" type="462c0819:PsiDirectoryNode" />
               <item name="assignments" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="csc148-work" type="b2602c69:ProjectViewProjectNode" />
+              <item name="csc148-work" type="462c0819:PsiDirectoryNode" />
+              <item name="assignments" type="462c0819:PsiDirectoryNode" />
+              <item name="a2" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="csc148-work" type="b2602c69:ProjectViewProjectNode" />
@@ -347,9 +329,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27879268" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27879268" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34517047" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -651,13 +632,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assignments/a2/rectangle_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-494">
-          <caret line="35" column="4" lean-forward="false" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/labs/lab10/timsort.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -727,14 +701,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assignments/a2/game.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="69" column="49" lean-forward="false" selection-start-line="69" selection-start-column="49" selection-end-line="69" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assignments/a2/renderer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="403">
@@ -743,18 +709,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assignments/a2/block.py">
+    <entry file="file://$PROJECT_DIR$/assignments/a2/rectangle_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="183" column="0" lean-forward="false" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
+        <state relative-caret-position="15">
+          <caret line="35" column="4" lean-forward="false" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assignments/a2/player.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="252" column="0" lean-forward="true" selection-start-line="252" selection-start-column="0" selection-end-line="252" selection-end-column="0" />
+        <state relative-caret-position="-37">
+          <caret line="239" column="48" lean-forward="false" selection-start-line="239" selection-start-column="48" selection-end-line="239" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignments/a2/game.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-211">
+          <caret line="142" column="20" lean-forward="true" selection-start-line="142" selection-start-column="20" selection-end-line="142" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignments/a2/block.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="158" column="0" lean-forward="true" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
           <folding />
         </state>
       </provider>
