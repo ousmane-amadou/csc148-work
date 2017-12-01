@@ -145,15 +145,19 @@ class Block:
         horizontally. If this Block has no children, do nothing.
         """
         if self.children == []:
-            return
+            pass
+        else:
+            new_children = []
 
-        if direction == 1:
-            self.children = [self.children[3], self.children[2],
+            if direction == 1:
+                new_children = [self.children[3], self.children[2],
                              self.children[1], self.children[0]]
-        elif direction == 0:
-            self.children = [self.children[1], self.children[0],
+            elif direction == 0:
+                new_children = [self.children[1], self.children[0],
                              self.children[3], self.children[2]]
-        self.update_block_locations(self.position, self.size)
+
+            self.children = new_children
+            self.update_block_locations(self.position, self.size)
 
 
     def rotate(self, direction: int) -> None:
@@ -231,11 +235,17 @@ class Block:
                 child = self.children[i]
                 child.size = round(size / 2.0)
 
-                child_x = top_left[0] + ((i==0) | (i==3)) * child.size  # Adds x for upper-right, bottom-right
-                child_y = top_left[1] + ((i==2) | (i==3)) * child.size  # Adds y for bottom-left, bottom-right
+                # Sets x position for child
+                # Modify x position if child is top-right, bottom-right
+                child_x = top_left[0] + ((i==0) | (i==3)) * child.size
+
+                # Sets with y position for child
+                # Modify y position if child is bottom-left, bottom-right
+                child_y = top_left[1] + ((i==2) | (i==3)) * child.size
 
                 child.position = (child_x, child_y)
                 child.update_block_locations(child.position, child.size)
+
                 self.max_depth = max(self.max_depth, child.max_depth)
 
             for i in range(len(self.children)):

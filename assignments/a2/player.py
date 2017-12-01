@@ -12,13 +12,69 @@ This file contains the player class hierarchy.
 """
 
 import random
-from typing import Optional, Dict, List
+from typing import Optional, List, Union, Any
 import pygame
 from renderer import Renderer
 from block import Block
 from goal import Goal
 
 TIME_DELAY = 600
+
+def get_random_block(board: Block):
+    random_loc = (random.randint(0, board.size), random.randint(0, board.size))
+    random_level = random.randint(1, board.max_depth)
+
+    return board.get_selected_block(random_loc, random_level)
+
+def execute_move(selected_block: Block, selected_move: int):
+    if selected_move == 0 or selected_move == 13:
+        selected_block.rotate(1)
+    elif selected_move == 1 or selected_move == 11:
+        selected_block.swap(1)
+    elif selected_move == 2 or selected_move == 12:
+        selected_block.swap(0)
+    elif selected_move == 3 or selected_move == 10:
+        selected_block.rotate(3)
+    elif selected_move == 4:
+        selected_block.smash(random.randint(0, selected_move.max_depth))
+
+def execute_move(player: 'Player', board: Block, visible: bool,
+                 move_id=-1, move_block=None) -> List[Union[Union[int, Block], Any]]:
+    """ Execute one of 5 moves, specified by <move_id> on
+    <move_block>.
+
+    Returns the block that was moved, the move_done
+    """
+    random_loc = (random.randint(0, board.size), random.randint(0, board.size))
+    random_level = random.randint(1, board.max_depth)
+
+    selected_block = move_block if move_block is not None else \
+        board.get_selected_block(random_loc, random_level)
+
+    selected_move = move_id if move_id != -1 else \
+        random.randint(0, 3 + 1 * (isinstance(player, RandomPlayer)))
+
+    if visible:
+        move_block.highlighted = True
+        player.renderer.draw(board, player.id)
+        pygame.time.wait(600)
+
+    if selected_move == 0 or selected_move == 13:
+        selected_block.rotate(1)
+    elif selected_move == 1 or selected_move == 11:
+        selected_block.swap(1)
+    elif selected_move == 2 or selected_move == 12:
+        selected_block.swap(0)
+    elif selected_move == 3 or selected_move == 10:
+        selected_block.rotate(3)
+    elif selected_move == 4:
+        selected_block.smash(random.randint(0, move_block.max_depth))
+
+    if visible:
+        selected_block.highlighted = False
+        player.renderer.draw(board, player.id)
+
+    return [player.goal.score(board), selected_move, selected_block]
 
 class Player:
     """A player in the Blocky game.
@@ -55,19 +111,12 @@ class Player:
         raise NotImplementedError
 
 class SmartPlayer(Player):
-    """A player in the Blocky game.
-
-       This is an abstract class. Only child classes should be instantiated.
+    """ An NPC (non-player character) in the Blocky Game that that
+        chooses moves more intelligently than a Random Player.
 
        === Public Attributes ===
-       renderer:
-           The object that draws our Blocky board on the screen
-           and tracks user interactions with the Blocky board.
-       id:
-           This player's number.  Used by the renderer to refer to the player,
-           for example as "Player 2"
-       goal:
-           This player's assigned goal for the game.
+        difficulty:
+            the level of challenge the smart player poses against other players
        """
     difficulty: int
 
@@ -75,9 +124,6 @@ class SmartPlayer(Player):
         """"""
         super().__init__(renderer, player_id, goal)
         self.difficulty = difficulty
-
-        self.board_state = None
-        self.move_memory = {}
 
     def make_move(self, board: Block):
         """Choose the best move to make on the given board, and apply it, mutating
@@ -92,7 +138,6 @@ class SmartPlayer(Player):
         >= 5 = 150
         """
         num_moves = 0
-        move_breadth = 0
 
         moves_legend = {0: 5, 1: 10, 2: 25, 3: 50, 4: 100}
         if self.difficulty >= 5:
@@ -100,57 +145,36 @@ class SmartPlayer(Player):
         else:
             num_moves = moves_legend[self.difficulty]
 
+        # [ score, move_type, move_block ]
         best_move = [-1, -1, None]
         for i in range(num_moves):
-            random_loc = (random.randint(0, board.size), random.randint(0, board.size))
-            random_level = random.randint(1, board.max_depth)
-
-            move_block = board.get_selected_block(random_loc, random_level)
-            random_action = random.randint(0, 3)
-
-            if random_action == 0:
-                move_block.rotate(1)
-            elif random_action == 1:
-                move_block.rotate(3)
-            elif random_action == 2:
-                move_block.swap(0)
-            elif random_action == 3:
-                move_block.swap(1)
+            move_block = get_random_block(board)
+            move_type = random.randint(0, 3)
+            execute_move(move_block, move_type)
 
             if self.goal.score(board) > best_move[0]:
-                best_move = [self.goal.score(board), random_action, move_block]
+                best_move = [self.goal.score(board), move_type, move_block]
 
-            # UNDO MOVE
-            if random_action == 0:
-                move_block.rotate(3)
-            elif random_action == 1:
-                move_block.rotate(1)
-            elif random_action == 2:
-                move_block.swap(0)
-            elif random_action == 3:
-                move_block.swap(1)
+            execute_move(move_block, move_type + 10)
+            # move_score, move_type, move_block = execute_move(self, board, False)
+            #
+            # if move_score > best_move[0]:
+            #     best_move = [move_score, move_type, move_block]
+            #
+            # # UNDO MOVE
+            # execute_move(self, board, False, move_id=move_type + 10, move_block=move_block)
 
-        pygame.time.wait(TIME_DELAY*2)
+
         best_move[2].highlighted = True
         self.renderer.draw(board, self.id)
+        pygame.time.wait(600)
 
-        pygame.time.wait(TIME_DELAY*2)
-
-        if best_move[1] == 0:
-            best_move[2].rotate(1)
-        elif best_move[1] == 1:
-            best_move[2].rotate(3)
-        elif best_move[1] == 2:
-            best_move[2].swap(0)
-        elif best_move[1] == 3:
-            best_move[2].swap(1)
+        execute_move(best_move[2], best_move[1])
 
         best_move[2].highlighted = False
         self.renderer.draw(board, self.id)
 
-class Move:
-    score: int
-    move_type: int
+        # execute_move(self, board, True,  move_id=best_move[1], move_block=best_move[2])
 
 class RandomPlayer(Player):
     def __init__(self, renderer: Renderer, player_id: int, goal: Goal) -> None:
@@ -158,31 +182,44 @@ class RandomPlayer(Player):
         super().__init__(renderer, player_id, goal)
 
     def make_move(self, board: Block):
-        # Choose Random block
-        random_loc = (random.randint(0, board.size), random.randint(0, board.size))
-        random_level = random.randint(1, board.max_depth)
+        move_block = get_random_block(board)
+        move_type = random.randint(0, 3)
 
-        move_block = board.get_selected_block(random_loc, random_level)
         move_block.highlighted = True
-
         self.renderer.draw(board, self.id)
         pygame.time.wait(600)
 
-        random_action = random.randint(0, 4)
-
-        if random_action == 0:   # Rotate the selected block either clockwise or counter clock wise
-            move_block.rotate(1)
-        elif random_action == 1:
-            move_block.rotate(3)
-        elif random_action == 2: # Swap the 4 sub blocks within the selcted block horizontally or vertically
-            move_block.swap(0)
-        elif random_action == 3:
-            move_block.swap(1)
-        elif random_action == 4:
-            move_block.smash(random.randint(0, move_block.max_depth))
+        execute_move(move_block, move_type)
 
         move_block.highlighted = False
         self.renderer.draw(board, self.id)
+
+        # execute_move(self, board, True)
+        # # Choose Random block
+        # random_loc = (random.randint(0, board.size), random.randint(0, board.size))
+        # random_level = random.randint(1, board.max_depth)
+        #
+        # move_block = board.get_selected_block(random_loc, random_level)
+        #
+        # move_block.highlighted = True
+        # self.renderer.draw(board, self.id)
+        # pygame.time.wait(600)
+        #
+        # random_action = random.randint(0, 4)
+        #
+        # if random_action == 0:   # Rotate the selected block either clockwise or counter clock wise
+        #     move_block.rotate(1)
+        # elif random_action == 1:
+        #     move_block.rotate(3)
+        # elif random_action == 2: # Swap the 4 sub blocks within the selcted block horizontally or vertically
+        #     move_block.swap(0)
+        # elif random_action == 3:
+        #     move_block.swap(1)
+        # elif random_action == 4:
+        #     move_block.smash(random.randint(0, move_block.max_depth))
+        #
+        # move_block.highlighted = False
+        # self.renderer.draw(board, self.id)
 
 
 class HumanPlayer(Player):
