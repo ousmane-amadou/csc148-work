@@ -19,6 +19,7 @@ from renderer import COLOUR_LIST, TEMPTING_TURQUOISE, BLACK
 HIGHLIGHT_COLOUR = TEMPTING_TURQUOISE
 FRAME_COLOUR = BLACK
 
+
 class Block:
     """A square block in the Blocky game.
 
@@ -228,6 +229,7 @@ class Block:
             for i in range(len(self.children)):
                 child = self.children[i]
                 child.size = round(size / 2.0)
+                child.parent = self
 
                 # Sets x position for child
                 # Modify x position if child is top-right, bottom-right
@@ -303,7 +305,7 @@ class Block:
                 x = self.position[1] + 5 + (self.size/unit) * i
 
                 L[i][j] = self.get_selected_block((x, y), self.max_depth).colour
-                #print(i, j, x, y, L[i][j])
+                # print(i, j, x, y, L[i][j])
         return L
 
 def random_init(level: int, max_depth: int) -> 'Block':

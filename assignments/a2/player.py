@@ -122,7 +122,7 @@ class SmartPlayer(Player):
             if self.goal.score(board) > best_move[0]:
                 best_move = [self.goal.score(board), move_type, move_block]
 
-            execute_move(move_block, move_type + 10)
+            execute_move(move_block, move_type+10)
 
 
         best_move[2].highlighted = True

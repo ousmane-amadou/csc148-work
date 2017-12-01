@@ -54,7 +54,7 @@ class Game:
         self.players = []
 
         self.board = random_init(0, max_depth)
-        self.board.update_block_locations((0, 0), 500)
+        self.board.update_block_locations((0, 0), BOARD_WIDTH)
 
         # Generate a Random Goal type for all players to share
         common_goal_type = round(random.random())
@@ -164,6 +164,6 @@ if __name__ == '__main__':
     #     ],
     # })
     # sample_game()
-    auto_game()
-    # two_player_game()
+    # auto_game()
+    two_player_game()
     # solitaire_game()

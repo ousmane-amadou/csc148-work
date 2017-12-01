@@ -14,7 +14,6 @@ This file contains the Goal class hierarchy.
 from typing import List, Tuple
 from block import Block
 
-
 class Goal:
     """A player goal in the game of Blocky.
 
@@ -50,9 +49,13 @@ class PerimeterGoal(Goal):
     colour c on the outer perimeter of the board.
     """
     def __init__(self, target_colour: Tuple[int, int, int]) -> None:
+        """ Initalize a new PerimeterGoal.
+        """
         Goal.__init__(self, target_colour)
 
     def description(self) -> str:
+        """Return a description of the BlobGoal type.
+        """
         return "Create the most most possible units on the outer perimeter of the board"
 
     def score(self, board: Block) -> int:
@@ -75,23 +78,28 @@ class BlobGoal(Goal):
     """
 
     def __init__(self, target_colour: Tuple[int, int, int]) -> None:
+        """ Initialize a new BlobGoal.
+        """
         Goal.__init__(self, target_colour)
 
-    def description(self):
+    def description(self) -> str:
+        """Return a description of the BlobGoal type.
+        """
         return "Create the largest connected blob "
 
     def score(self, board: Block) -> int:
-        s = 0
+        """ Calculate and return the score associated with the largest connected
+        blob on <board>. """
+        max_blob = 0
         size = len(board.flatten())
-        adj = self._init_matrix(size)
+        visited = self._init_matrix(size)
         for i in range(size):
             for j in range(size):
-                s = max(s, self._undiscovered_blob_size((i, j), board.flatten(), adj))
-        return s
+                max_blob = max(max_blob, self._undiscovered_blob_size((i, j), board.flatten(), visited))
+        return max_blob
 
-    def _init_matrix(self, size:int) -> List[List[int]]:
-        """
-        Returns a size by size matrix whose entries are all -1.
+    def _init_matrix(self, size: int) -> List[List[int]]:
+        """Returns a <size> by <size> matrix whose entries are all -1.
         """
         L = []
         for i in range(size):
