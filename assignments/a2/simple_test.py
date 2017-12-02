@@ -30,7 +30,9 @@ def test_flatten() -> None:
     board, flatten_expected = construct_board()
 
     flatten_actual = board.flatten()
-
+    # for i in range(len(flatten_expected)):
+    #     for j in range(len(flatten_expected)):
+    #         print(flatten_actual[i][j], flatten_expected[i][j], i, j)
     # It should be the case that width == height (we make square boards only)
     assert len(flatten_actual) == len(flatten_actual[0]),\
         'Flattened board should be square.'

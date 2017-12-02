@@ -13,11 +13,22 @@ This file contains the Block class, the main data structure used in the game.
 from typing import Optional, Tuple, List
 import random
 import math
-from renderer import COLOUR_LIST, TEMPTING_TURQUOISE, BLACK, BOARD_WIDTH
+from renderer import COLOUR_LIST, TEMPTING_TURQUOISE, BLACK
 
 
 HIGHLIGHT_COLOUR = TEMPTING_TURQUOISE
 FRAME_COLOUR = BLACK
+
+
+def init_matrix(size: int) -> List[List[int]]:
+    """Returns a <size> by <size> matrix whose entries are all -1.
+    """
+    m = []
+    for i in range(size):
+        m.append([])
+        for _ in range(size):
+            m[i].append(-1)
+    return m
 
 
 class Block:
@@ -198,7 +209,7 @@ class Block:
             self.children = []
             for _ in range(4):
                 self.children.append(random_init(self.level + 1,
-                                                 self.max_depth - 1))
+                                                 self.max_depth))
             self.update_block_locations(self.position, self.size)
             return True
         else:
@@ -283,15 +294,30 @@ class Block:
 
         m[0][0] represents the unit cell in the upper left corner of the Block.
         """
-        self.update_block_locations((0, 0), BOARD_WIDTH)
-        unit = 2**(self.max_depth - self.level)
-        m = []
-        for c in range(0, unit):
-            m.append(list(range(0, unit)))
-            for r in range(0, unit):
-                x = self.position[0] + 5 + (self.size/unit) * c
-                y = self.position[1] + 5 + (self.size/unit) * r
-                m[c][r] = self.get_selected_block((x, y), self.max_depth).colour
+        units = 2 ** (self.max_depth - self.level)
+        sub_unit = int(math.floor(units/2))
+        m = init_matrix(units)
+
+        if self.children == []:
+            m = [[self.colour for _ in range(units)] for _ in range(units)]
+        else:
+            # Recusively flatten children
+            mtr = self.children[0].flatten()
+            mtl = self.children[1].flatten()
+            mbl = self.children[2].flatten()
+            mbr = self.children[3].flatten()
+
+            for i in range(units):
+                for j in range(units):
+                    if (i < sub_unit) and (j < sub_unit):
+                        m[i][j] = mtl[i][j]
+                    elif (i < sub_unit) and (j >= sub_unit):
+                        m[i][j] = mbl[i][j-sub_unit]
+                    elif (i >= sub_unit) and (j < sub_unit):
+                        m[i][j] = mtr[i-sub_unit][j]
+                    else:
+                        m[i][j] = mbr[i-sub_unit][j-sub_unit]
+
         return m
 
 
@@ -309,7 +335,7 @@ def random_init(level: int, md: int) -> 'Block':
     # If this Block is not already at the maximum allowed depth, it can
     # be subdivided. Use a random number to decide whether or not to
     # subdivide it further.
-    if level <= md and random.random() <= math.exp(-0.25 * level):
+    if level < md and random.random() <= math.exp(-0.25 * level):
         b = Block(level, children=[random_init(level+1, md) for _ in range(4)])
     else:
         b = Block(level, random.choice(COLOUR_LIST), children=None)
