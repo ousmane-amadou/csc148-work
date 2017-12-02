@@ -17,7 +17,7 @@ can call to try playing the game in several different configurations.
 import random
 from typing import List
 from block import Block, random_init
-from goal import BlobGoal, PerimeterGoal
+from goal import BlobGoal, PerimeterGoal, Goal
 from player import Player, HumanPlayer, RandomPlayer, SmartPlayer
 from renderer import Renderer, COLOUR_LIST, colour_name, BOARD_WIDTH
 
@@ -168,15 +168,15 @@ def sample_game() -> None:
 
 
 if __name__ == '__main__':
-    import python_ta
-    python_ta.check_all(config={
-        'allowed-io': ['run_game'],
-        'allowed-import-modules': [
-            'doctest', 'python_ta', 'random', 'typing',
-            'block', 'goal', 'player', 'renderer'
-        ],
-    })
-    # sample_game()
+    # import python_ta
+    # python_ta.check_all(config={
+    #     'allowed-io': ['run_game'],
+    #     'allowed-import-modules': [
+    #         'doctest', 'python_ta', 'random', 'typing',
+    #         'block', 'goal', 'player', 'renderer'
+    #     ],
+    # })
+    sample_game()
     # auto_game()
     # two_player_game()
     # solitaire_game()

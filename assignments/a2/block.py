@@ -219,28 +219,20 @@ class Block:
             pass
         else:
             self.size = size
-            self.max_depth = self.level + 1
             for i in range(len(self.children)):
                 child = self.children[i]
                 child.size = round(size / 2.0)
-                child.parent = self
 
                 # Sets x position for child
                 # Modify x position if child is top-right, bottom-right
                 child_x = top_left[0] + ((i == 0) | (i == 3)) * child.size
 
-                # Sets with y position for child
+                # Sets y position for child
                 # Modify y position if child is bottom-left, bottom-right
                 child_y = top_left[1] + ((i == 2) | (i == 3)) * child.size
 
                 child.position = (child_x, child_y)
                 child.update_block_locations(child.position, child.size)
-
-                self.max_depth = max(self.max_depth, child.max_depth)
-
-            for i in range(len(self.children)):
-                child = self.children[i]
-                child.max_depth = self.max_depth
 
     def get_selected_block(self, location: Tuple[float, float], level: int) \
             -> 'Block':
@@ -283,13 +275,13 @@ class Block:
         """Return a two-dimensional list representing this Block as rows
         and columns of unit cells.
 
-        Return a list of lists L, where, for 0 <= i, j < 2^{self.level}
-            - L[i] represents column i and
-            - L[i][j] represents the unit cell at column i and row j.
+        Return a list of lists m, where, for 0 <= i, j < 2^{self.level}
+            - m[i] represents column i and
+            - m[i][j] represents the unit cell at column i and row j.
         Each unit cell is represented by 3 ints for the colour
         of the block at the cell location[i][j]
 
-        L[0][0] represents the unit cell in the upper left corner of the Block.
+        m[0][0] represents the unit cell in the upper left corner of the Block.
         """
         self.update_block_locations((0, 0), BOARD_WIDTH)
         unit = 2**(self.max_depth - self.level)
@@ -321,6 +313,20 @@ def random_init(level: int, md: int) -> 'Block':
         b = Block(level, children=[random_init(level+1, md) for _ in range(4)])
     else:
         b = Block(level, random.choice(COLOUR_LIST), children=None)
+
+    # Set max_depth and parent attribute for each block
+    v = [b]
+    while v:
+        curr = v.pop()
+        curr.max_depth = md
+
+        if curr.children is None:
+            continue
+
+        for child in curr.children:
+            child.parent = curr
+            v.append(child)
+
     return b
 
 
