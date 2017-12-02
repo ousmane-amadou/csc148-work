@@ -68,7 +68,7 @@ class PerimeterGoal(Goal):
     def description(self) -> str:
         """Return a description of the BlobGoal type.
         """
-        return "Create the most most possible " \
+        return "Create the most possible " \
                "units on the outer perimeter of the board"
 
     def score(self, board: Block) -> int:
