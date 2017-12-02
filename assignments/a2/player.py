@@ -124,7 +124,7 @@ class SmartPlayer(Player):
             if score > best_move[0]:
                 best_move = [score, move_type, move_block]
 
-            execute_move(move_block, move_type+10)
+            execute_move(move_block, move_type+10)  # UNDO's move
 
         best_move[2].highlighted = True
         self.renderer.draw(board, self.id)

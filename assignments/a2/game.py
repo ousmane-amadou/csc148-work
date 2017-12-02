@@ -60,16 +60,8 @@ class Game:
         # Generate a Random Goal type for all players to share
         common_goal_type = round(random.random())
 
-        # Colors that have already been selected by a player
-        claimed_colors = []
-
         for i in range(num_human + random_players + len(smart_players)):
             goal = generate_random_goal(common_goal_type)
-
-            while goal.colour in claimed_colors:
-                goal = generate_random_goal(common_goal_type)
-
-            claimed_colors.append(goal.colour)
 
             if i < num_human:
                 self.players.append(HumanPlayer(self.renderer, i, goal))

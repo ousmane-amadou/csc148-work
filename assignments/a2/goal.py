@@ -75,7 +75,7 @@ class PerimeterGoal(Goal):
         """ Calculate and return the score associated with the most units on
         the outer perimeter on <board>. """
         s = 0
-        rep = board.flatten()   # flattened rep-presentation of board
+        rep = board.flatten()   # flattened rep-resentation of board
         for i in range(0, len(rep)):
             if rep[i][0] == self.colour:
                 s += 1
@@ -106,7 +106,8 @@ class BlobGoal(Goal):
 
     def score(self, board: Block) -> int:
         """ Calculate and return the score associated with the largest connected
-        blob on <board>. """
+        blob on <board>.
+        """
         mx_b = 0
 
         rep = board.flatten()
