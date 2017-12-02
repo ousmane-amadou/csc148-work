@@ -335,24 +335,17 @@ def random_init(level: int, md: int) -> 'Block':
     # If this Block is not already at the maximum allowed depth, it can
     # be subdivided. Use a random number to decide whether or not to
     # subdivide it further.
+
     if level < md and random.random() <= math.exp(-0.25 * level):
         b = Block(level, children=[random_init(level+1, md) for _ in range(4)])
+
+        # Set parent attribute for each child block
+        for child in b.children:
+            child.parent = b
     else:
         b = Block(level, random.choice(COLOUR_LIST), children=None)
 
-    # Set max_depth and parent attribute for each block
-    v = [b]
-    while v:
-        curr = v.pop()
-        curr.max_depth = md
-
-        if curr.children is None:
-            continue
-
-        for child in curr.children:
-            child.parent = curr
-            v.append(child)
-
+    b.max_depth = md    # Set max_depth attribute for current block
     return b
 
 

@@ -162,7 +162,7 @@ def sample_game() -> None:
     """Run a sample game with one human player, one random player,
     and one smart player.
     """
-    random.seed(1001)
+    # random.seed(1001)
     game = Game(5, 1, 1, [6])
     game.run_game(3)
 

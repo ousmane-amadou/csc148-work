@@ -68,14 +68,14 @@ class PerimeterGoal(Goal):
     def description(self) -> str:
         """Return a description of the BlobGoal type.
         """
-        return "Create the most possible " \
-               "units on the outer perimeter of the board"
+        return "Create the most " \
+               "units on outer perimeter of the board"
 
     def score(self, board: Block) -> int:
         """ Calculate and return the score associated with the most units on
         the outer perimeter on <board>. """
         s = 0
-        rep = board.flatten()
+        rep = board.flatten()   # flattened rep-presentation of board
         for i in range(0, len(rep)):
             if rep[i][0] == self.colour:
                 s += 1
