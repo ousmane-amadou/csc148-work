@@ -17,7 +17,7 @@ can call to try playing the game in several different configurations.
 import random
 from typing import List
 from block import Block, random_init
-from goal import BlobGoal, PerimeterGoal, Goal
+from goal import BlobGoal, PerimeterGoal
 from player import Player, HumanPlayer, RandomPlayer, SmartPlayer
 from renderer import Renderer, COLOUR_LIST, colour_name, BOARD_WIDTH
 
@@ -50,7 +50,8 @@ class Game:
         Precondition:
             2 <= max_depth <= 5
         """
-        self.renderer = Renderer(num_players=(num_human+random_players+len(smart_players)))
+        self.renderer = \
+            Renderer(num_players=(num_human+random_players+len(smart_players)))
         self.players = []
 
         self.board = random_init(0, max_depth)
@@ -75,7 +76,8 @@ class Game:
             elif i < num_human + random_players:
                 self.players.append(RandomPlayer(self.renderer, i, goal))
             else:
-                self.players.append(SmartPlayer(self.renderer, i, goal, smart_players.pop()))
+                self.players.append(SmartPlayer(self.renderer,
+                                                i, goal, smart_players.pop()))
             self.renderer.display_goal(self.players[i])
         self.renderer.draw(self.board, 0)
 
@@ -166,15 +168,15 @@ def sample_game() -> None:
 
 
 if __name__ == '__main__':
-    # import python_ta
-    # python_ta.check_all(config={
-    #     'allowed-io': ['run_game'],
-    #     'allowed-import-modules': [
-    #         'doctest', 'python_ta', 'random', 'typing',
-    #         'block', 'goal', 'player', 'renderer'
-    #     ],
-    # })
+    import python_ta
+    python_ta.check_all(config={
+        'allowed-io': ['run_game'],
+        'allowed-import-modules': [
+            'doctest', 'python_ta', 'random', 'typing',
+            'block', 'goal', 'player', 'renderer'
+        ],
+    })
     # sample_game()
     # auto_game()
-    two_player_game()
+    # two_player_game()
     # solitaire_game()

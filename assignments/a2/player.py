@@ -90,15 +90,16 @@ class SmartPlayer(Player):
     """
     difficulty: int
 
-    def __init__(self, renderer: Renderer, player_id: int, goal: Goal, difficulty: int) -> None:
+    def __init__(self, renderer: Renderer,
+                 player_id: int, goal: Goal, difficulty: int) -> None:
         """Initialize a new Smart Player.
         """
         super().__init__(renderer, player_id, goal)
         self.difficulty = difficulty
 
     def make_move(self, board: Block):
-        """Choose the best move to make on the given board, and apply it, mutating
-        the Board as appropriate.
+        """Choose the best move to make on the given board, and apply it,
+        mutating the Board as appropriate.
 
         Number of moves compared depends on set difficulty:
         0 = 5
@@ -108,12 +109,12 @@ class SmartPlayer(Player):
         4 = 100
         >= 5 = 150
         """
-        moves_legend = {0: 5, 1: 10, 2: 25, 3: 50, 4: 100, 5: 150}
+        moves = {0: 5, 1: 10, 2: 25, 3: 50, 4: 100, 5: 150}
 
         # [ score, move_type, move_block ]
         best_move = [-1, -1, Block(0)]
 
-        for i in range(moves_legend[self.difficulty if self.difficulty < 5 else 5]):
+        for _ in range(moves[self.difficulty if self.difficulty < 5 else 5]):
             move_block = get_random_block(board)
             move_type = random.randint(0, 3)
             execute_move(move_block, move_type)

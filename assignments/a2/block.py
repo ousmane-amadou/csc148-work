@@ -125,19 +125,19 @@ class Block:
 
         The order of the rectangles does not matter.
         """
-        to_draw = []
+        d = []
 
         if self.children == []:
-            to_draw += [(self.colour, self.position, (self.size, self.size), 0)]
-            to_draw += [(FRAME_COLOUR, self.position, (self.size, self.size), 3)]
+            d += [(self.colour, self.position, (self.size, self.size), 0)]
+            d += [(FRAME_COLOUR, self.position, (self.size, self.size), 3)]
         else:
             for i in range(len(self.children)):
-                to_draw += self.children[i].rectangles_to_draw()
+                d += self.children[i].rectangles_to_draw()
 
         if self.highlighted:
-            to_draw += [(HIGHLIGHT_COLOUR, self.position, (self.size, self.size), 5)]
+            d += [(HIGHLIGHT_COLOUR, self.position, (self.size, self.size), 5)]
 
-        return to_draw
+        return d
 
     def swap(self, direction: int) -> None:
         """Swap the child Blocks of this Block.
@@ -149,9 +149,11 @@ class Block:
             pass
         else:
             if direction == 1:
-                self.children = [self.children[3], self.children[2], self.children[1], self.children[0]]
+                self.children = [self.children[3], self.children[2],
+                                 self.children[1], self.children[0]]
             elif direction == 0:
-                self.children = [self.children[1], self.children[0], self.children[3], self.children[2]]
+                self.children = [self.children[1], self.children[0],
+                                 self.children[3], self.children[2]]
 
             self.update_block_locations(self.position, self.size)
 
@@ -165,9 +167,11 @@ class Block:
             pass
         else:
             if direction == 3:
-                self.children = [self.children[3], self.children[0], self.children[1], self.children[2]]
+                self.children = [self.children[3], self.children[0],
+                                 self.children[1], self.children[2]]
             elif direction == 1:
-                self.children = [self.children[1], self.children[2], self.children[3], self.children[0]]
+                self.children = [self.children[1], self.children[2],
+                                 self.children[3], self.children[0]]
             else:
                 return
 
@@ -192,8 +196,9 @@ class Block:
 
         if 0 < self.level < self.max_depth:
             self.children = []
-            for i in range(4):
-                self.children.append(random_init(self.level + 1, self.max_depth - 1))
+            for _ in range(4):
+                self.children.append(random_init(self.level + 1,
+                                                 self.max_depth - 1))
             self.update_block_locations(self.position, self.size)
             return True
         else:
@@ -260,8 +265,9 @@ class Block:
             return self
         else:
             selected_child = 0
-            left_child = location[0] < (self.position[0] + round(self.size / 2.0))
-            upper_child = location[1] < (self.position[1] + round(self.size / 2.0))
+            size = round(self.size / 2.0)
+            left_child = location[0] < (self.position[0] + size)
+            upper_child = location[1] < (self.position[1] + size)
 
             if left_child and upper_child:
                 selected_child = 1
@@ -270,7 +276,8 @@ class Block:
             elif not upper_child and not left_child:
                 selected_child = 3
 
-            return self.children[selected_child].get_selected_block(location, level-1)
+            return self.children[selected_child].get_selected_block(
+                location, level-1)
 
     def flatten(self) -> List[List[Tuple[int, int, int]]]:
         """Return a two-dimensional list representing this Block as rows
@@ -287,16 +294,16 @@ class Block:
         self.update_block_locations((0, 0), BOARD_WIDTH)
         unit = 2**(self.max_depth - self.level)
         m = []
-        for col in range(0, unit):
+        for c in range(0, unit):
             m.append(list(range(0, unit)))
-            for row in range(0, unit):
-                x = self.position[0] + 5 + (self.size/unit) * col
-                y = self.position[1] + 5 + (self.size/unit) * row
-                m[col][row] = self.get_selected_block((x, y), self.max_depth).colour
+            for r in range(0, unit):
+                x = self.position[0] + 5 + (self.size/unit) * c
+                y = self.position[1] + 5 + (self.size/unit) * r
+                m[c][r] = self.get_selected_block((x, y), self.max_depth).colour
         return m
 
 
-def random_init(level: int, max_depth: int) -> 'Block':
+def random_init(level: int, md: int) -> 'Block':
     """Return a randomly-generated Block with level <level> and subdivided
     to a maximum depth of <max_depth>.
 
@@ -310,13 +317,11 @@ def random_init(level: int, max_depth: int) -> 'Block':
     # If this Block is not already at the maximum allowed depth, it can
     # be subdivided. Use a random number to decide whether or not to
     # subdivide it further.
-    if level <= max_depth:  # to subdivide
-        if random.random() <= math.exp(-0.25 * level):
-            return Block(level, children=[random_init(level+1+(i-i), max_depth) for i in range(4)])
-
-    # or not to subdivide
-    blck = Block(level, random.choice(COLOUR_LIST), children=None)
-    return blck
+    if level <= md and random.random() <= math.exp(-0.25 * level):
+        b = Block(level, children=[random_init(level+1, md) for _ in range(4)])
+    else:
+        b = Block(level, random.choice(COLOUR_LIST), children=None)
+    return b
 
 
 if __name__ == '__main__':
