@@ -17,7 +17,7 @@ can call to try playing the game in several different configurations.
 import random
 from typing import List
 from block import Block, random_init
-from goal import BlobGoal, PerimeterGoal
+from goal import BlobGoal, PerimeterGoal, Goal
 from player import Player, HumanPlayer, RandomPlayer, SmartPlayer
 from renderer import Renderer, COLOUR_LIST, colour_name, BOARD_WIDTH
 
@@ -59,8 +59,17 @@ class Game:
         # Generate a Random Goal type for all players to share
         common_goal_type = round(random.random())
 
+        # Colors that have already been selected by a player
+        claimed_colors = []
+
         for i in range(num_human + random_players + len(smart_players)):
             goal = generate_random_goal(common_goal_type)
+
+            while goal.colour in claimed_colors:
+                goal = generate_random_goal(common_goal_type)
+
+            claimed_colors.append(goal.colour)
+
             if i < num_human:
                 self.players.append(HumanPlayer(self.renderer, i, goal))
             elif i < num_human + random_players:
@@ -112,14 +121,16 @@ class Game:
                   f'goal = \n\t{player.goal.description()}: ' +
                   f'{colour_name(player.goal.colour)}')
 
+
 # Helper function for Game initializer.
-def generate_random_goal(type: int) -> 'Goal':
-    """Returns a goal, of type <type> and a random colour. If <type> is 0 a
-    BlobGoal is created and if <type> is 1 a Perimeter Goal is created.
+def generate_random_goal(t: int) -> 'Goal':
+    """Returns a goal, of type <t> and a random colour. If <t> is 0 a
+    BlobGoal is created and if <t> is 1 a Perimeter Goal is created.
     """
-    if type == 0:
+    if t == 0:
         return BlobGoal(random.choice(COLOUR_LIST))
     return PerimeterGoal(random.choice(COLOUR_LIST))
+
 
 def auto_game() -> None:
     """Run a game with two computer players of different difficulty.
@@ -133,7 +144,7 @@ def two_player_game() -> None:
     """Run a game with two human players.
     """
     random.seed(507)
-    game = Game(3, 2, 0, [])
+    game = Game(2, 2, 0, [])
     game.run_game(5)
 
 

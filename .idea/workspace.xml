@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1eec9c6e-4093-4dfc-a5b9-605adbf12f3c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/assignments/a2/block.py" afterPath="$PROJECT_DIR$/assignments/a2/block.py" />
+      <change beforePath="$PROJECT_DIR$/assignments/a2/game.py" afterPath="$PROJECT_DIR$/assignments/a2/game.py" />
+      <change beforePath="$PROJECT_DIR$/assignments/a2/goal.py" afterPath="$PROJECT_DIR$/assignments/a2/goal.py" />
+      <change beforePath="$PROJECT_DIR$/assignments/a2/player.py" afterPath="$PROJECT_DIR$/assignments/a2/player.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,7 +15,58 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="game.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assignments/a2/game.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="98">
+              <caret line="129" column="14" lean-forward="true" selection-start-line="129" selection-start-column="14" selection-end-line="129" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="player.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assignments/a2/player.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="127">
+              <caret line="187" column="7" lean-forward="false" selection-start-line="187" selection-start-column="4" selection-end-line="187" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="block.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assignments/a2/block.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="112">
+              <caret line="178" column="28" lean-forward="true" selection-start-line="178" selection-start-column="28" selection-end-line="178" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="simple_test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assignments/a2/simple_test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-180">
+              <caret line="329" column="23" lean-forward="true" selection-start-line="329" selection-start-column="23" selection-end-line="329" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="goal.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assignments/a2/goal.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="164" column="49" lean-forward="true" selection-start-line="164" selection-start-column="49" selection-end-line="164" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -27,6 +80,12 @@
       <find>random_init</find>
       <find>random</find>
       <find>drawa</find>
+      <find>smas</find>
+      <find>get</find>
+      <find>flatten</find>
+      <find>size</find>
+      <find>flat</find>
+      <find>smash</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -70,8 +129,9 @@
         <option value="$PROJECT_DIR$/labs/lab10/sorting.py" />
         <option value="$PROJECT_DIR$/labs/lab10/timsort.py" />
         <option value="$PROJECT_DIR$/assignments/a2/renderer.py" />
-        <option value="$PROJECT_DIR$/assignments/a2/goal.py" />
+        <option value="$PROJECT_DIR$/assignments/a2/simple_test.py" />
         <option value="$PROJECT_DIR$/assignments/a2/game.py" />
+        <option value="$PROJECT_DIR$/assignments/a2/goal.py" />
         <option value="$PROJECT_DIR$/assignments/a2/player.py" />
         <option value="$PROJECT_DIR$/assignments/a2/block.py" />
       </list>
@@ -174,7 +234,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.game">
+  <component name="RunManager" selected="Python tests.Nosetests in simple_test.py">
     <configuration name="game" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -247,7 +307,7 @@
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
     </configuration>
-    <configuration name="Nosetests in rectangle_test.py" type="tests" factoryName="Nosetests" temporary="true" nameIsGenerated="true">
+    <configuration name="Nosetests in simple_test.py" type="tests" factoryName="Nosetests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
@@ -259,23 +319,23 @@
       <module name="csc148-work" />
       <option name="_new_regexPattern" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/assignments/a2/rectangle_test.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/assignments/a2/simple_test.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.game" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.Nosetests in rectangle_test.py" />
-      <item index="2" class="java.lang.String" itemvalue="Python.profile_sorting" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Doctests in sorting" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Doctests in timsort" />
+      <item index="1" class="java.lang.String" itemvalue="Python.profile_sorting" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Doctests in sorting" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Doctests in timsort" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Nosetests in simple_test.py" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.game" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Doctests in timsort" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Doctests in sorting" />
-        <item index="3" class="java.lang.String" itemvalue="Python.profile_sorting" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Nosetests in rectangle_test.py" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Nosetests in simple_test.py" />
+        <item index="1" class="java.lang.String" itemvalue="Python.game" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Doctests in timsort" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Doctests in sorting" />
+        <item index="4" class="java.lang.String" itemvalue="Python.profile_sorting" />
       </list>
     </recent_temporary>
   </component>
@@ -296,41 +356,42 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Doctests_in_timsort - 2017.11.30 at 12h 29m 43s.xml">
-      <configuration name="Doctests in timsort" configurationId="tests" />
+    <history-entry file="Nosetests_in_simple_test_py - 2017.12.01 at 19h 11m 03s.xml">
+      <configuration name="Nosetests in simple_test.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctests_in_timsort - 2017.11.30 at 12h 31m 27s.xml">
-      <configuration name="Doctests in timsort" configurationId="tests" />
+    <history-entry file="Nosetests_in_simple_test_py - 2017.12.01 at 19h 24m 55s.xml">
+      <configuration name="Nosetests in simple_test.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctests_in_timsort - 2017.11.30 at 12h 32m 10s.xml">
-      <configuration name="Doctests in timsort" configurationId="tests" />
+    <history-entry file="Nosetests_in_simple_test_py - 2017.12.01 at 19h 25m 26s.xml">
+      <configuration name="Nosetests in simple_test.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctests_in_timsort - 2017.11.30 at 12h 33m 21s.xml">
-      <configuration name="Doctests in timsort" configurationId="tests" />
+    <history-entry file="Nosetests_in_simple_test_py - 2017.12.01 at 19h 28m 33s.xml">
+      <configuration name="Nosetests in simple_test.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctests_in_timsort - 2017.11.30 at 12h 33m 34s.xml">
-      <configuration name="Doctests in timsort" configurationId="tests" />
+    <history-entry file="Nosetests_in_simple_test_py - 2017.12.01 at 19h 28m 53s.xml">
+      <configuration name="Nosetests in simple_test.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctests_in_timsort - 2017.11.30 at 12h 37m 08s.xml">
-      <configuration name="Doctests in timsort" configurationId="tests" />
+    <history-entry file="Nosetests_in_simple_test_py - 2017.12.01 at 19h 31m 49s.xml">
+      <configuration name="Nosetests in simple_test.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctests_in_timsort - 2017.11.30 at 12h 37m 41s.xml">
-      <configuration name="Doctests in timsort" configurationId="tests" />
+    <history-entry file="Nosetests_in_simple_test_py - 2017.12.01 at 19h 31m 59s.xml">
+      <configuration name="Nosetests in simple_test.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctests_in_timsort - 2017.11.30 at 12h 42m 28s.xml">
-      <configuration name="Doctests in timsort" configurationId="tests" />
+    <history-entry file="Nosetests_in_simple_test_py - 2017.12.01 at 19h 35m 53s.xml">
+      <configuration name="Nosetests in simple_test.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctests_in_timsort - 2017.11.30 at 12h 43m 01s.xml">
-      <configuration name="Doctests in timsort" configurationId="tests" />
+    <history-entry file="Nosetests_in_simple_test_py - 2017.12.01 at 19h 38m 07s.xml">
+      <configuration name="Nosetests in simple_test.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctests_in_timsort - 2017.12.01 at 14h 05m 00s.xml">
-      <configuration name="Doctests in timsort" configurationId="tests" />
+    <history-entry file="Nosetests_in_simple_test_py - 2017.12.01 at 19h 49m 38s.xml">
+      <configuration name="Nosetests in simple_test.py" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27879268" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27879268" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34517047" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -374,13 +435,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/labs/lab1/search.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-444">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/labs/lab2/tweet.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2060">
@@ -503,13 +557,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -693,50 +740,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assignments/a2/goal.py">
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="96" column="33" lean-forward="true" selection-start-line="96" selection-start-column="33" selection-end-line="96" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assignments/a2/renderer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="173" column="6" lean-forward="false" selection-start-line="173" selection-start-column="6" selection-end-line="173" selection-end-column="6" />
+        <state relative-caret-position="144">
+          <caret line="604" column="0" lean-forward="false" selection-start-line="604" selection-start-column="0" selection-end-line="604" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assignments/a2/rectangle_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="35" column="4" lean-forward="false" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="44" />
+        <state relative-caret-position="767">
+          <caret line="71" column="21" lean-forward="false" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assignments/a2/player.py">
+    <entry file="file://$PROJECT_DIR$/assignments/a2/renderer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-37">
-          <caret line="239" column="48" lean-forward="false" selection-start-line="239" selection-start-column="48" selection-end-line="239" selection-end-column="48" />
+        <state relative-caret-position="30">
+          <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignments/a2/goal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="164" column="49" lean-forward="true" selection-start-line="164" selection-start-column="49" selection-end-line="164" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assignments/a2/game.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-211">
-          <caret line="142" column="20" lean-forward="true" selection-start-line="142" selection-start-column="20" selection-end-line="142" selection-end-column="20" />
+        <state relative-caret-position="98">
+          <caret line="129" column="14" lean-forward="true" selection-start-line="129" selection-start-column="14" selection-end-line="129" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignments/a2/simple_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-180">
+          <caret line="329" column="23" lean-forward="true" selection-start-line="329" selection-start-column="23" selection-end-line="329" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignments/a2/player.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="187" column="7" lean-forward="false" selection-start-line="187" selection-start-column="4" selection-end-line="187" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assignments/a2/block.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="158" column="0" lean-forward="true" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
+        <state relative-caret-position="112">
+          <caret line="178" column="28" lean-forward="true" selection-start-line="178" selection-start-column="28" selection-end-line="178" selection-end-column="28" />
           <folding />
         </state>
       </provider>

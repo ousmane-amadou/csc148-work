@@ -14,6 +14,7 @@ This file contains the Goal class hierarchy.
 from typing import List, Tuple
 from block import Block
 
+
 class Goal:
     """A player goal in the game of Blocky.
 
@@ -59,18 +60,22 @@ class PerimeterGoal(Goal):
         return "Create the most most possible units on the outer perimeter of the board"
 
     def score(self, board: Block) -> int:
+        """ Calculate and return the score associated with the most units on
+        the outer perimeter on <board>. """
         s = 0
         rep = board.flatten()
-        for i in range(0, len(rep[0])):
+        for i in range(0, len(rep)):
             if rep[i][0] == self.colour:
                 s += 1
             if rep[0][i] == self.colour:
                 s += 1
-            if rep[len(rep[0])-1][0] == self.colour:
+            if rep[len(rep) - 1][i] == self.colour:
                 s += 1
-            if rep[0][len(rep[0])-1] == self.colour:
+            if rep[i][len(rep) - 1] == self.colour:
                 s += 1
+
         return s
+
 
 class BlobGoal(Goal):
     """A goal to create the largest connected blob of this goal's target
@@ -91,22 +96,25 @@ class BlobGoal(Goal):
         """ Calculate and return the score associated with the largest connected
         blob on <board>. """
         max_blob = 0
-        size = len(board.flatten())
+
+        b = board.flatten()
+        size = len(b)
         visited = self._init_matrix(size)
+
         for i in range(size):
             for j in range(size):
-                max_blob = max(max_blob, self._undiscovered_blob_size((i, j), board.flatten(), visited))
+                max_blob = max(max_blob, self._undiscovered_blob_size((i, j), b, visited))
         return max_blob
 
     def _init_matrix(self, size: int) -> List[List[int]]:
         """Returns a <size> by <size> matrix whose entries are all -1.
         """
-        L = []
+        m = []
         for i in range(size):
-            L.append([])
+            m.append([])
             for j in range(size):
-                L[i].append(-1)
-        return L
+                m[i].append(-1)
+        return m
 
     def _undiscovered_blob_size(self, pos: Tuple[int, int],
                                 board: List[List[Tuple[int, int, int]]],
@@ -129,6 +137,7 @@ class BlobGoal(Goal):
         Update <visited> so that all cells that are visited are marked with
         either 0 or 1.
         """
+
         out_of_bounds = pos[0] >= len(board[0]) or pos[0] < 0 or pos[1] >= len(board[1]) or pos[1] < 0
         if out_of_bounds or visited[pos[0]][pos[1]] != -1:
             return 0
@@ -138,14 +147,14 @@ class BlobGoal(Goal):
         else:   # The only remaining case should be unvisited target colour nodes
             visited[pos[0]][pos[1]] = 1
 
-            connected_blobs_above = self._undiscovered_blob_size((pos[0]-1, pos[1]), board, visited)
-            connected_blobs_below = self._undiscovered_blob_size((pos[0]+1, pos[1]), board, visited)
-            connected_blobs_left = self._undiscovered_blob_size((pos[0], pos[1]-1), board, visited)
-            connected_blobs_right = self._undiscovered_blob_size((pos[0], pos[1]+1), board, visited)
+            blobs_above = self._undiscovered_blob_size((pos[0]-1, pos[1]), board, visited)
+            blobs_below = self._undiscovered_blob_size((pos[0]+1, pos[1]), board, visited)
+            blobs_left = self._undiscovered_blob_size((pos[0], pos[1]-1), board, visited)
+            blobs_right = self._undiscovered_blob_size((pos[0], pos[1]+1), board, visited)
 
-            connected_blob = connected_blobs_above + connected_blobs_below + connected_blobs_left + connected_blobs_right
+            connected_blobs = blobs_above + blobs_below + blobs_left + blobs_right
 
-            return 1 + connected_blob
+            return 1 + connected_blobs
 
 
 if __name__ == '__main__':

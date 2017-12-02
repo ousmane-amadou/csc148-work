@@ -13,7 +13,7 @@ This file contains the Block class, the main data structure used in the game.
 from typing import Optional, Tuple, List
 import random
 import math
-from renderer import COLOUR_LIST, TEMPTING_TURQUOISE, BLACK
+from renderer import COLOUR_LIST, TEMPTING_TURQUOISE, BLACK, BOARD_WIDTH
 
 
 HIGHLIGHT_COLOUR = TEMPTING_TURQUOISE
@@ -149,11 +149,9 @@ class Block:
             pass
         else:
             if direction == 1:
-                self.children = [self.children[3], self.children[2],
-                                self.children[1], self.children[0]]
+                self.children = [self.children[3], self.children[2], self.children[1], self.children[0]]
             elif direction == 0:
-                self.children = [self.children[1], self.children[0],
-                                self.children[3], self.children[2]]
+                self.children = [self.children[1], self.children[0], self.children[3], self.children[2]]
 
             self.update_block_locations(self.position, self.size)
 
@@ -167,11 +165,9 @@ class Block:
             pass
         else:
             if direction == 3:
-                self.children = [self.children[3], self.children[0],
-                                self.children[1], self.children[2]]
+                self.children = [self.children[3], self.children[0], self.children[1], self.children[2]]
             elif direction == 1:
-                self.children = [self.children[1], self.children[2],
-                                self.children[3], self.children[0]]
+                self.children = [self.children[1], self.children[2], self.children[3], self.children[0]]
             else:
                 return
 
@@ -180,7 +176,7 @@ class Block:
 
             self.update_block_locations(self.position, self.size)
 
-    def smash(self, max_depth: int) -> bool:
+    def smash(self) -> bool:
         """Smash this block.
 
         If this Block can be smashed,
@@ -193,15 +189,15 @@ class Block:
 
         Return True if this Block was smashed and False otherwise.
         """
+
         if 0 < self.level < self.max_depth:
             self.children = []
             for i in range(4):
-                self.children.append(random_init(self.level + 1, max_depth - 1))
+                self.children.append(random_init(self.level + 1, self.max_depth - 1))
             self.update_block_locations(self.position, self.size)
             return True
         else:
             return False
-
 
     def update_block_locations(self, top_left: Tuple[float, float],
                                size: float) -> None:
@@ -226,11 +222,11 @@ class Block:
 
                 # Sets x position for child
                 # Modify x position if child is top-right, bottom-right
-                child_x = top_left[0] + ((i==0) | (i==3)) * child.size
+                child_x = top_left[0] + ((i == 0) | (i == 3)) * child.size
 
                 # Sets with y position for child
                 # Modify y position if child is bottom-left, bottom-right
-                child_y = top_left[1] + ((i==2) | (i==3)) * child.size
+                child_y = top_left[1] + ((i == 2) | (i == 3)) * child.size
 
                 child.position = (child_x, child_y)
                 child.update_block_locations(child.position, child.size)
@@ -288,17 +284,17 @@ class Block:
 
         L[0][0] represents the unit cell in the upper left corner of the Block.
         """
+        self.update_block_locations((0, 0), BOARD_WIDTH)
         unit = 2**(self.max_depth - self.level)
-        L = []
-        for i in range(0, unit):
-            L.append(list(range(0, unit)))
-            for j in range(0, unit):
-                y = self.position[0] + 5 + (self.size/unit) * j
-                x = self.position[1] + 5 + (self.size/unit) * i
+        m = []
+        for col in range(0, unit):
+            m.append(list(range(0, unit)))
+            for row in range(0, unit):
+                x = self.position[0] + 5 + (self.size/unit) * col
+                y = self.position[1] + 5 + (self.size/unit) * row
+                m[col][row] = self.get_selected_block((x, y), self.max_depth).colour
+        return m
 
-                L[i][j] = self.get_selected_block((x, y), self.max_depth).colour
-                # print(i, j, x, y, L[i][j])
-        return L
 
 def random_init(level: int, max_depth: int) -> 'Block':
     """Return a randomly-generated Block with level <level> and subdivided
@@ -314,13 +310,14 @@ def random_init(level: int, max_depth: int) -> 'Block':
     # If this Block is not already at the maximum allowed depth, it can
     # be subdivided. Use a random number to decide whether or not to
     # subdivide it further.
-    if level <= max_depth: ## subdivide
+    if level <= max_depth:  # to subdivide
         if random.random() <= math.exp(-0.25 * level):
-            return Block(level, children=[random_init(level+1, max_depth) for i in range(4)])
+            return Block(level, children=[random_init(level+1+(i-i), max_depth) for i in range(4)])
 
-    ## or not to subdivide
+    # or not to subdivide
     blck = Block(level, random.choice(COLOUR_LIST), children=None)
     return blck
+
 
 if __name__ == '__main__':
     import python_ta

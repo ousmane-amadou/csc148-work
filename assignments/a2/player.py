@@ -12,13 +12,14 @@ This file contains the player class hierarchy.
 """
 
 import random
-from typing import Optional, List, Union, Any
+from typing import Optional
 import pygame
 from renderer import Renderer
 from block import Block
 from goal import Goal
 
 TIME_DELAY = 600
+
 
 def get_random_block(board: Block) -> Block:
     """ Returns a random block at a random depth within <board>.
@@ -27,6 +28,7 @@ def get_random_block(board: Block) -> Block:
     random_level = random.randint(1, board.max_depth)
 
     return board.get_selected_block(random_loc, random_level)
+
 
 def execute_move(selected_block: Block, selected_move: int) -> None:
     """ Executes <selected_move> with <selected_block>.
@@ -40,7 +42,8 @@ def execute_move(selected_block: Block, selected_move: int) -> None:
     elif selected_move == 3 or selected_move == 10:
         selected_block.rotate(3)
     elif selected_move == 4:
-        selected_block.smash(random.randint(0, selected_move.max_depth))
+        selected_block.smash()
+
 
 class Player:
     """A player in the Blocky game.
@@ -76,6 +79,7 @@ class Player:
         """
         raise NotImplementedError
 
+
 class SmartPlayer(Player):
     """An NPC (non-player character) in the Blocky Game that that chooses moves
      more intelligently than a Random Player.
@@ -104,26 +108,22 @@ class SmartPlayer(Player):
         4 = 100
         >= 5 = 150
         """
-        num_moves = 0
-
-        moves_legend = {0: 5, 1: 10, 2: 25, 3: 50, 4: 100}
-        if self.difficulty >= 5:
-            num_moves = 150
-        else:
-            num_moves = moves_legend[self.difficulty]
+        moves_legend = {0: 5, 1: 10, 2: 25, 3: 50, 4: 100, 5: 150}
 
         # [ score, move_type, move_block ]
-        best_move = [-1, -1, get_random_block(board)]
-        for i in range(num_moves):
+        best_move = [-1, -1, Block(0)]
+
+        for i in range(moves_legend[self.difficulty if self.difficulty < 5 else 5]):
             move_block = get_random_block(board)
             move_type = random.randint(0, 3)
             execute_move(move_block, move_type)
 
-            if self.goal.score(board) > best_move[0]:
-                best_move = [self.goal.score(board), move_type, move_block]
+            score = self.goal.score(board)
+
+            if score > best_move[0]:
+                best_move = [score, move_type, move_block]
 
             execute_move(move_block, move_type+10)
-
 
         best_move[2].highlighted = True
         self.renderer.draw(board, self.id)
@@ -148,7 +148,7 @@ class RandomPlayer(Player):
     def make_move(self, board: Block):
         """Chooses a random move, executes it, and returns 1 upon completion."""
         move_block = get_random_block(board)
-        move_type = random.randint(0, 3)
+        move_type = random.randint(0, 4)
 
         move_block.highlighted = True
         self.renderer.draw(board, self.id)
@@ -160,6 +160,7 @@ class RandomPlayer(Player):
         self.renderer.draw(board, self.id)
 
         return 0
+
 
 class HumanPlayer(Player):
     """A human player.
@@ -263,7 +264,7 @@ class HumanPlayer(Player):
                 if self.num_smashes >= self.MAX_SMASHES:
                     print('Can\'t smash again!')
                     return 0
-                if block.smash(board.max_depth):
+                if block.smash():
                     self.num_smashes += 1
                     return 1
                 else:
