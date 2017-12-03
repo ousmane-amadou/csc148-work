@@ -72,7 +72,7 @@ class PerimeterGoal(Goal):
                "units on outer perimeter of the board"
 
     def score(self, board: Block) -> int:
-        """ Calculate and return the score associated with the most units on
+        """ Calculate and return a score as the number of units on
         the outer perimeter on <board>. """
         s = 0
         rep = board.flatten()   # flattened rep-resentation of board
