@@ -81,7 +81,7 @@ class Player:
 
 
 class SmartPlayer(Player):
-    """An NPC (non-player character) in the Blocky Game that that chooses moves
+    """An NPC (non-player character) in the Blocky Game that chooses moves
      more intelligently than a Random Player.
 
     === Public Attributes ===
@@ -139,7 +139,7 @@ class SmartPlayer(Player):
 
 
 class RandomPlayer(Player):
-    """An NPC (non-player character) in the Blocky Game that that chooses moves
+    """An NPC (non-player character) in the Blocky Game that chooses moves
     more randomly.
     """
     def __init__(self, renderer: Renderer, player_id: int, goal: Goal) -> None:
