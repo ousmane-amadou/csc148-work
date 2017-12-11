@@ -18,7 +18,7 @@ please see
 Note: this file is for support purposes only, and is not part of your
 submission.
 """
-from ex7 import anagrams
+from ex72 import anagrams
 
 
 def test_empty_string():

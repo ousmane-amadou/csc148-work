@@ -63,9 +63,6 @@ def draw_grid(n: int) -> None:
                 done = True
 
 
-        # Display the screen to the user.
-
-
 class Domino:
     """A domino on a grid.
 
@@ -161,18 +158,15 @@ def tile_with_dominoes(n: int) -> List['Domino']:
             t.add_offset(2**(n-1), 0)
 
         for t in lower_left_tiling:
-            t.add_offset(0, 2 ** (n-1))
+            t.add_offset(0, 2**(n-1))
 
         for t in lower_right_tiling:
-            t.add_offset(2 ** (n-1), 2 ** (n-1))
+            t.add_offset(2**(n-1), 2**(n-1))
 
         # Return the combined tiling for all four quadrants.
 
         return upper_right_tiling + upper_left_tiling + \
                lower_left_tiling + lower_right_tiling
-
-
-
 
 
 def _tile_2_by_2() -> List['Domino']:
@@ -186,6 +180,7 @@ def _tile_2_by_2() -> List['Domino']:
         return [Domino((0, 0), (0, 1)), Domino((1, 0), (1, 1))]
     else:
         return [Domino((0, 0), (1, 0)), Domino((0, 1), (1, 1))]
+
 
 if __name__ == '__main__':
     # import python_ta

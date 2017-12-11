@@ -279,6 +279,17 @@ class LinkedListRec:
         else:
             self._rest.insert(index-1, item)
 
+    def insert_after_root(self, item: object):
+        """
+        >>> lst = LinkedListRec([3, 0, 10])
+        >>> lst.insert_after_root(4)
+        >>> print(lst)
+        3 -> 4 -> 0 -> 10
+        """
+        temp = LinkedListRec([item])
+        temp._rest = self._rest
+        self._rest = temp
+
     # --- Additional Exercises ---
 
     def map(self, f: Callable[[object], object]) -> 'LinkedListRec':
