@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1eec9c6e-4093-4dfc-a5b9-605adbf12f3c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/exercises/ex1/output.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/exercises/ex7/ex7_test.py" afterPath="$PROJECT_DIR$/exercises/ex7/ex7_test.py" />
-      <change beforePath="$PROJECT_DIR$/labs/lab7/rec_linked_list.py" afterPath="$PROJECT_DIR$/labs/lab7/rec_linked_list.py" />
-      <change beforePath="$PROJECT_DIR$/labs/lab8/tiling.py" afterPath="$PROJECT_DIR$/labs/lab8/tiling.py" />
-    </list>
+    <list default="true" id="1eec9c6e-4093-4dfc-a5b9-605adbf12f3c" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

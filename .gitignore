@@ -5,6 +5,13 @@ __pycache__/
 # C extensions
 *.so
 
+# Dunno
+.cache/
+.hypothesis/
+.DS_Store
+.idea/
+*/ouptut.html
+
 # Distribution / packaging
 bin/
 build/
