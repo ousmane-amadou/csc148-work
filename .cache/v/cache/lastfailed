@@ -1,5 +1,0 @@
-{
-  "exercises/ex5/ex5_test.py::test_orders_empty": true,
-  "exercises/ex5/ex5_test.py::test_orders_have_correct_length": true,
-  "labs/lab1/test_search.py::test_search": true
-}
